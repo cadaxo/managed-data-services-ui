@@ -1,0 +1,37 @@
+<mvc:View controllerName="com.cadaxo.cmds.manageddataservicesui.controller.Graph"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:m="sap.m" xmlns:l="sap.ui.layout" xmlns="sap.suite.ui.commons.networkgraph">
+    <Graph enableWheelZoom="false" orientation="{settings>/orientation}" nodes="{/NODES}" lines="{/RELATIONS}" id="graph"
+	noDataText="{i18n>noData}">
+        <nodes>
+            <Node maxWidth="{maxWidth}" headerCheckBoxState="{headerCheckBoxState}" key="{Id}" title="{Name}"
+                icon="sap-icon://table-view" 
+                showActionLinksButton="false"
+                showDetailButton="false"
+                showExpandButton="false"
+                shape="Circle"
+                width="300"
+                press="onNodePress">
+                    <actionButtons>
+                                <ActionButton
+                                        icon="sap-icon://navigation-left-arrow"
+                                        title="Expand"
+                                        position="Left"
+                                        press="leftExpandPressed"/>
+                        
+                                <ActionButton
+                                        icon="sap-icon://navigation-right-arrow"
+                                        title="Expand"
+                                        press="rightExpandPressed"/>
+           
+                            
+                        </actionButtons>
+    </Node>
+</nodes>
+<lines>
+        <Line from="{Idfrom}" to="{Idto}"
+             >
+       
+        </Line>
+											</lines>
+    </Graph>
+</mvc:View>
