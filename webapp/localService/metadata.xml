@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZCDX_MDS_SRV" xml:lang="en" sap:schema-version="1"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="NODE" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HttpLink" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="HTTP Link" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="State" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AdtLink" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ADT Link" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Object" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Object Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="toFields" Relationship="ZCDX_MDS_SRV.toNodesFields" FromRole="FromRole_toNodesFields" ToRole="ToRole_toNodesFields"/>
+                <NavigationProperty Name="toAnnotations" Relationship="ZCDX_MDS_SRV.toNodesAnnotations" FromRole="FromRole_toNodesAnnotations" ToRole="ToRole_toNodesAnnotations"/>
+            </EntityType>
+            <EntityType Name="RELATION" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Cardinality"/>
+                    <PropertyRef Name="Idfrom"/>
+                    <PropertyRef Name="Idto"/>
+                    <PropertyRef Name="Type"/>
+                </Key>
+                <Property Name="Cardinality" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cardinality" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Idfrom" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="ID from" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Idto" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="ID to" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="FIELD" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Fieldname"/>
+                    <PropertyRef Name="NodeId"/>
+                </Key>
+                <Property Name="FieldAlias" Type="Edm.String" Nullable="false" MaxLength="256" sap:unicode="false" sap:label="DD: Concatenated Field Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fieldname" Type="Edm.String" Nullable="false" MaxLength="256" sap:unicode="false" sap:label="DD: Concatenated Field Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NodeId" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Node ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="toAnnotations" Relationship="ZCDX_MDS_SRV.toFieldsAnnotations" FromRole="FromRole_toFieldsAnnotations" ToRole="ToRole_toFieldsAnnotations"/>
+            </EntityType>
+            <EntityType Name="ANNOTATION" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Fieldname"/>
+                    <PropertyRef Name="NodeId"/>
+                    <PropertyRef Name="Name"/>
+                    <PropertyRef Name="Position"/>
+                </Key>
+                <Property Name="Fieldname" Type="Edm.String" Nullable="false" MaxLength="256" sap:unicode="false" sap:label="DD: Concatenated Field Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NodeId" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="NODE_ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="240" sap:unicode="false" sap:label="DD: Key/Name for Annotation" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Position" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="DD: Marked Position in a Repeat Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="1300" sap:unicode="false" sap:label="DD: Value of an Annotation" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="toNodesAnnotations" sap:content-version="1">
+                <End Type="ZCDX_MDS_SRV.NODE" Multiplicity="1" Role="FromRole_toNodesAnnotations"/>
+                <End Type="ZCDX_MDS_SRV.ANNOTATION" Multiplicity="*" Role="ToRole_toNodesAnnotations"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_toNodesAnnotations">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_toNodesAnnotations">
+                        <PropertyRef Name="NodeId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="toNodesFields" sap:content-version="1">
+                <End Type="ZCDX_MDS_SRV.NODE" Multiplicity="1" Role="FromRole_toNodesFields"/>
+                <End Type="ZCDX_MDS_SRV.FIELD" Multiplicity="*" Role="ToRole_toNodesFields"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_toNodesFields">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_toNodesFields">
+                        <PropertyRef Name="NodeId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="toFieldsAnnotations" sap:content-version="1">
+                <End Type="ZCDX_MDS_SRV.FIELD" Multiplicity="1" Role="FromRole_toFieldsAnnotations"/>
+                <End Type="ZCDX_MDS_SRV.ANNOTATION" Multiplicity="*" Role="ToRole_toFieldsAnnotations"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_toFieldsAnnotations">
+                        <PropertyRef Name="Fieldname"/>
+                        <PropertyRef Name="NodeId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_toFieldsAnnotations">
+                        <PropertyRef Name="Fieldname"/>
+                        <PropertyRef Name="NodeId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZCDX_MDS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="NODES" EntityType="ZCDX_MDS_SRV.NODE" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="RELATIONS" EntityType="ZCDX_MDS_SRV.RELATION" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="FIELDS" EntityType="ZCDX_MDS_SRV.FIELD" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ANNOTATIONS" EntityType="ZCDX_MDS_SRV.ANNOTATION" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="toNodesFieldsSet" Association="ZCDX_MDS_SRV.toNodesFields" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="NODES" Role="FromRole_toNodesFields"/>
+                    <End EntitySet="FIELDS" Role="ToRole_toNodesFields"/>
+                </AssociationSet>
+                <AssociationSet Name="toFieldsAnnotationsSet" Association="ZCDX_MDS_SRV.toFieldsAnnotations" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="FIELDS" Role="FromRole_toFieldsAnnotations"/>
+                    <End EntitySet="ANNOTATIONS" Role="ToRole_toFieldsAnnotations"/>
+                </AssociationSet>
+                <AssociationSet Name="toNodesAnnotationsSet" Association="ZCDX_MDS_SRV.toNodesAnnotations" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="NODES" Role="FromRole_toNodesAnnotations"/>
+                    <End EntitySet="ANNOTATIONS" Role="ToRole_toNodesAnnotations"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://18.212.238.21:8000/sap/opu/odata/sap/ZCDX_MDS_SRV/$metadata"
+                xmlns:atom="http://www.w3.org/2005/Atom"/>
+                <atom:link rel="latest-version" href="http://18.212.238.21:8000/sap/opu/odata/sap/ZCDX_MDS_SRV/$metadata"
+                    xmlns:atom="http://www.w3.org/2005/Atom"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
