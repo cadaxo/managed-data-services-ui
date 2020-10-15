@@ -1,14 +1,14 @@
-<mvc:View controllerName="com.cadaxo.cmds.manageddataservicesui.controller.App"
+<mvc:View controllerName="com.cadaxo.cmds.controller.App"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:g="sap.suite.ui.commons.networkgraph">
 	<Shell id="shell" appWidthLimited="false">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-                        <FlexBox fitContainer="true" renderType="Bare" wrap="Wrap" id="graphWrapper">
-                             <mvc:XMLView viewName="com.cadaxo.cmds.manageddataservicesui.view.Graph"/>
-                        </FlexBox>
-                    </content>
+            <FlexBox fitContainer="true" renderType="Bare" wrap="Wrap" id="graphWrapper">
+                  <mvc:XMLView viewName="com.cadaxo.cmds.view.Graph"/>
+            </FlexBox>
+          </content>
 				</Page>
 			</pages>
 		</App>

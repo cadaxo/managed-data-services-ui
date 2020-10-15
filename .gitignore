@@ -1,6 +1,11 @@
-/node_modules/
+node_modules/
+.idea/
+.mta/
+*.mtar
+dist/
 package-lock.json
-/dist/
-/.vscode/
-/*-content.zip/ 
-/coverage/ 
+mta_archives/
+deployer/resources/
+Makefile*
+mta-*
+approuter/*/webapp/

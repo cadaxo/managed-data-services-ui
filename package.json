@@ -1,25 +1,39 @@
 {
   "name": "manageddataservicesui",
   "version": "0.0.1",
-  "devDependencies": {
-    "@sapui5/ts-types": "1.71.x",
-    "@ui5/cli": "2.2.6",
-    "@sap/ui5-builder-webide-extension": "1.0.x",
-    "@sap/approuter": "8.1.x",
-    "@sap/html5-repo-mock": "1.5.x",
-    "karma": "^4.4.1",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-coverage": "^2.0.2",
-    "karma-ui5": "^2.2.0"
-  },
   "scripts": {
-    "build": "ui5 build --include-task=generateManifestBundle generateCachebusterInfo",
-    "start-local": "node node_modules/@sap/html5-repo-mock/index.js",
-    "test": "karma start"
+    "start": "ui5 serve --config=ui5.yaml  --open index.html",
+    "build:ui": "run-s  build:uimodule",
+    "test": "run-s lint karma",
+    "karma-ci": "karma start karma-ci.conf.js",
+    "clearCoverage": "shx rm -rf coverage",
+    "karma": "run-s clearCoverage karma-ci",
+    "lint": "eslint .",
+    "deploy": "run-s build:ui",
+    "serve:uimodule": "ui5 serve --config=ui5.yaml",
+    "build:uimodule": "ui5 build --config=ui5.yaml --clean-dest --dest dist/"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^2.4.1",
+    "eslint": "^7.7.0",
+    "karma": "^5.1.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.3",
+    "karma-ui5": "^2.2.0",
+    "npm-run-all": "^4.1.5",
+    "sapui5-runtime": "^1.5.5",
+    "shx": "^0.3.2",
+    "ui5-middleware-livereload": "^0.4.1",
+    "ui5-middleware-route-proxy": "*",
+    "ui5-middleware-servestatic": "^0.3.3",
+    "ui5-task-nwabap-deployer": "*"
   },
   "ui5": {
     "dependencies": [
-      "@sap/ui5-builder-webide-extension"
+      "ui5-middleware-livereload",
+      "ui5-task-nwabap-deployer",
+      "ui5-middleware-route-proxy",
+      "ui5-middleware-servestatic"
     ]
   }
 }

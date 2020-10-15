@@ -1,7 +1,7 @@
 {
-  "_version": "1.12.0",
+  "_version": "1.21.0",
   "sap.app": {
-    "id": "com.cadaxo.cmds.manageddataservicesui",
+    "id": "com.cadaxo.cmds",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -9,22 +9,16 @@
     },
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
-    "resources": "resources.json",
-    "ach": "ach",
-    "sourceTemplate": {
-      "id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
-      "version": "1.40.12"
-    },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZCDX_MDS_SRV/",
+        "uri": "/sap/opu/odata/cadaxo/MDS_SRV/",
         "type": "OData",
         "settings": {
           "odataVersion": "2.0",
           "localUri": "localService/metadata.xml"
         }
       }
-    }
+    }    
   },
   "sap.ui": {
     "technology": "UI5",
@@ -43,15 +37,14 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": false,
     "rootView": {
-      "viewName": "com.cadaxo.cmds.manageddataservicesui.view.App",
+      "viewName": "com.cadaxo.cmds.view.App",
       "type": "XML",
       "async": true,
-      "id": "App"
+      "id": "idAppControl"
     },
     "dependencies": {
-      "minUI5Version": "1.60.1",
+      "minUI5Version": "1.60.0",
       "libs": {
         "sap.ui.core": {},
         "sap.m": {},
@@ -66,7 +59,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "com.cadaxo.cmds.manageddataservicesui.i18n.i18n"
+          "bundleName": "com.cadaxo.cmds.i18n.i18n"
         }
       },
       "": {
@@ -77,7 +70,7 @@
           "defaultCountMode": "Inline",
           "refreshAfterChange": false
         }
-      }
+      }      
     },
     "resources": {
       "css": [
@@ -90,11 +83,10 @@
       "config": {
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
-        "async": true,
-        "viewPath": "com.cadaxo.cmds.manageddataservicesui.view",
+        "viewPath": "com.cadaxo.cmds.view",
+        "controlId": "idAppControl",
         "controlAggregation": "pages",
-        "controlId": "app",
-        "clearControlAggregation": false
+        "async": true
       },
       "routes": [
         {
@@ -108,9 +100,8 @@
       "targets": {
         "TargetApp": {
           "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "App",
+          "viewLevel": 1,
+          "viewId": "idAppControl",
           "viewName": "App"
         }
       }

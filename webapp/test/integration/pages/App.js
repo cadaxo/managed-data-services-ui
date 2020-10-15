@@ -1,27 +1,34 @@
-sap.ui.define([
-	"sap/ui/test/Opa5"
-], function (Opa5) {
-	"use strict";
-	var sViewName = "App";
-	Opa5.createPageObjects({
-		onTheAppPage: {
+sap.ui.require([
+  "sap/ui/test/Opa5",
+  "sap/ui/test/matchers/AggregationLengthEquals"
+], function (Opa5, AggregationLengthEquals) {
+  "use strict";
 
-			actions: {},
+  var sViewName = "com.cadaxo.cmds.mdsui.view.App";
+  var sAppId = "idAppControl";
 
-			assertions: {
+  Opa5.createPageObjects({
+    onTheAppPage: {
 
-				iShouldSeeTheApp: function () {
-					return this.waitFor({
-						id: "app",
-						viewName: sViewName,
-						success: function () {
-							Opa5.assert.ok(true, "The " + sViewName + " view is displayed");
-						},
-						errorMessage: "Did not find the " + sViewName + " view"
-					});
-				}
-			}
-		}
-	});
+      assertions: {
+
+        iShouldSeePageCount: function(iItemCount) {
+          return this.waitFor({
+            id: sAppId,
+            viewName: sViewName,
+            matchers: [new AggregationLengthEquals({
+              name: "pages",
+              length: iItemCount
+            })],
+            success: function() {
+              Opa5.assert.ok(true, "The app contains one page");
+            },
+            errorMessage: "App does not have expected number of pages '" + iItemCount + "'."
+          });
+        }
+      }
+
+    }
+  });
 
 });

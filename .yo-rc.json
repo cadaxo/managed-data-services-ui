@@ -1,0 +1,16 @@
+{
+  "generator-easy-ui5": {
+    "projectname": "manageddataservicesui",
+    "namespace": "com.cadaxo.cmds",
+    "platform": "SAP NetWeaver",
+    "viewtype": "XML",
+    "viewname": "App",
+    "ui5libs": "Content delivery network (SAPUI5)",
+    "newdir": true,
+    "namespaceURI": "com/cadaxo/cmds",
+    "uimodules": [
+      "uimodule"
+    ],
+    "setupCompleted": true
+  }
+}
