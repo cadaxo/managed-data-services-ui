@@ -1,0 +1,20 @@
+[
+    {
+      "__metadata": {
+        "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Annotations('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')",
+        "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Annotations('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')",
+        "type": "CADAXO_MDS_SRV.Annotation"
+      },
+      "AnnotationId": "67A6DAADECBBF47371EAD38C300FF0FB682EF51E",
+      "ObjectId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+      "AnnotationName": "Mock Annotation",
+      "Position": 1,
+      "Value": "Test Value",
+      "ObjectState": 0,
+      "toDatasource": {
+        "__deferred": {
+          "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')/toDatasource"
+        }
+      }
+    }
+]

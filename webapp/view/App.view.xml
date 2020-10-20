@@ -11,7 +11,7 @@
 								id="graph"
 								lines="{graphModel>/links}"
 								noDataText="{i18n>noData}"
-								width="65%">
+								width="auto">
 								<g:statuses>
 									<g:Status key="TABL" title="Table" backgroundColor="blue"
 										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
@@ -61,7 +61,7 @@
 							</g:lines>
 						
 							</g:Graph>
-							<Panel width="35%" height="100%" id="sideBar-panel">
+							<Panel visible="false" width="35%" height="100%" id="sideBar-panel">
 								<headerToolbar>
 									<OverflowToolbar>
 										<Title text="{ObjectName}"/>
@@ -76,8 +76,11 @@
 										<items>
 											<TabContainerItem name="Fields">
 												<content>
-													<Tree id="tree-fields" items="{toFields}" mode="SingleSelectMaster">
+													<!--Tree id="tree-fields" items="{toFields}" mode="SingleSelectMaster">
 														<StandardTreeItem press="fieldPressed" detailPress="fieldPressed" title="{FieldName}"/>
+													</Tree-->
+													<Tree itemPress="fieldPressed" id="tree-fields" items="{fields>/results}" mode="SingleSelectMaster">
+														<StandardTreeItem type="Active"  title="{fields>text}"/>
 													</Tree>
 												</content>
 											</TabContainerItem>

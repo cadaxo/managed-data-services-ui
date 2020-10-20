@@ -69,98 +69,115 @@ sap.ui.define([
         data: []
       });
       
-    this.getView().setModel(oTreeModel,"treemodel");
+      this.getView().setModel(oTreeModel,"treemodel");
 
 
-    var oTabContainer = this.getView().byId("tabs");
-    oTabContainer.addEventDelegate({
-    onAfterRendering: function() {
-        var oTabStrip = this.getAggregation("_tabStrip");
-        var oItems = oTabStrip.getItems();
-        for (var i = 0; i < oItems.length; i++) {
-        var oCloseButton = oItems[i].getAggregation("_closeButton");
-        oCloseButton.setVisible(false);
-        }
-    }}, oTabContainer);
-    
-  },
+      var oTabContainer = this.getView().byId("tabs");
+      oTabContainer.addEventDelegate({
+      onAfterRendering: function() {
+          var oTabStrip = this.getAggregation("_tabStrip");
+          var oItems = oTabStrip.getItems();
+          for (var i = 0; i < oItems.length; i++) {
+          var oCloseButton = oItems[i].getAggregation("_closeButton");
+          oCloseButton.setVisible(false);
+          }
+      }}, oTabContainer);
+      
+    },
 
-  hideAllNodes: function() {
+    hideAllNodes: function() {
 
-    var oGraph = oController._graph;
-    if (oGraph) {
-var oMainNode = oGraph.getNodes()[0];
-if (oMainNode) {
-  oMainNode.setHidden(false);
-  oGraph.getNodes().forEach(function (oNode) { 
-    if (oNode.getKey() != oMainNode.getKey()) {
-      oNode.setHidden(true);
-    }
-            })
-            debugger;
-  oGraph.scrollToElement(oMainNode);
-}	
-}
+      var oGraph = oController._graph;
+      if (oGraph) {
+        var oMainNode = oGraph.getNodes()[0];
+        if (oMainNode) {
+          oMainNode.setHidden(false);
+          oGraph.getNodes().forEach(function (oNode) { 
+            if (oNode.getKey() != oMainNode.getKey()) {
+              oNode.setHidden(true);
+            }
+          })  
+          oGraph.scrollToElement(oMainNode);
+        }	
+      }
 
-},
+    },
 
-leftExpandPressed: function(oEvent) {
+    leftExpandPressed: function(oEvent) {
 
-    function hasHiddenParent(oNode) {
-        return oNode.getParentNodes().some(function (n) {
-            return n.isHidden();
-        });
-    }
+      function hasHiddenParent(oNode) {
+          return oNode.getParentNodes().some(function (n) {
+              return n.isHidden();
+          });
+      }
 
-    var oNode = oEvent.getSource().getParent();
-var bExpand = hasHiddenParent(oNode);
-oNode.getParentNodes().forEach(function (oChild) {
-oChild.setHidden(!bExpand);
-});
-},
+      var oNode = oEvent.getSource().getParent();
+      var bExpand = hasHiddenParent(oNode);
+      oNode.getParentNodes().forEach(function (oChild) {
+        oChild.setHidden(!bExpand);
+      });
+    },
 
-rightExpandPressed: function(oEvent) {
+    rightExpandPressed: function(oEvent) {
 
-    function hasHiddenChild(oNode) {
+      function hasHiddenChild(oNode) {
         return oNode.getChildNodes().some(function (n) {
             return n.isHidden();
         });
     }	
     
-    var oNode = oEvent.getSource().getParent();
-var bExpand = hasHiddenChild(oNode);
-oNode.getChildNodes().forEach(function (oChild) {
-oChild.setHidden(!bExpand);
-});
-},
+      var oNode = oEvent.getSource().getParent();
+      var bExpand = hasHiddenChild(oNode);
+      oNode.getChildNodes().forEach(function (oChild) {
+        oChild.setHidden(!bExpand);
+      });
+    },
 
-setCustomToolbar: function(oGraph) {
-    var oToolbar = oGraph.getToolbar();
+    setCustomToolbar: function(oGraph) {
+        var oToolbar = oGraph.getToolbar();
 
-    //hide search input field
-    oToolbar.getContent()[1].setVisible(false)
-},
+        //hide search input field
+        oToolbar.getContent()[1].setVisible(false)
+    },
 
-onNodePressed: function(oEvent) {
-    var oElement = oEvent.getSource();
+    onNodePressed: function(oEvent) {
+      var oElement = oEvent.getSource();
 
-    var oPanel = oController.getView().byId("sideBar-panel");
-    oPanel.bindElement({
-        path: "/Datasources('"+oEvent.getSource().getKey()+"')",
-        parameters: {
-            expand: "toFields/toAnnotations"
-        },
-        events: {
-            dataReceived: function(response) {
-                debugger;
-            }
-        }
-    });
-},
+      var oPanel = oController.getView().byId("sideBar-panel");
+      oPanel.setVisible(true);
+      oController._graph.setWidth("65%");
 
-fieldPressed: function(oEvent) {
-    debugger
-}
+      oPanel.bindElement({
+          path: "/Datasources('"+oEvent.getSource().getKey()+"')",
+          parameters: {
+              expand: "toFields/toAnnotations"
+          },
+          events: {
+              dataReceived: function(response) {
+                  debugger;
+
+                  var aFields = [];
+                  response.getParameters().data.toFields.forEach((field) => {
+                    
+                    var aAnnotations = [];
+                    field.toAnnotations.forEach((annotation) => {
+                      aAnnotations.push({"text": annotation.AnnotationName});
+                    })
+                    aFields.push({"text": field.FieldName, "annotations": aAnnotations})
+                  })
+
+                  var oFieldsModel = new sap.ui.model.json.JSONModel({"results": aFields});
+                  oController.getView().setModel(oFieldsModel,"fields");
+                  
+              }
+          }
+      });
+    },
+
+    fieldPressed: function(oEvent) {
+        debugger;
+        //oEvent.getSource().getSelectedItem().getTitle()
+    }
 
   });
 });

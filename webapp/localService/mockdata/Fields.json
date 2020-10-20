@@ -1,0 +1,640 @@
+[
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "67A6DAADECBBF47371EAD38C300FF0FB682EF51E",
+          "FieldAlias": "ProductUUID",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "PRODUCTUUID",
+          "Position": 1,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('17E4633A5AC09CDAB9E437599E2AE89D8EA6D088')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('17E4633A5AC09CDAB9E437599E2AE89D8EA6D088')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "17E4633A5AC09CDAB9E437599E2AE89D8EA6D088",
+          "FieldAlias": "Product",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "PRODUCT",
+          "Position": 2,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('17E4633A5AC09CDAB9E437599E2AE89D8EA6D088')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('17E4633A5AC09CDAB9E437599E2AE89D8EA6D088')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('17E4633A5AC09CDAB9E437599E2AE89D8EA6D088')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D29827DD6E601A33B9313D7F391BC264C5FDBCF1')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D29827DD6E601A33B9313D7F391BC264C5FDBCF1')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "D29827DD6E601A33B9313D7F391BC264C5FDBCF1",
+          "FieldAlias": "ProductType",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "PRODUCTTYPE",
+          "Position": 3,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D29827DD6E601A33B9313D7F391BC264C5FDBCF1')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D29827DD6E601A33B9313D7F391BC264C5FDBCF1')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D29827DD6E601A33B9313D7F391BC264C5FDBCF1')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('604663556FF5A9F12A6379A8505D99A69C47FCAF')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('604663556FF5A9F12A6379A8505D99A69C47FCAF')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "604663556FF5A9F12A6379A8505D99A69C47FCAF",
+          "FieldAlias": "ProductCategory",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "PRODUCTCATEGORY",
+          "Position": 4,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('604663556FF5A9F12A6379A8505D99A69C47FCAF')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('604663556FF5A9F12A6379A8505D99A69C47FCAF')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('604663556FF5A9F12A6379A8505D99A69C47FCAF')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('664E8FBAC7FF64AF0C763AF517F4101BA92376B2')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('664E8FBAC7FF64AF0C763AF517F4101BA92376B2')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "664E8FBAC7FF64AF0C763AF517F4101BA92376B2",
+          "FieldAlias": "CreatedByUser",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "CREATEDBYUSER",
+          "Position": 5,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('664E8FBAC7FF64AF0C763AF517F4101BA92376B2')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('664E8FBAC7FF64AF0C763AF517F4101BA92376B2')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('664E8FBAC7FF64AF0C763AF517F4101BA92376B2')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('63C0898A925EA026F7ED57E0CB25EF98E972A75C')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('63C0898A925EA026F7ED57E0CB25EF98E972A75C')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "63C0898A925EA026F7ED57E0CB25EF98E972A75C",
+          "FieldAlias": "CreationDateTime",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "CREATIONDATETIME",
+          "Position": 6,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('63C0898A925EA026F7ED57E0CB25EF98E972A75C')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('63C0898A925EA026F7ED57E0CB25EF98E972A75C')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('63C0898A925EA026F7ED57E0CB25EF98E972A75C')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('900BE40EFF0861D351F722319F44C9FE76559A04')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('900BE40EFF0861D351F722319F44C9FE76559A04')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "900BE40EFF0861D351F722319F44C9FE76559A04",
+          "FieldAlias": "LastChangedByUser",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "LASTCHANGEDBYUSER",
+          "Position": 7,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('900BE40EFF0861D351F722319F44C9FE76559A04')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('900BE40EFF0861D351F722319F44C9FE76559A04')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('900BE40EFF0861D351F722319F44C9FE76559A04')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('76989952A87725F3B8692D98F57B2DD14F1DBC66')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('76989952A87725F3B8692D98F57B2DD14F1DBC66')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "76989952A87725F3B8692D98F57B2DD14F1DBC66",
+          "FieldAlias": "LastChangedDateTime",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "LASTCHANGEDDATETIME",
+          "Position": 8,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('76989952A87725F3B8692D98F57B2DD14F1DBC66')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('76989952A87725F3B8692D98F57B2DD14F1DBC66')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('76989952A87725F3B8692D98F57B2DD14F1DBC66')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D",
+          "FieldAlias": "Price",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "PRICE",
+          "Position": 9,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5FC3E4517FDF27D9247C5E06F207752A1EFCF51')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5FC3E4517FDF27D9247C5E06F207752A1EFCF51')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "A5FC3E4517FDF27D9247C5E06F207752A1EFCF51",
+          "FieldAlias": "Currency",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "CURRENCY",
+          "Position": 10,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5FC3E4517FDF27D9247C5E06F207752A1EFCF51')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5FC3E4517FDF27D9247C5E06F207752A1EFCF51')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5FC3E4517FDF27D9247C5E06F207752A1EFCF51')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C70A126A7F2624016753DB12E580A3EE6F26FD8A')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C70A126A7F2624016753DB12E580A3EE6F26FD8A')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "C70A126A7F2624016753DB12E580A3EE6F26FD8A",
+          "FieldAlias": "Height",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "HEIGHT",
+          "Position": 11,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C70A126A7F2624016753DB12E580A3EE6F26FD8A')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C70A126A7F2624016753DB12E580A3EE6F26FD8A')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C70A126A7F2624016753DB12E580A3EE6F26FD8A')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8D21D32B061033C20C0693CF58F43F7F1E697C5')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8D21D32B061033C20C0693CF58F43F7F1E697C5')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "F8D21D32B061033C20C0693CF58F43F7F1E697C5",
+          "FieldAlias": "Width",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "WIDTH",
+          "Position": 12,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8D21D32B061033C20C0693CF58F43F7F1E697C5')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8D21D32B061033C20C0693CF58F43F7F1E697C5')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8D21D32B061033C20C0693CF58F43F7F1E697C5')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('57ACD2A327EF26F196CE387468C82FBBA9317D8A')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('57ACD2A327EF26F196CE387468C82FBBA9317D8A')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "57ACD2A327EF26F196CE387468C82FBBA9317D8A",
+          "FieldAlias": "Depth",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "DEPTH",
+          "Position": 13,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('57ACD2A327EF26F196CE387468C82FBBA9317D8A')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('57ACD2A327EF26F196CE387468C82FBBA9317D8A')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('57ACD2A327EF26F196CE387468C82FBBA9317D8A')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4",
+          "FieldAlias": "DimensionUnit",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "DIMENSIONUNIT",
+          "Position": 14,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F55B5FD75ED853C9683062327B2C83CF5CBFAF91')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F55B5FD75ED853C9683062327B2C83CF5CBFAF91')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "F55B5FD75ED853C9683062327B2C83CF5CBFAF91",
+          "FieldAlias": "ProductPictureURL",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "PRODUCTPICTUREURL",
+          "Position": 15,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F55B5FD75ED853C9683062327B2C83CF5CBFAF91')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F55B5FD75ED853C9683062327B2C83CF5CBFAF91')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F55B5FD75ED853C9683062327B2C83CF5CBFAF91')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30",
+          "FieldAlias": "ProductValueAddedTax",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "PRODUCTVALUEADDEDTAX",
+          "Position": 16,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EE1B1322EB2BC4E831780F6CA56B6B6085F594CE')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EE1B1322EB2BC4E831780F6CA56B6B6085F594CE')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "EE1B1322EB2BC4E831780F6CA56B6B6085F594CE",
+          "FieldAlias": "ProductNameGroupUUID",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "PRODUCTNAMEGROUPUUID",
+          "Position": 17,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EE1B1322EB2BC4E831780F6CA56B6B6085F594CE')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EE1B1322EB2BC4E831780F6CA56B6B6085F594CE')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EE1B1322EB2BC4E831780F6CA56B6B6085F594CE')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('316700621E74F14F22A89E4A1484ACD83D4C9972')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('316700621E74F14F22A89E4A1484ACD83D4C9972')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "316700621E74F14F22A89E4A1484ACD83D4C9972",
+          "FieldAlias": "ProductDescriptionGroupUUID",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "PRODUCTDESCRIPTIONGROUPUUID",
+          "Position": 18,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('316700621E74F14F22A89E4A1484ACD83D4C9972')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('316700621E74F14F22A89E4A1484ACD83D4C9972')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('316700621E74F14F22A89E4A1484ACD83D4C9972')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8D72BE1AD86F5B701496926D3FCF128D2E4A750F')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8D72BE1AD86F5B701496926D3FCF128D2E4A750F')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "8D72BE1AD86F5B701496926D3FCF128D2E4A750F",
+          "FieldAlias": "SupplierUUID",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "SUPPLIERUUID",
+          "Position": 19,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8D72BE1AD86F5B701496926D3FCF128D2E4A750F')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8D72BE1AD86F5B701496926D3FCF128D2E4A750F')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8D72BE1AD86F5B701496926D3FCF128D2E4A750F')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('981CB32361A0D87E62B33DBDE2499A5DE53E5A0D')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('981CB32361A0D87E62B33DBDE2499A5DE53E5A0D')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "981CB32361A0D87E62B33DBDE2499A5DE53E5A0D",
+          "FieldAlias": "ProductBaseUnit",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "PRODUCTBASEUNIT",
+          "Position": 20,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('981CB32361A0D87E62B33DBDE2499A5DE53E5A0D')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('981CB32361A0D87E62B33DBDE2499A5DE53E5A0D')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('981CB32361A0D87E62B33DBDE2499A5DE53E5A0D')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7950FFA899B006500978E59D81B9FD792FF73349')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7950FFA899B006500978E59D81B9FD792FF73349')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "7950FFA899B006500978E59D81B9FD792FF73349",
+          "FieldAlias": "Weight",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "WEIGHT",
+          "Position": 21,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7950FFA899B006500978E59D81B9FD792FF73349')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7950FFA899B006500978E59D81B9FD792FF73349')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7950FFA899B006500978E59D81B9FD792FF73349')/toAnnotations"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('91457F1C1DDF4F6711675AFA3A5B620A1471F2B7')",
+            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('91457F1C1DDF4F6711675AFA3A5B620A1471F2B7')",
+            "type": "CADAXO_MDS_SRV.Field"
+          },
+          "FieldId": "91457F1C1DDF4F6711675AFA3A5B620A1471F2B7",
+          "FieldAlias": "WeightUnit",
+          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
+          "FieldName": "WEIGHTUNIT",
+          "Position": 22,
+          "Description": "",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('91457F1C1DDF4F6711675AFA3A5B620A1471F2B7')/toDatasource"
+            }
+          },
+          "toParameters": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('91457F1C1DDF4F6711675AFA3A5B620A1471F2B7')/toParameters"
+            }
+          },
+          "toAnnotations": {
+            "__deferred": {
+              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('91457F1C1DDF4F6711675AFA3A5B620A1471F2B7')/toAnnotations"
+            }
+          }
+        }
+      ]
