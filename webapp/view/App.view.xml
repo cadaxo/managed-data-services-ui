@@ -1,14 +1,103 @@
 <mvc:View controllerName="com.cadaxo.cmds.controller.App"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:g="sap.suite.ui.commons.networkgraph">
+    xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:g="sap.suite.ui.commons.networkgraph">
 	<Shell id="shell" appWidthLimited="false">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-            <FlexBox fitContainer="true" renderType="Bare" wrap="Wrap" id="graphWrapper">
-                  <mvc:XMLView viewName="com.cadaxo.cmds.view.Graph"/>
-            </FlexBox>
-          </content>
+						<FlexBox fitContainer="true" renderType="Bare" wrap="Wrap" id="graphWrapper">
+							<g:Graph enableWheelZoom="false"
+								nodes="{graphModel>/nodes}"
+								id="graph"
+								lines="{graphModel>/links}"
+								noDataText="{i18n>noData}"
+								width="65%">
+								<g:statuses>
+									<g:Status key="TABL" title="Table" backgroundColor="blue"
+										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+									<g:Status key="DDLS" title="CDS View" backgroundColor="green"
+										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />    
+									<g:Status key="ASSOCIATION" title="Association" backgroundColor="green"
+										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" /> 
+									<g:Status key="BASE" title="Base" backgroundColor="blue"
+										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />  
+									<g:Status key="ISUSED" title="Is Used" backgroundColor="red"
+										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />                       
+								</g:statuses>
+								<g:nodes>
+									<g:Node key="{graphModel>DsId}" title="{graphModel>ObjectName}"
+										icon="{
+												path: 'graphModel>ObjectType',
+												formatter: '.formatter.setNodeIcon'
+										}"  
+										showActionLinksButton="false"
+										showDetailButton="false"
+										showExpandButton="false"
+										shape="Circle"
+										width="300"
+										status="{graphModel>ObjectType}" 
+										press="onNodePressed">
+										<g:actionButtons>
+											<g:ActionButton
+													icon="sap-icon://navigation-left-arrow"
+													title="Show parent nodes"
+													position="Left"
+													press="leftExpandPressed"/>
+									
+											<g:ActionButton
+													icon="sap-icon://navigation-right-arrow"
+													title="Show child nodes"
+													press="rightExpandPressed"/>
+										</g:actionButtons>
+									</g:Node>
+
+								</g:nodes>
+								<g:lines>
+								<g:Line 
+									from="{graphModel>ObjectId1}" 
+									to="{graphModel>ObjectId2}"
+									status="{graphModel>Type}" >
+								</g:Line>
+							</g:lines>
+						
+							</g:Graph>
+							<Panel width="35%" height="100%" id="sideBar-panel">
+								<headerToolbar>
+									<OverflowToolbar>
+										<Title text="{ObjectName}"/>
+										<ToolbarSpacer />
+										<Button text="Show Where Used" enabled="false" />
+										<Button icon="sap-icon://detail-view" tooltip="Show source in browser" />
+										<Button icon="sap-icon://edit-outside" tooltip="Show source in ADT" />
+									</OverflowToolbar>
+								</headerToolbar>
+								<content>
+									<TabContainer id="tabs">
+										<items>
+											<TabContainerItem name="Fields">
+												<content>
+													<Tree id="tree-fields" items="{toFields}" mode="SingleSelectMaster">
+														<StandardTreeItem press="fieldPressed" detailPress="fieldPressed" title="{FieldName}"/>
+													</Tree>
+												</content>
+											</TabContainerItem>
+											<TabContainerItem name="Header">
+												<content>
+													<Tree></Tree>
+												</content>
+											</TabContainerItem>
+											<TabContainerItem name="Parameters">
+												<content>
+													<Tree></Tree>
+												</content>
+											</TabContainerItem>
+										</items>
+									</TabContainer>
+								</content>
+						
+							</Panel>
+						</FlexBox>
+          			</content>
 				</Page>
 			</pages>
 		</App>

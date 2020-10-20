@@ -1,20 +1,20 @@
 sap.ui.define([], function () {
 	"use strict";
 	return {
-		nodeStatus: function (sStatus) {
-			switch (sStatus) {
+		setNodeIcon: function (sObjectType) {
+			switch (sObjectType) {
 				case "DDLS":
-					return "cdsview"
+					return "sap-icon://table-view"
 				case "TABL":
-                    return "table"
+                    return "sap-icon://database"
                 case "DDLX":
-                    return "Warning"
+                    return "sap-icon://address-book" 
                 case "COMPOSITE":
-                        return "Information"              
+                        return "sap-icon://table-view"             
                 case "CONSUMPTION":
-                        return "Standard"                                
+                        return "sap-icon://table-view"                               
 				default:
-					return "Success";
+					return "sap-icon://table-view";
 			}
 		},
 		lineStatus: function (sStatus) {

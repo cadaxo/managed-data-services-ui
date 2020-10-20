@@ -9,3 +9,6 @@ deployer/resources/
 Makefile*
 mta-*
 approuter/*/webapp/
+.env*
+webapp/localService/mockdata_local
+debug.log

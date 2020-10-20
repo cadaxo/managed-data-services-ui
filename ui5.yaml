@@ -24,8 +24,8 @@ server:
     - name: ui5-middleware-route-proxy
       afterMiddleware: compression
       configuration:
-        debug: false
-        /sap/opu/odata/cadaxo/:
+        debug: true
+        /sap/opu/odata/CADAXO/:
           target: PROXY_TARGET
           auth:
             user: PROXY_USERNAME

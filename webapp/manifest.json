@@ -11,12 +11,16 @@
     "description": "{{appDescription}}",
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/cadaxo/MDS_SRV/",
+        "uri": "/sap/opu/odata/CADAXO/MDS_SRV/",
         "type": "OData",
         "settings": {
           "odataVersion": "2.0",
           "localUri": "localService/metadata.xml"
         }
+      },
+      "toAllLinks": {
+        "uri": "localService/mockdata/toAllLinks.json",
+        "type": "JSON"
       }
     }    
   },
@@ -68,8 +72,13 @@
         "settings": {
           "defaultBindingMode": "TwoWay",
           "defaultCountMode": "Inline",
-          "refreshAfterChange": false
+          "refreshAfterChange": false,
+          "useBatch": false
         }
+      },
+      "toAllLinks" :{
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "toAllLinks"
       }      
     },
     "resources": {
@@ -84,7 +93,7 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "viewPath": "com.cadaxo.cmds.view",
-        "controlId": "idAppControl",
+        "controlId": "app",
         "controlAggregation": "pages",
         "async": true
       },
@@ -101,7 +110,7 @@
         "TargetApp": {
           "viewType": "XML",
           "viewLevel": 1,
-          "viewId": "idAppControl",
+          "viewId": "app",
           "viewName": "App"
         }
       }
