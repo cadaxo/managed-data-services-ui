@@ -1,7 +1,10 @@
 sap.ui.define([
   "com/cadaxo/cmds/controller/BaseController",
-  "sap/ui/model/json/JSONModel"
-], function(Controller, JSONModel) {
+  "sap/ui/model/json/JSONModel",
+  "sap/ui/model/Filter",
+  "sap/m/Text",
+  "sap/m/Button"
+], function(Controller, JSONModel, Filter, Text, Button) {
   "use strict";
   
   var oController;
@@ -11,6 +14,9 @@ sap.ui.define([
     onInit: function() {
             
       oController = this;
+
+      var oFilterModel = new JSONModel({enabled: false, field: ""});
+      this.getView().setModel(oFilterModel, "filterModel");
 
       this.getView().attachAfterRendering(function() {
 
@@ -30,19 +36,14 @@ sap.ui.define([
                    oJson.setSizeLimit(Number.MAX_SAFE_INTEGER);
                    oJson.setData({
                        nodes: aNodes,
-                       //links: oResponse.toAllLinks.results
-                       //links: oResponse.results
                        links: links
                    });
                    this.setModel(oJson,'graphModel');
               }
-              //debugger;
               this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
-                  //urlParameters: {$expand: "toAllLinks"},
                   success: fnSuccessLinksData.bind(this, oData.results)
               })
           }
-          //debugger;
 
           var mock = {};
           if (!(window.location.href).includes('mockServer')) {
@@ -87,6 +88,9 @@ sap.ui.define([
 
     hideAllNodes: function() {
 
+      var bFilterEnabled = oController.getView().getModel("filterModel").getProperty("/enabled")
+
+      if (!bFilterEnabled) {
       var oGraph = oController._graph;
       if (oGraph) {
         var oMainNode = oGraph.getNodes()[0];
@@ -100,6 +104,7 @@ sap.ui.define([
           oGraph.scrollToElement(oMainNode);
         }	
       }
+    }
 
     },
 
@@ -136,8 +141,31 @@ sap.ui.define([
     setCustomToolbar: function(oGraph) {
         var oToolbar = oGraph.getToolbar();
 
+        debugger;
+
+        oToolbar.insertContent(new Text("text-filter-bar",{
+          text: "Filter: Where Used - {filterModel>/field}",
+          visible: "{filterModel>/enabled}"
+          //press: 
+        }), 0);
+
+        oToolbar.insertContent(new Button("btn-filter-bar-reset",{
+          type: "Transparent",
+          tooltip: "Reset Filter",
+          icon: "sap-icon://reset",
+          visible: "{filterModel>/enabled}"
+          //press: 
+        }), 1);
+        
+        oToolbar.insertContent(new Button("btn-new-main-node",{
+          type: "Transparent",
+          tooltip: "Select New Main Node",
+          icon: "sap-icon://table-view"
+          //press: 
+        }), 3);      
+
         //hide search input field
-        oToolbar.getContent()[1].setVisible(false)
+        oToolbar.getContent()[4].setVisible(false);
     },
 
     onNodePressed: function(oEvent) {
@@ -150,33 +178,112 @@ sap.ui.define([
       oPanel.bindElement({
           path: "/Datasources('"+oEvent.getSource().getKey()+"')",
           parameters: {
-              expand: "toFields/toAnnotations"
+              expand: "toAnnotations,toFields/toAnnotations"
           },
           events: {
               dataReceived: function(response) {
-                  debugger;
-
+                 
+                  //Prepare fields + field annotations
                   var aFields = [];
                   response.getParameters().data.toFields.forEach((field) => {
                     
                     var aAnnotations = [];
                     field.toAnnotations.forEach((annotation) => {
-                      aAnnotations.push({"text": annotation.AnnotationName});
+                      aAnnotations.push({"text": annotation.AnnotationName, "value": annotation.Value});
                     })
                     aFields.push({"text": field.FieldName, "annotations": aAnnotations})
                   })
 
-                  var oFieldsModel = new sap.ui.model.json.JSONModel({"results": aFields});
-                  oController.getView().setModel(oFieldsModel,"fields");
+                   //Prepare header annotations
+                  var aHeaderAnnotations = [];
+                  response.getParameters().data.toAnnotations.forEach((headerAnnotation) => {
+                    aHeaderAnnotations.push({"text": headerAnnotation.AnnotationName, "value": headerAnnotation.Value})
+                  })
+
+                  var oNodeDetailModel = new sap.ui.model.json.JSONModel({"fields": aFields, "headerAnnotations": aHeaderAnnotations});
+                  oController.getView().setModel(oNodeDetailModel,"nodeDetail");
                   
+              },
+              change: function(oEvent) {
+
+                //Prepare fields + field annotations
+                var sPath = oEvent.getSource().getPath();
+                var aPathFields = oEvent.getSource().getModel().getProperty(sPath+"/toFields");
+                if (aPathFields !== undefined) {
+                  var aFields = [];
+                  aPathFields.forEach((field) => {
+                    var oFieldValues = oEvent.getSource().getModel().getProperty("/"+field);
+                    var aAnnotations = [];
+                    oFieldValues.toAnnotations.__list.forEach((annotation) => {
+                      var oAnnotationValues = oEvent.getSource().getModel().getProperty("/"+annotation);
+                      aAnnotations.push({"text": oAnnotationValues.AnnotationName, "value": oAnnotationValues.Value});
+                    })
+                    aFields.push({"text": oFieldValues.FieldName, "annotations": aAnnotations});
+                  })
+                 
+                  //Prepare header annotations
+                  var aPathAnnotations = oEvent.getSource().getModel().getProperty(sPath+"/toAnnotations");
+                  var aHeaderAnnotations = [];
+                  aPathAnnotations.forEach((annotation) => {
+                    var oAnnotationValues = oEvent.getSource().getModel().getProperty("/"+annotation);
+                    aHeaderAnnotations.push({"text": oAnnotationValues.AnnotationName, "value": oAnnotationValues.Value})
+                  })
+
+                  var oNodeDetailModel = new sap.ui.model.json.JSONModel({"fields": aFields, "headerAnnotations": aHeaderAnnotations});
+                  oController.getView().setModel(oNodeDetailModel,"nodeDetail");
+                }
               }
-          }
-      });
+            }
+          })
+      
     },
 
     fieldPressed: function(oEvent) {
-        debugger;
-        //oEvent.getSource().getSelectedItem().getTitle()
+        oController.getView().byId("btn-show-where-used").setEnabled(true);
+    },
+
+    whereUsedPressed: function(oEvent) {
+        var oTree = oController.getView().byId("tree-fields");
+        var sSearchField = oTree.getSelectedItem().getCustomData()[0].getValue();
+        var sMainNode = jQuery.sap.getUriParameters().get("mainNode");
+
+        var aFilters = [new Filter({path: "toFields/FieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField})];
+
+
+        const fnSuccessGraphData = function(oData, oResponse) {
+              
+          const fnSuccessLinksData = function(aNodes, oResponse) {
+
+              var links;
+              if ((window.location.href).includes('mockServer')) {
+                var allLinks = this.getModel('toAllLinks');
+                links = allLinks.getData().d.results
+              } else {
+                links = oResponse.results
+              }
+
+               const oJson = new JSONModel({new: 'test'});
+               oJson.setSizeLimit(Number.MAX_SAFE_INTEGER);
+               oJson.setData({
+                   nodes: aNodes,
+                   links: links
+               });
+               this.setModel(oJson,'graphModel');
+          }
+          this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
+              success: fnSuccessLinksData.bind(this, oData.results)
+          })
+        }
+
+        oController.getView().getModel().read("/Datasources", {
+          filters: aFilters,
+          urlParameters: {"search": sMainNode},
+          success: fnSuccessGraphData.bind(this)
+        });
+
+        oController.getView().getModel("filterModel").setProperty("/enabled", true);
+        oController.getView().getModel("filterModel").setProperty("/field", sSearchField);
+      
     }
 
   });

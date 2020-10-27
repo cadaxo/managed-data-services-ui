@@ -1,11 +1,12 @@
 <mvc:View controllerName="com.cadaxo.cmds.controller.App"
-    xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:g="sap.suite.ui.commons.networkgraph">
+    xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:g="sap.suite.ui.commons.networkgraph">
 	<Shell id="shell" appWidthLimited="false">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
 						<FlexBox fitContainer="true" renderType="Bare" wrap="Wrap" id="graphWrapper">
+						
 							<g:Graph enableWheelZoom="false"
 								nodes="{graphModel>/nodes}"
 								id="graph"
@@ -13,16 +14,18 @@
 								noDataText="{i18n>noData}"
 								width="auto">
 								<g:statuses>
-									<g:Status key="TABL" title="Table" backgroundColor="blue"
-										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
-									<g:Status key="DDLS" title="CDS View" backgroundColor="green"
-										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />    
+									<g:Status key="TABL" title="Table" backgroundColor="blue" contentColor="darkblue"
+										borderColor="blue" hoverBorderColor="sapUiContentShadowColor" />
+									<g:Status key="DDLS" title="CDS View" backgroundColor="green" contentColor="darkgreen"
+										borderColor="green" hoverBorderColor="sapUiContentShadowColor" />    
 									<g:Status key="ASSOCIATION" title="Association" backgroundColor="green"
 										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" /> 
 									<g:Status key="BASE" title="Base" backgroundColor="blue"
 										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />  
 									<g:Status key="ISUSED" title="Is Used" backgroundColor="red"
-										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />                       
+										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+									<g:Status key="DISABLED" title="Disabled" backgroundColor="white" contentColor="grey"
+										borderColor="grey" hoverBorderColor="sapUiContentShadowColor" />	                       
 								</g:statuses>
 								<g:nodes>
 									<g:Node key="{graphModel>DsId}" title="{graphModel>ObjectName}"
@@ -35,7 +38,11 @@
 										showExpandButton="false"
 										shape="Circle"
 										width="300"
-										status="{graphModel>ObjectType}" 
+										status="{parts: [
+											'graphModel>ObjectType', 'graphModel>ObjectState'
+											],
+											formatter: '.formatter.setNodeStatus'
+										}"
 										press="onNodePressed">
 										<g:actionButtons>
 											<g:ActionButton
@@ -66,7 +73,7 @@
 									<OverflowToolbar>
 										<Title text="{ObjectName}"/>
 										<ToolbarSpacer />
-										<Button text="Show Where Used" enabled="false" />
+										<Button press="whereUsedPressed" id="btn-show-where-used" text="Show Where Used" enabled="false" />
 										<Button icon="sap-icon://detail-view" tooltip="Show source in browser" />
 										<Button icon="sap-icon://edit-outside" tooltip="Show source in ADT" />
 									</OverflowToolbar>
@@ -76,17 +83,51 @@
 										<items>
 											<TabContainerItem name="Fields">
 												<content>
-													<!--Tree id="tree-fields" items="{toFields}" mode="SingleSelectMaster">
-														<StandardTreeItem press="fieldPressed" detailPress="fieldPressed" title="{FieldName}"/>
-													</Tree-->
-													<Tree itemPress="fieldPressed" id="tree-fields" items="{fields>/results}" mode="SingleSelectMaster">
-														<StandardTreeItem type="Active"  title="{fields>text}"/>
+													<Tree itemPress="fieldPressed" id="tree-fields" items="{nodeDetail>/fields}"
+													mode="SingleSelectMaster"
+													>
+														<CustomTreeItem type="Active">
+															<customData>
+																<core:CustomData key="fieldName" value="{nodeDetail>text}"/>
+															</customData>
+															<FlexBox alignItems="Start" width="100%">
+																<items>
+																	<Text text="{nodeDetail>text}">
+																	<layoutData>
+																		<FlexItemData growFactor="1" />
+																	</layoutData>
+																	</Text>
+																	<Text text="{nodeDetail>value}" >
+																	<layoutData>
+																		<FlexItemData growFactor="1" />
+																	</layoutData>
+																	</Text>
+																</items>
+															</FlexBox>
+														</CustomTreeItem>
 													</Tree>
 												</content>
 											</TabContainerItem>
 											<TabContainerItem name="Header">
 												<content>
-													<Tree></Tree>
+													<Tree id="tree-headers" items="{nodeDetail>/headerAnnotations}">
+														<CustomTreeItem type="Active">
+															<FlexBox width="100%" alignItems="Start" >
+																<items>
+																	<Text width="100%"  text="{nodeDetail>text}">
+																	<layoutData>
+																		<FlexItemData width="100%" growFactor="1" />
+																	</layoutData>
+																	</Text>
+																	<Text width="100%" textAlign="End" text="{nodeDetail>value}" >
+																	<layoutData>
+																		<FlexItemData  growFactor="1" />
+																	</layoutData>
+																	</Text>
+																</items>
+															</FlexBox>
+														</CustomTreeItem>
+													</Tree>
 												</content>
 											</TabContainerItem>
 											<TabContainerItem name="Parameters">
