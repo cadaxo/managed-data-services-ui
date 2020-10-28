@@ -45,13 +45,14 @@ sap.ui.define([
               })
           }
 
-          var mock = {};
-          if (!(window.location.href).includes('mockServer')) {
-              mock.urlParameters = {"search" : jQuery.sap.getUriParameters().get("mainNode")}
-          }
+          // var mock = {};
+          // if (!(window.location.href).includes('mockServer')) {
+          //     mock.urlParameters = {"search" : jQuery.sap.getUriParameters().get("mainNode")}
+          // }
 
           this.getModel().read("/Datasources", {
-              ...mock,
+              //...mock,
+              urlParameters: {"search" : jQuery.sap.getUriParameters().get("mainNode")},
               success: fnSuccessGraphData.bind(this)
           });
           
@@ -153,14 +154,15 @@ sap.ui.define([
           type: "Transparent",
           tooltip: "Reset Filter",
           icon: "sap-icon://reset",
-          visible: "{filterModel>/enabled}"
-          //press: 
+          visible: "{filterModel>/enabled}",
+          press: oController.onResetFilterPressed
         }), 1);
         
         oToolbar.insertContent(new Button("btn-new-main-node",{
           type: "Transparent",
           tooltip: "Select New Main Node",
-          icon: "sap-icon://table-view"
+          icon: "sap-icon://table-view",
+          enabled: false
           //press: 
         }), 3);      
 
@@ -238,6 +240,16 @@ sap.ui.define([
       
     },
 
+    onResetFilterPressed: function(oEvent) {
+
+      oController.getView().getModel("filterModel").setProperty("/enabled", false);
+      
+      var oGraphModel = oController.getView().getModel("graphModel");
+      oGraphModel.getData().nodes.forEach(function(node, index){
+        oController.getView().getModel("graphModel").setProperty('/nodes/'+index+'/ObjectState', 100);
+      })
+    },
+
     fieldPressed: function(oEvent) {
         oController.getView().byId("btn-show-where-used").setEnabled(true);
     },
@@ -284,7 +296,15 @@ sap.ui.define([
         oController.getView().getModel("filterModel").setProperty("/enabled", true);
         oController.getView().getModel("filterModel").setProperty("/field", sSearchField);
       
-    }
+    },
+    viewInBrowserPressed: function (oEvent) {
+      debugger;
+      window.open(oEvent.getSource().getCustomData()[0].getValue());
+  },
+  
+  viewInAdtPressed: function (oEvent) {
+    window.open(oEvent.getSource().getCustomData()[0].getValue());
+  },
 
   });
 });

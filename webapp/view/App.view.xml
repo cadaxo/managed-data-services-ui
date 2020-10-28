@@ -74,8 +74,16 @@
 										<Title text="{ObjectName}"/>
 										<ToolbarSpacer />
 										<Button press="whereUsedPressed" id="btn-show-where-used" text="Show Where Used" enabled="false" />
-										<Button icon="sap-icon://detail-view" tooltip="Show source in browser" />
-										<Button icon="sap-icon://edit-outside" tooltip="Show source in ADT" />
+										<Button press="viewInBrowserPressed" icon="sap-icon://detail-view" tooltip="Show source in browser">
+											<customData>
+												<core:CustomData key="url" value="{ActionLink/Display}"/>
+											</customData>
+										</Button>
+										<Button press="viewInADTPressed" icon="sap-icon://edit-outside" tooltip="Show source in ADT">
+											<customData>
+												<core:CustomData key="url" value="{ActionLink/Edit}"/>
+											</customData>										
+										</Button>
 									</OverflowToolbar>
 								</headerToolbar>
 								<content>
