@@ -101,7 +101,16 @@ sap.ui.define([
             if (oNode.getKey() != oMainNode.getKey()) {
               oNode.setHidden(true);
             }
-          })  
+          })
+
+          oMainNode.getChildNodes().forEach(function (oNode) {
+            oNode.setHidden(false);
+          })
+
+          oMainNode.getParentNodes().forEach(function (oNode) {
+            oNode.setHidden(false);
+          })
+
           oGraph.scrollToElement(oMainNode);
         }	
       }
@@ -141,8 +150,6 @@ sap.ui.define([
 
     setCustomToolbar: function(oGraph) {
         var oToolbar = oGraph.getToolbar();
-
-        debugger;
 
         oToolbar.insertContent(new Text("text-filter-bar",{
           text: "Filter: Where Used - {filterModel>/field}",
@@ -298,12 +305,11 @@ sap.ui.define([
       
     },
     viewInBrowserPressed: function (oEvent) {
-      debugger;
       window.open(oEvent.getSource().getCustomData()[0].getValue());
   },
   
   viewInAdtPressed: function (oEvent) {
-    window.open(oEvent.getSource().getCustomData()[0].getValue());
+      window.open(oEvent.getSource().getCustomData()[0].getValue());
   },
 
   });
