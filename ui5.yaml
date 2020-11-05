@@ -44,14 +44,14 @@ builder:
         path: dist
         pattern: "**/*.*"
       connection:
-        server: http://<yourserver>:<yourserverport>
+        server: DEPLOY_TARGET
       authentication:
-        user: <youruser>
-        password: <yourpassword>
+        user: DEPLOY_USERNAME
+        password: DEPLOY_PASSWORD
       ui5:
         language: EN
-        package: <yourpackage>
-        bspContainer: <yourbspapplication>
-        bspContainerText: Generated with easy-ui5
-        transportNo: <yourtransport>
-        calculateApplicationIndex: true
+        package: ZCDX_MDS_UI
+        bspContainer: Z_MDS_UI
+        bspContainerText: Cadaxo Managed Data Services UI
+        transportNo: NPLK900116
+        calculateApplicationIndex: false

@@ -30,7 +30,7 @@ sap.ui.define([], function () {
 			}
 		},
 		setNodeStatus: function (sType, iStatus) {
-			if (iStatus === 201) return "DISABLED";
+			if (iStatus >= 200 && iStatus <= 299) return "DISABLED";
 			switch (sType) {
 				case "DDLS":
 					return "DDLS";
