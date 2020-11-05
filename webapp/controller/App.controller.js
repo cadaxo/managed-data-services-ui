@@ -52,7 +52,7 @@ sap.ui.define([
 
           this.getModel().read("/Datasources", {
               //...mock,
-              urlParameters: {"search" : jQuery.sap.getUriParameters().get("mainNode")},
+              urlParameters: {"search" : jQuery.sap.getUriParameters().get("cadaxoMainNode")},
               success: fnSuccessGraphData.bind(this)
           });
           
@@ -257,7 +257,7 @@ sap.ui.define([
     whereUsedPressed: function(oEvent) {
         var oTree = oController.getView().byId("tree-fields");
         var sSearchField = oTree.getSelectedItem().getCustomData()[0].getValue();
-        var sMainNode = jQuery.sap.getUriParameters().get("mainNode");
+        var sMainNode = jQuery.sap.getUriParameters().get("cadaxoMainNode");
 
         var aFilters = [new Filter({path: "toFields/FieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField})];
 
