@@ -3,6 +3,9 @@
 About deploying to ABAP Repository please check
 [ui5-task-nwabap-deployer](https://github.com/pfefferf/ui5-nwabap-deployer/tree/master/packages/ui5-task-nwabap-deployer)
 
+## Install UI5 CLI
+npm install --global @ui5/cli
+ 
 ## Run project locally
 1. clone project to your local folder
 2. run 'npm install' in the local/project folder

@@ -266,7 +266,7 @@ sap.ui.define([
         var sSearchField = oTree.getSelectedItem().getCustomData()[0].getValue();
         var sMainNode = jQuery.sap.getUriParameters().get("cadaxoMainNode");
 
-        var aFilters = [new Filter({path: "toFields/FieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField})];
+        var aFilters = [new Filter({path: "FieldSearch/SearchFieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField})];
 
 
         const fnSuccessGraphData = function(oData, oResponse) {
