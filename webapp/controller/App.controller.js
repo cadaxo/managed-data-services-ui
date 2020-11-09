@@ -3,8 +3,9 @@ sap.ui.define([
   "sap/ui/model/json/JSONModel",
   "sap/ui/model/Filter",
   "sap/m/Text",
-  "sap/m/Button"
-], function(Controller, JSONModel, Filter, Text, Button) {
+  "sap/m/Button",
+  "sap/m/Popover"
+], function(Controller, JSONModel, Filter, Text, Button, Popover) {
   "use strict";
   
   var oController;
@@ -311,6 +312,42 @@ sap.ui.define([
   viewInAdtPressed: function (oEvent) {
       window.open(oEvent.getSource().getCustomData()[0].getValue());
   },
+
+  linePressed: function (oEvent) {
+    debugger;
+    var oFlexBoxTitle = new sap.m.FlexBox({
+      justifyContent: "Center",
+      renderType: "Bare",
+      items: [
+        new sap.m.Text({text: oEvent.getSource()._oFrom.mProperties.title, width:"50%"}),
+        new sap.ui.core.Icon({src: "sap-icon://arrow-right"}),
+        new sap.m.Text({text: oEvent.getSource()._oTo.mProperties.title, width:"50%", textAlign:"End"}),
+      ]
+    });
+
+    var oFlexBox = new sap.m.FlexBox({
+      direction: "Column",
+      justifyContent: "Start",
+      renderType: "Bare",
+      items: [
+        new sap.m.Text({text: "Type: " + oEvent.getSource().getProperty("status")}),
+        new sap.m.Text({text: "Description: " + oEvent.getSource().getTitle()})
+      ]
+    });
+
+    oFlexBoxTitle.addStyleClass("sapSuiteUiCommonsNetworkLineTooltipFromTo");
+    oFlexBox.addStyleClass("sapUiSmallMargin");
+
+    this._oPopoverForLine = new sap.m.Popover({
+      showHeader: false,
+      contentWidth: "350px",
+      content: [oFlexBoxTitle, oFlexBox]
+    });
+  
+    // Prevents render a default tooltip
+    oEvent.preventDefault();
+    this._oPopoverForLine.openBy(oEvent.getParameter("opener"));
+  }
 
   });
 });

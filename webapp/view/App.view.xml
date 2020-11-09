@@ -63,7 +63,9 @@
 								<g:Line 
 									from="{graphModel>ObjectId1}" 
 									to="{graphModel>ObjectId2}"
-									status="{graphModel>Type}" >
+									press="linePressed"
+									status="{graphModel>Type}" 
+									title="{graphModel>Description}">
 								</g:Line>
 							</g:lines>
 						
