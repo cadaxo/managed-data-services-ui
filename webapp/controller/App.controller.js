@@ -63,7 +63,8 @@ sap.ui.define([
       
       this._graph = this.getView().byId("graph");
       
-      this._graph.attachEvent("graphReady", this.hideAllNodes);
+      //this._graph.attachEvent("graphReady", this.hideAllNodes);
+      this._graph.attachEvent("graphReady", this.graphReady);
 
       this.setCustomToolbar(this._graph);
 
@@ -86,6 +87,27 @@ sap.ui.define([
           }
       }}, oTabContainer);
       
+    },
+
+    graphReady: function() {
+      var oGraph = oController._graph;
+      if (oGraph) {
+        var oMainNode = oGraph.getNodes()[0];
+        if (oMainNode) {
+          oGraph.scrollToElement(oMainNode);
+        }
+      }
+
+      this.getModel().read("/LegendCusts", {
+        success: oController.fnSuccessLegendCusts.bind(this)
+      }); 
+
+    },
+
+    fnSuccessLegendCusts: function(oData, oResponse) {
+      if (this.getModel("graphModel")) {
+        this.getModel("graphModel").setProperty("/statuses", oData.results);
+      }
     },
 
     hideAllNodes: function() {
@@ -314,7 +336,6 @@ sap.ui.define([
   },
 
   linePressed: function (oEvent) {
-    debugger;
     var oFlexBoxTitle = new sap.m.FlexBox({
       justifyContent: "Center",
       renderType: "Bare",

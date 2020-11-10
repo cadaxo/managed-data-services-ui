@@ -12,20 +12,14 @@
 								id="graph"
 								lines="{graphModel>/links}"
 								noDataText="{i18n>noData}"
-								width="auto">
+								width="auto"
+								statuses="{graphModel>/statuses}">
 								<g:statuses>
-									<g:Status key="TABL" title="Table" backgroundColor="blue" contentColor="darkblue"
-										borderColor="blue" hoverBorderColor="sapUiContentShadowColor" />
-									<g:Status key="DDLS" title="CDS View" backgroundColor="green" contentColor="darkgreen"
-										borderColor="green" hoverBorderColor="sapUiContentShadowColor" />    
-									<g:Status key="ASSOCIATION" title="Association" backgroundColor="green"
-										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" /> 
-									<g:Status key="BASE" title="Base" backgroundColor="blue"
-										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />  
-									<g:Status key="ISUSED" title="Is Used" backgroundColor="red"
-										borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
-									<g:Status key="DISABLED" title="Disabled" backgroundColor="white" contentColor="grey"
-										borderColor="grey" hoverBorderColor="sapUiContentShadowColor" />	                       
+									<g:Status key="{graphModel>StatusKey}"
+									title="{graphModel>Description}"
+									backgroundColor="{graphModel>Color2}"
+									contentColor="{graphModel>Color1}">
+									</g:Status>
 								</g:statuses>
 								<g:nodes>
 									<g:Node key="{graphModel>DsId}" title="{graphModel>ObjectName}"
@@ -64,7 +58,11 @@
 									from="{graphModel>ObjectId1}" 
 									to="{graphModel>ObjectId2}"
 									press="linePressed"
-									status="{graphModel>Type}" 
+									status="{parts: [
+											'graphModel>Type'
+											],
+											formatter: '.formatter.setLineStatus'
+										}"
 									title="{graphModel>Description}">
 								</g:Line>
 							</g:lines>

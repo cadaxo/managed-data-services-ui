@@ -37,6 +37,10 @@ sap.ui.define([], function () {
 				case "TABL":
                     return "TABL";
 			}
+		},
+
+		setLineStatus: function (sType) {
+			return sType;
 		}
 	};
 });
