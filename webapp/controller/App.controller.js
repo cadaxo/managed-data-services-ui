@@ -4,8 +4,9 @@ sap.ui.define([
   "sap/ui/model/Filter",
   "sap/m/Text",
   "sap/m/Button",
-  "sap/m/Popover"
-], function(Controller, JSONModel, Filter, Text, Button, Popover) {
+  "sap/m/Popover",
+  "sap/m/MessageBox"
+], function(Controller, JSONModel, Filter, Text, Button, Popover, MessageBox) {
   "use strict";
   
   var oController;
@@ -42,7 +43,8 @@ sap.ui.define([
                    this.setModel(oJson,'graphModel');
               }
               this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
-                  success: fnSuccessLinksData.bind(this, oData.results)
+                  success: fnSuccessLinksData.bind(this, oData.results),
+                  error: oController.fnErrorHandler.bind(this)
               })
           }
 
@@ -54,7 +56,8 @@ sap.ui.define([
           this.getModel().read("/Datasources", {
               //...mock,
               urlParameters: {"search" : jQuery.sap.getUriParameters().get("cadaxoMainNode")},
-              success: fnSuccessGraphData.bind(this)
+              success: fnSuccessGraphData.bind(this),
+              error: oController.fnErrorHandler.bind(this)
           });
           
           
@@ -99,15 +102,31 @@ sap.ui.define([
       }
 
       this.getModel().read("/LegendCusts", {
-        success: oController.fnSuccessLegendCusts.bind(this)
+        success: oController.fnSuccessLegendCusts.bind(this),
+        error: oController.fnErrorHandler.bind(this)
       }); 
 
+    },
+
+    fnErrorHandler: function(oError) {
+      var sTitle = "";
+      var sDetail = "";
+      if (oError.message) {
+        sTitle = oError.message
+      }
+
+      if (JSON.parse(oError.responseText).error.message.value) {
+        sDetail = JSON.parse(oError.responseText).error.message.value
+      }
+
+      MessageBox.error(sTitle + "\n\n" + sDetail);
     },
 
     fnSuccessLegendCusts: function(oData, oResponse) {
       if (this.getModel("graphModel")) {
         this.getModel("graphModel").setProperty("/statuses", oData.results);
       }
+      
     },
 
     hideAllNodes: function() {
@@ -201,7 +220,6 @@ sap.ui.define([
     },
 
     onNodePressed: function(oEvent) {
-      var oElement = oEvent.getSource();
 
       var oPanel = oController.getView().byId("sideBar-panel");
       oPanel.setVisible(true);
@@ -210,11 +228,14 @@ sap.ui.define([
       oPanel.bindElement({
           path: "/Datasources('"+oEvent.getSource().getKey()+"')",
           parameters: {
-              expand: "toAnnotations,toFields/toAnnotations"
+              expand: "toAnnotations,toFields/toAnnotations,toParameters"
           },
           events: {
               dataReceived: function(response) {
-                 
+                  if (oEvent.getParameter("error")) {
+                    fnErrorHandler(oEvent.getParameter("error"));
+                    return;
+                  }
                   //Prepare fields + field annotations
                   var aFields = [];
                   response.getParameters().data.toFields.forEach((field) => {
@@ -232,7 +253,13 @@ sap.ui.define([
                     aHeaderAnnotations.push({"text": headerAnnotation.AnnotationName, "value": headerAnnotation.Value})
                   })
 
-                  var oNodeDetailModel = new sap.ui.model.json.JSONModel({"fields": aFields, "headerAnnotations": aHeaderAnnotations});
+                  //Prepare parameters
+                  var aParameters = [];
+                  response.getParameters().data.toParameters.forEach((parameter) => {
+                    aParameters.push({"Description": parameter.Description, "Datatype": parameter.Datatype, "Length": parseInt(parameter.Length, 10)})
+                  })
+
+                  var oNodeDetailModel = new sap.ui.model.json.JSONModel({"fields": aFields, "headerAnnotations": aHeaderAnnotations, "parameters": aParameters});
                   oController.getView().setModel(oNodeDetailModel,"nodeDetail");
                   
               },
@@ -261,7 +288,15 @@ sap.ui.define([
                     aHeaderAnnotations.push({"text": oAnnotationValues.AnnotationName, "value": oAnnotationValues.Value})
                   })
 
-                  var oNodeDetailModel = new sap.ui.model.json.JSONModel({"fields": aFields, "headerAnnotations": aHeaderAnnotations});
+                  //Prepare parameters
+                  var aPathParameters = oEvent.getSource().getModel().getProperty(sPath+"/toParameters");
+                  var aParameters = [];
+                  aPathParameters.forEach((parameter) => {
+                    var oParameterValues = oEvent.getSource().getModel().getProperty("/"+parameter);
+                    aParameters.push({"Description": oParameterValues.Description, "Datatype": oParameterValues.Datatype, "Length": oParameterValues.Length})
+                  })
+
+                  var oNodeDetailModel = new sap.ui.model.json.JSONModel({"fields": aFields, "headerAnnotations": aHeaderAnnotations, "parameters": aParameters});
                   oController.getView().setModel(oNodeDetailModel,"nodeDetail");
                 }
               }
@@ -313,14 +348,16 @@ sap.ui.define([
                this.setModel(oJson,'graphModel');
           }
           this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
-              success: fnSuccessLinksData.bind(this, oData.results)
+              success: fnSuccessLinksData.bind(this, oData.results),
+              error: oController.fnErrorHandler.bind(this)
           })
         }
 
         oController.getView().getModel().read("/Datasources", {
           filters: aFilters,
           urlParameters: {"search": sMainNode},
-          success: fnSuccessGraphData.bind(this)
+          success: fnSuccessGraphData.bind(this),
+          error: oController.fnErrorHandler.bind(this)
         });
 
         oController.getView().getModel("filterModel").setProperty("/enabled", true);

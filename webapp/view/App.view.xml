@@ -105,7 +105,7 @@
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
 																	</Text>
-																	<Text text="{nodeDetail>value}" >
+																	<Text width="100%" textAlign="End" text="{nodeDetail>value}" >
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
@@ -116,31 +116,63 @@
 													</Tree>
 												</content>
 											</TabContainerItem>
-											<TabContainerItem name="Header">
+											<TabContainerItem name="Header Annotations">
 												<content>
-													<Tree id="tree-headers" items="{nodeDetail>/headerAnnotations}">
-														<CustomTreeItem type="Active">
-															<FlexBox width="100%" alignItems="Start" >
-																<items>
-																	<Text width="100%"  text="{nodeDetail>text}">
-																	<layoutData>
-																		<FlexItemData width="100%" growFactor="1" />
-																	</layoutData>
-																	</Text>
-																	<Text width="100%" textAlign="End" text="{nodeDetail>value}" >
-																	<layoutData>
-																		<FlexItemData  growFactor="1" />
-																	</layoutData>
-																	</Text>
-																</items>
-															</FlexBox>
-														</CustomTreeItem>
-													</Tree>
+													<Table id="headerAnnotations"
+														inset="false"
+														items="{nodeDetail>/headerAnnotations}">
+														<columns>
+															<Column width="70%">
+																<Text text="Name" />
+															</Column>
+															<Column width="30%">
+																<Text text="Value" />
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem>
+																<cells>
+																	<Text text="{nodeDetail>text}"/>
+																	<Text text="{nodeDetail>value}" />
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
 												</content>
 											</TabContainerItem>
 											<TabContainerItem name="Parameters">
 												<content>
-													<Tree></Tree>
+														<Table id="parameters"
+															inset="false"
+															items="{
+																path: 'nodeDetail>/parameters',
+																sorter: {
+																	path: 'Position'
+																}
+															}">
+															<columns>
+																<Column>
+																	<Text text="Name" />
+																</Column>
+																<Column>
+																	<Text text="Datatype" />
+																</Column>
+																<Column>
+																	<Text text="Length" />
+																</Column>
+															</columns>
+															<items>
+																<ColumnListItem>
+																	<cells>
+																		<Text
+																			text="{nodeDetail>Description}"/>
+																		<Text
+																			text="{nodeDetail>Datatype}" />
+																		<Text text="{nodeDetail>Length}" />
+																	</cells>
+																</ColumnListItem>
+															</items>
+														</Table>
 												</content>
 											</TabContainerItem>
 										</items>
