@@ -6,7 +6,11 @@ sap.ui.define([], function () {
 				case "DDLS":
 					return "sap-icon://table-view";
 				case "TABL":
-                    return "sap-icon://database";
+					return "sap-icon://database";
+				case "YDLS":
+						return "sap-icon://add-coursebook";	
+				case "YABL":
+						return "sap-icon://show";	
                 case "DDLX":
                     return "sap-icon://address-book";
                 case "COMPOSITE":
@@ -30,12 +34,10 @@ sap.ui.define([], function () {
 			}
 		},
 		setNodeStatus: function (sType, iStatus) {
-			if (iStatus >= 200 && iStatus <= 299) return "DISABLED";
-			switch (sType) {
-				case "DDLS":
-					return "DDLS";
-				case "TABL":
-                    return "TABL";
+			if (iStatus >= 200 && iStatus <= 299) {
+				return "DISABLED"
+			} else {
+				return sType;
 			}
 		},
 

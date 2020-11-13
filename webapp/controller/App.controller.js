@@ -126,7 +126,7 @@ sap.ui.define([
       if (this.getModel("graphModel")) {
         this.getModel("graphModel").setProperty("/statuses", oData.results);
       }
-      
+      debugger;
     },
 
     hideAllNodes: function() {
