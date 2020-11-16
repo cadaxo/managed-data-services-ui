@@ -100,11 +100,26 @@
 															</customData>
 															<FlexBox alignItems="Start" width="100%">
 																<items>
-																	<Text text="{nodeDetail>text}">
+																	<Text width="130px" text="{nodeDetail>text}">
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
 																	</Text>
+																	<Text width="120px" text="{nodeDetail>alias}">
+																	<layoutData>
+																		<FlexItemData growFactor="1" />
+																	</layoutData>
+																	</Text>
+																	<Text width="40px" text="{nodeDetail>datatype}">
+																	<layoutData>
+																		<FlexItemData growFactor="1" />
+																	</layoutData>
+																	</Text>
+																	<Text width="30px" text="{nodeDetail>length}">
+																	<layoutData>
+																		<FlexItemData growFactor="1" />
+																	</layoutData>																	
+																	</Text>		
 																	<Text width="100%" textAlign="End" text="{nodeDetail>value}" >
 																	<layoutData>
 																		<FlexItemData growFactor="1" />

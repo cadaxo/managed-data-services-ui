@@ -244,7 +244,11 @@ sap.ui.define([
                     field.toAnnotations.forEach((annotation) => {
                       aAnnotations.push({"text": annotation.AnnotationName, "value": annotation.Value});
                     })
-                    aFields.push({"text": field.FieldName, "annotations": aAnnotations})
+                    aFields.push({"text": field.FieldName, 
+                    "datatype": field.Datatype, 
+                    "length": parseInt(field.Length,10),
+                    "alias": field.FieldAlias,
+                    "annotations": aAnnotations})
                   })
 
                    //Prepare header annotations
@@ -277,7 +281,12 @@ sap.ui.define([
                       var oAnnotationValues = oEvent.getSource().getModel().getProperty("/"+annotation);
                       aAnnotations.push({"text": oAnnotationValues.AnnotationName, "value": oAnnotationValues.Value});
                     })
-                    aFields.push({"text": oFieldValues.FieldName, "annotations": aAnnotations});
+                    aFields.push({
+                      "text": oFieldValues.FieldName, 
+                      "datatype": oFieldValues.Datatype, 
+                      "length": parseInt(oFieldValues.Length,10),
+                      "alias": oFieldValues.FieldAlias,
+                      "annotations": aAnnotations});
                   })
                  
                   //Prepare header annotations
