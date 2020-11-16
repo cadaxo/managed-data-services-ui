@@ -8,11 +8,13 @@
 						<FlexBox fitContainer="true" renderType="Bare" wrap="Wrap" id="graphWrapper">
 						
 							<g:Graph enableWheelZoom="false"
+								enableZoom="true"
 								nodes="{graphModel>/nodes}"
 								id="graph"
 								lines="{graphModel>/links}"
 								noDataText="{i18n>noData}"
 								width="auto"
+							
 								statuses="{graphModel>/statuses}">
 								<g:statuses>
 									<g:Status key="{graphModel>StatusKey}"

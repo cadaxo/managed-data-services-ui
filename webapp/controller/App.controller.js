@@ -10,6 +10,9 @@ sap.ui.define([
   "use strict";
   
   var oController;
+  var STATUS_ICON = "sap-icon://sys-cancel";
+  var LEFT_ARROW = "sap-icon://navigation-left-arrow";
+  var RIGHT_ARROW = "sap-icon://navigation-right-arrow";
 
   return Controller.extend("com.cadaxo.cmds.controller.App", {
 
@@ -100,6 +103,7 @@ sap.ui.define([
           oGraph.scrollToElement(oMainNode);
         }
       }
+      oController.hideAllNodes();
 
       this.getModel().read("/LegendCusts", {
         success: oController.fnSuccessLegendCusts.bind(this),
@@ -128,11 +132,23 @@ sap.ui.define([
       }
     },
 
+    hasHiddenParent: function(oNode) {
+      return oNode.getParentNodes().some(function (n) {
+        return n.isHidden();
+      });
+    },
+  
+    hasHiddenChild: function(oNode) {
+      return oNode.getChildNodes().some(function (n) {
+        return n.isHidden();
+      });
+    },
+
     hideAllNodes: function() {
 
-      var bFilterEnabled = oController.getView().getModel("filterModel").getProperty("/enabled")
+      var bFilterEnabled = oController.getView().getModel("filterModel").getProperty("/enabled");
 
-      if (!bFilterEnabled) {
+     // if (!bFilterEnabled) {
       var oGraph = oController._graph;
       if (oGraph) {
         var oMainNode = oGraph.getNodes()[0];
@@ -146,47 +162,51 @@ sap.ui.define([
 
           oMainNode.getChildNodes().forEach(function (oNode) {
             oNode.setHidden(false);
+            if ( oController.hasHiddenChild(oNode) || oController.hasHiddenParent(oNode) ) {
+              oNode.setStatusIcon(STATUS_ICON);
+            }
           })
 
           oMainNode.getParentNodes().forEach(function (oNode) {
             oNode.setHidden(false);
+            if ( oController.hasHiddenChild(oNode) || oController.hasHiddenParent(oNode) ) {
+              oNode.setStatusIcon(STATUS_ICON);
+            }
           })
 
           oGraph.scrollToElement(oMainNode);
         }	
       }
-    }
+    //}
 
     },
 
     leftExpandPressed: function(oEvent) {
 
-      function hasHiddenParent(oNode) {
-          return oNode.getParentNodes().some(function (n) {
-              return n.isHidden();
-          });
-      }
-
       var oNode = oEvent.getSource().getParent();
-      var bExpand = hasHiddenParent(oNode);
+      var bExpand = oController.hasHiddenParent(oNode);
       oNode.getParentNodes().forEach(function (oChild) {
         oChild.setHidden(!bExpand);
+        if ( oController.hasHiddenChild(oChild) || oController.hasHiddenParent(oChild) ) {
+          oChild.setStatusIcon(STATUS_ICON);
+        }
       });
+
+      oController.fixNodeState(oNode);
     },
 
     rightExpandPressed: function(oEvent) {
-
-      function hasHiddenChild(oNode) {
-        return oNode.getChildNodes().some(function (n) {
-            return n.isHidden();
-        });
-    }	
     
       var oNode = oEvent.getSource().getParent();
-      var bExpand = hasHiddenChild(oNode);
+      var bExpand = oController.hasHiddenChild(oNode);
       oNode.getChildNodes().forEach(function (oChild) {
         oChild.setHidden(!bExpand);
+        if ( oController.hasHiddenChild(oChild) || oController.hasHiddenParent(oChild) ) {
+          oChild.setStatusIcon(STATUS_ICON);
+        }
       });
+
+      oController.fixNodeState(oNode);
     },
 
     setCustomToolbar: function(oGraph) {
@@ -206,19 +226,58 @@ sap.ui.define([
           press: oController.onResetFilterPressed
         }), 1);
         
-        oToolbar.insertContent(new Button("btn-new-main-node",{
-          type: "Transparent",
-          tooltip: "Select New Main Node",
-          icon: "sap-icon://table-view",
-          enabled: false
-          //press: 
-        }), 3);      
+        // oToolbar.insertContent(new Button("btn-new-main-node",{
+        //   type: "Transparent",
+        //   tooltip: "Select New Main Node",
+        //   icon: "sap-icon://table-view",
+        //   enabled: false
+        //   //press: 
+        // }), 3);      
 
         //hide search input field
-        oToolbar.getContent()[4].setVisible(false);
+        //oToolbar.getContent()[4].setVisible(false);
     },
 
+    fixNodeState: function(oNode) {
+      if (oNode.isHidden()) {
+        return;
+      }
+      var bHasHiddenSiblings = false;
+      var oButton = oNode.getActionButtons()[0];
+      if (oNode.getParentNodes().length === 0) {
+        oButton.setEnabled(false);
+        //oNode.getActionButtons()[1].setEnabled(false);
+      } else {
+        if (oController.hasHiddenParent(oNode)) {
+          bHasHiddenSiblings = true;
+          oButton.setIcon(LEFT_ARROW);
+          oButton.setTitle("Expand");
+        } else {
+          oButton.setIcon(RIGHT_ARROW);
+          oButton.setTitle("Collapse");
+        }
+      }
+      oButton = oNode.getActionButtons()[1];
+      if (oNode.getChildNodes().length === 0) {
+        oButton.setEnabled(false);
+        //oNode.getActionButtons()[3].setEnabled(false);
+      } else {
+        if (oController.hasHiddenChild(oNode)) {
+          bHasHiddenSiblings = true;
+          oButton.setIcon(RIGHT_ARROW);
+          oButton.setTitle("Expand");
+        } else {
+          oButton.setIcon(LEFT_ARROW);
+          oButton.setTitle("Collapse");
+        }
+      }
+      oNode.setStatusIcon(bHasHiddenSiblings ? STATUS_ICON : undefined);
+    },
+  
+
     onNodePressed: function(oEvent) {
+
+      oController.fixNodeState(oEvent.getSource());
 
       var oPanel = oController.getView().byId("sideBar-panel");
       oPanel.setVisible(true);
@@ -413,7 +472,7 @@ sap.ui.define([
 
     this._oPopoverForLine = new sap.m.Popover({
       showHeader: false,
-      contentWidth: "350px",
+      
       content: [oFlexBoxTitle, oFlexBox]
     });
   
