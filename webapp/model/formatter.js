@@ -35,7 +35,7 @@ sap.ui.define([], function () {
 		},
 		setNodeStatus: function (sType, iStatus) {
 			if (iStatus >= 200 && iStatus <= 299) {
-				return `FILTERED_${sType}`;
+				return `XXFILTERED_${sType}`;
 			} else {
 				return sType;
 			}
