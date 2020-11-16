@@ -65,7 +65,7 @@ sap.ui.define([
       
       
       this._graph = this.getView().byId("graph");
-      
+      this._mainNode = jQuery.sap.getUriParameters().get("cadaxoMainNode").split("|",1)[0];
       //this._graph.attachEvent("graphReady", this.hideAllNodes);
       this._graph.attachEvent("graphReady", this.graphReady);
 
@@ -126,7 +126,6 @@ sap.ui.define([
       if (this.getModel("graphModel")) {
         this.getModel("graphModel").setProperty("/statuses", oData.results);
       }
-      debugger;
     },
 
     hideAllNodes: function() {
@@ -224,6 +223,8 @@ sap.ui.define([
       var oPanel = oController.getView().byId("sideBar-panel");
       oPanel.setVisible(true);
       oController._graph.setWidth("65%");
+      
+      oController.getView().byId("btn-show-where-used").setEnabled(false);
 
       oPanel.bindElement({
           path: "/Datasources('"+oEvent.getSource().getKey()+"')",
@@ -325,7 +326,12 @@ sap.ui.define([
     },
 
     fieldPressed: function(oEvent) {
-        oController.getView().byId("btn-show-where-used").setEnabled(true);
+        var sSelectedObjectName = oController.getView().byId("sideBar-panel").getModel().getProperty(oController.getView().byId("sideBar-panel").getBindingContext().getPath()).ObjectName;
+        
+        if (sSelectedObjectName === oController._mainNode) {
+          oController.getView().byId("btn-show-where-used").setEnabled(true);
+        }
+        
     },
 
     whereUsedPressed: function(oEvent) {
