@@ -5,8 +5,9 @@ sap.ui.define([
   "sap/m/Text",
   "sap/m/Button",
   "sap/m/Popover",
-  "sap/m/MessageBox"
-], function(Controller, JSONModel, Filter, Text, Button, Popover, MessageBox) {
+  "sap/m/MessageBox",
+  "sap/ui/core/Item"
+], function(Controller, JSONModel, Filter, Text, Button, Popover, MessageBox, Item) {
   "use strict";
   
   var oController;
@@ -20,8 +21,8 @@ sap.ui.define([
             
       oController = this;
 
-      var oFilterModel = new JSONModel({enabled: false, field: ""});
-      this.getView().setModel(oFilterModel, "filterModel");
+      var oWhereUsedFilterModel = new JSONModel({enabled: false, field: ""});
+      this.getView().setModel(oWhereUsedFilterModel, "whereUsedFilterModel");
 
       this.getView().attachAfterRendering(function() {
 
@@ -109,7 +110,6 @@ sap.ui.define([
         success: oController.fnSuccessLegendCusts.bind(this),
         error: oController.fnErrorHandler.bind(this)
       }); 
-
     },
 
     fnErrorHandler: function(oError) {
@@ -130,25 +130,103 @@ sap.ui.define([
       if (this.getModel("graphModel")) {
         this.getModel("graphModel").setProperty("/statuses", oData.results);
       }
+
+
+      
+      var aStatuses = [];
+      oController._graph.getNodes().forEach(function(node) {
+        aStatuses.push(node.getProperty("status"));
+      })
+
+      aStatuses = aStatuses.filter(function(item, index){
+        return aStatuses.indexOf(item) === index;
+      })
+      
+      if (aStatuses.length) {
+        var aFilterItems = [];
+        aStatuses.forEach(function(status){
+          oController.getView().getModel("graphModel").getProperty("/statuses").forEach(function(modelStatus){
+            if (modelStatus.StatusKey === status) {
+              aFilterItems.push({"key": status, "name":modelStatus.Description})
+            }
+          })
+        })
+  
+        if (oController._multicombobox === undefined) {
+          var oNodesFilterModel = new JSONModel({"items": aFilterItems});
+          var oToolbar = oController._graph.getToolbar();
+  
+          var oMultiComboBox = new sap.m.MultiComboBox("multi-graph-filter",{
+            width: "20%",
+            placeholder: "Show in graph...",
+            items : {  
+              path : "/items",  
+              template : new Item({  
+                key : "{key}",  
+                text : "{name}"  
+              })
+            },
+            selectionChange: oController.filterSelectionChanged,
+            selectionFinish: oController.filterSelectionFinished
+          });
+  
+          oMultiComboBox.setModel(oNodesFilterModel);
+          oMultiComboBox.setSelectedKeys(aStatuses);
+
+          oToolbar.insertContent(new Text("text-filter-nodes-bar",{
+            text: "Show:"
+          }), 3);
+
+          oToolbar.insertContent(oMultiComboBox, 4);
+          oController._multicombobox = oMultiComboBox;
+        }
+  
+      }
+
+    },
+
+    filterSelectionChanged: function() {
+    },
+    filterSelectionFinished: function(oEvent) {
+      oController.hideAllNodes();
     },
 
     hasHiddenParent: function(oNode) {
       return oNode.getParentNodes().some(function (n) {
-        return n.isHidden();
+        if (oController._multicombobox) {
+
+          if (oController._multicombobox.getSelectedKeys().some(function(key){
+            return key.endsWith(n.getStatus());
+          })) {
+            return n.isHidden();
+          }
+          // if (oController._multicombobox.getSelectedKeys().indexOf(n.getStatus()) > -1) {
+          //   return n.isHidden();
+          // }
+        } 
       });
     },
   
     hasHiddenChild: function(oNode) {
       return oNode.getChildNodes().some(function (n) {
-        return n.isHidden();
+        if (oController._multicombobox) {
+          if (oController._multicombobox.getSelectedKeys().some(function(key){
+            return key.endsWith(n.getStatus());
+          })) {
+            return n.isHidden();
+          }
+          // if (oController._multicombobox.getSelectedKeys().indexOf(n.getStatus()) > -1) {
+          //   return n.isHidden();
+          // }
+        }
       });
     },
 
     hideAllNodes: function() {
 
-      var bFilterEnabled = oController.getView().getModel("filterModel").getProperty("/enabled");
+      //var bFilterEnabled = oController.getView().getModel("whereUsedFilterModel").getProperty("/enabled");
 
-     // if (!bFilterEnabled) {
+     //if (!bFilterEnabled) {
       var oGraph = oController._graph;
       if (oGraph) {
         var oMainNode = oGraph.getNodes()[0];
@@ -161,14 +239,38 @@ sap.ui.define([
           })
 
           oMainNode.getChildNodes().forEach(function (oNode) {
-            oNode.setHidden(false);
+            
+            if (oController._multicombobox) {
+
+              if (oController._multicombobox.getSelectedKeys().some(function(key){
+                return oNode.getStatus().endsWith(key);
+              })) {
+                oNode.setHidden(false);
+              }
+
+              // if (oController._multicombobox.getSelectedKeys().indexOf(oNode.getStatus()) > -1) {
+              //   oNode.setHidden(false);
+              // }
+            } 
+            
             if ( oController.hasHiddenChild(oNode) || oController.hasHiddenParent(oNode) ) {
               oNode.setStatusIcon(STATUS_ICON);
             }
           })
 
           oMainNode.getParentNodes().forEach(function (oNode) {
-            oNode.setHidden(false);
+            if (oController._multicombobox) {
+
+              if (oController._multicombobox.getSelectedKeys().some(function(key){
+                return oNode.getStatus().endsWith(key);
+              })) {
+                oNode.setHidden(false);
+              }
+
+              // if (oController._multicombobox.getSelectedKeys().indexOf(oNode.getStatus()) > -1) {
+              //   oNode.setHidden(false);
+              // }
+            } 
             if ( oController.hasHiddenChild(oNode) || oController.hasHiddenParent(oNode) ) {
               oNode.setStatusIcon(STATUS_ICON);
             }
@@ -186,7 +288,21 @@ sap.ui.define([
       var oNode = oEvent.getSource().getParent();
       var bExpand = oController.hasHiddenParent(oNode);
       oNode.getParentNodes().forEach(function (oChild) {
-        oChild.setHidden(!bExpand);
+
+        if (oController._multicombobox) {
+
+          if (oController._multicombobox.getSelectedKeys().some(function(key){
+            return oChild.getStatus().endsWith(key);
+          })) {
+            oChild.setHidden(!bExpand);
+          }
+
+          // if (oController._multicombobox.getSelectedKeys().indexOf(oChild.getStatus()) > -1) {
+          //   oChild.setHidden(!bExpand);
+          // }
+        } 
+
+        
         if ( oController.hasHiddenChild(oChild) || oController.hasHiddenParent(oChild) ) {
           oChild.setStatusIcon(STATUS_ICON);
         }
@@ -200,7 +316,20 @@ sap.ui.define([
       var oNode = oEvent.getSource().getParent();
       var bExpand = oController.hasHiddenChild(oNode);
       oNode.getChildNodes().forEach(function (oChild) {
-        oChild.setHidden(!bExpand);
+
+        if (oController._multicombobox) {
+
+          if (oController._multicombobox.getSelectedKeys().some(function(key){
+            return oChild.getStatus().endsWith(key);
+          })) {
+            oChild.setHidden(!bExpand);
+          }
+
+          // if (oController._multicombobox.getSelectedKeys().indexOf(oChild.getStatus()) > -1) {
+          //   oChild.setHidden(!bExpand);
+          // }
+        } 
+
         if ( oController.hasHiddenChild(oChild) || oController.hasHiddenParent(oChild) ) {
           oChild.setStatusIcon(STATUS_ICON);
         }
@@ -213,8 +342,8 @@ sap.ui.define([
         var oToolbar = oGraph.getToolbar();
 
         oToolbar.insertContent(new Text("text-filter-bar",{
-          text: "Filter: Where Used - {filterModel>/field}",
-          visible: "{filterModel>/enabled}"
+          text: "Filter: Where Used - {whereUsedFilterModel>/field}",
+          visible: "{whereUsedFilterModel>/enabled}"
           //press: 
         }), 0);
 
@@ -222,20 +351,20 @@ sap.ui.define([
           type: "Transparent",
           tooltip: "Reset Filter",
           icon: "sap-icon://reset",
-          visible: "{filterModel>/enabled}",
+          visible: "{whereUsedFilterModel>/enabled}",
           press: oController.onResetFilterPressed
         }), 1);
-        
+
+        //Set Placeholder for Search Input Field
+        oToolbar.getContent()[3].setPlaceholder("Search in graph");
+
         // oToolbar.insertContent(new Button("btn-new-main-node",{
         //   type: "Transparent",
         //   tooltip: "Select New Main Node",
         //   icon: "sap-icon://table-view",
         //   enabled: false
         //   //press: 
-        // }), 3);      
-
-        //hide search input field
-        //oToolbar.getContent()[4].setVisible(false);
+        // }), 5);  
     },
 
     fixNodeState: function(oNode) {
@@ -246,7 +375,6 @@ sap.ui.define([
       var oButton = oNode.getActionButtons()[0];
       if (oNode.getParentNodes().length === 0) {
         oButton.setEnabled(false);
-        //oNode.getActionButtons()[1].setEnabled(false);
       } else {
         if (oController.hasHiddenParent(oNode)) {
           bHasHiddenSiblings = true;
@@ -260,7 +388,6 @@ sap.ui.define([
       oButton = oNode.getActionButtons()[1];
       if (oNode.getChildNodes().length === 0) {
         oButton.setEnabled(false);
-        //oNode.getActionButtons()[3].setEnabled(false);
       } else {
         if (oController.hasHiddenChild(oNode)) {
           bHasHiddenSiblings = true;
@@ -285,6 +412,11 @@ sap.ui.define([
       
       oController.getView().byId("btn-show-where-used").setEnabled(false);
 
+      oController.getView().byId("fields-header").addStyleClass("sapMTableTH");
+      oController.getView().byId("fields-header-column1").addStyleClass("sapColumnCustomHeaderFirst");
+      oController.getView().byId("fields-header-column2").addStyleClass("sapColumnCustomHeader");
+      oController.getView().byId("fields-header-column3").addStyleClass("sapColumnCustomHeader");
+
       oPanel.bindElement({
           path: "/Datasources('"+oEvent.getSource().getKey()+"')",
           parameters: {
@@ -302,12 +434,13 @@ sap.ui.define([
                     
                     var aAnnotations = [];
                     field.toAnnotations.forEach((annotation) => {
-                      aAnnotations.push({"text": annotation.AnnotationName, "value": annotation.Value});
+                      aAnnotations.push({"text": annotation.AnnotationName, "value": annotation.Value, "isField": false});
                     })
                     aFields.push({"text": field.FieldName, 
-                    "datatype": field.Datatype, 
-                    "length": parseInt(field.Length,10),
+                    "datatype": field.Datatype + '(' + parseInt(field.Length,10) + ')', 
+                    //"length": parseInt(field.Length,10),
                     "alias": field.FieldAlias,
+                    "isField": true,
                     "annotations": aAnnotations})
                   })
 
@@ -320,7 +453,7 @@ sap.ui.define([
                   //Prepare parameters
                   var aParameters = [];
                   response.getParameters().data.toParameters.forEach((parameter) => {
-                    aParameters.push({"Description": parameter.Description, "Datatype": parameter.Datatype, "Length": parseInt(parameter.Length, 10)})
+                    aParameters.push({"Description": parameter.Description, "Datatype": parameter.Datatype + '(' + parseInt(parameter.Length, 10) + ')'})
                   })
 
                   var oNodeDetailModel = new sap.ui.model.json.JSONModel({"fields": aFields, "headerAnnotations": aHeaderAnnotations, "parameters": aParameters});
@@ -343,8 +476,8 @@ sap.ui.define([
                     })
                     aFields.push({
                       "text": oFieldValues.FieldName, 
-                      "datatype": oFieldValues.Datatype, 
-                      "length": parseInt(oFieldValues.Length,10),
+                      "datatype": oFieldValues.Datatype + '(' + parseInt(oFieldValues.Length,10) + ')', 
+                      //"length": parseInt(oFieldValues.Length,10),
                       "alias": oFieldValues.FieldAlias,
                       "annotations": aAnnotations});
                   })
@@ -362,7 +495,7 @@ sap.ui.define([
                   var aParameters = [];
                   aPathParameters.forEach((parameter) => {
                     var oParameterValues = oEvent.getSource().getModel().getProperty("/"+parameter);
-                    aParameters.push({"Description": oParameterValues.Description, "Datatype": oParameterValues.Datatype, "Length": oParameterValues.Length})
+                    aParameters.push({"Description": oParameterValues.Description, "Datatype": oParameterValues.Datatype + '(' + parseInt(parameter.Length, 10) + ')'})
                   })
 
                   var oNodeDetailModel = new sap.ui.model.json.JSONModel({"fields": aFields, "headerAnnotations": aHeaderAnnotations, "parameters": aParameters});
@@ -376,7 +509,7 @@ sap.ui.define([
 
     onResetFilterPressed: function(oEvent) {
 
-      oController.getView().getModel("filterModel").setProperty("/enabled", false);
+      oController.getView().getModel("whereUsedFilterModel").setProperty("/enabled", false);
       
       var oGraphModel = oController.getView().getModel("graphModel");
       oGraphModel.getData().nodes.forEach(function(node, index){
@@ -434,8 +567,8 @@ sap.ui.define([
           error: oController.fnErrorHandler.bind(this)
         });
 
-        oController.getView().getModel("filterModel").setProperty("/enabled", true);
-        oController.getView().getModel("filterModel").setProperty("/field", sSearchField);
+        oController.getView().getModel("whereUsedFilterModel").setProperty("/enabled", true);
+        oController.getView().getModel("whereUsedFilterModel").setProperty("/field", sSearchField);
       
     },
     viewInBrowserPressed: function (oEvent) {
@@ -472,13 +605,17 @@ sap.ui.define([
 
     this._oPopoverForLine = new sap.m.Popover({
       showHeader: false,
-      
+      contentWidth: "350px",
       content: [oFlexBoxTitle, oFlexBox]
     });
   
     // Prevents render a default tooltip
     oEvent.preventDefault();
     this._oPopoverForLine.openBy(oEvent.getParameter("opener"));
+  },
+
+  tabChanged: function(oEvent) {
+    oController.getView().byId("btn-show-where-used").setEnabled(false);
   }
 
   });

@@ -1,1 +1,8 @@
 /* Enter your custom styles here */
+.sapColumnCustomHeaderFirst {
+    padding: .875rem 1rem 1rem;
+}
+
+.sapColumnCustomHeader {
+    padding: .875rem 1rem;
+}

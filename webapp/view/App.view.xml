@@ -89,10 +89,39 @@
 									</OverflowToolbar>
 								</headerToolbar>
 								<content>
-									<TabContainer id="tabs">
+									<!--FlexBox>
+										<items>
+											<Text class="sapColumnCustomHeader" text="Type:"></Text>
+										</items>
+									</FlexBox>
+									<FlexBox>
+										<items>
+											<Text class="sapColumnCustomHeader" text="Description:"></Text>
+										</items>
+									</FlexBox-->
+									<TabContainer id="tabs" itemSelect="tabChanged">
 										<items>
 											<TabContainerItem name="Fields">
 												<content>
+													<FlexBox id="fields-header">
+														<items>
+															<Text id="fields-header-column1" width="150px" text="Name">
+															<layoutData>
+																<FlexItemData growFactor="1" />
+															</layoutData>
+															</Text>
+															<Text id="fields-header-column2" text="Alias">
+															<layoutData>
+																<FlexItemData growFactor="1" />
+															</layoutData>
+															</Text>
+															<Text id="fields-header-column3" text="Datatype">
+															<layoutData>
+																<FlexItemData growFactor="1" />
+															</layoutData>
+															</Text>
+														</items>
+													</FlexBox>
 													<Tree itemPress="fieldPressed" id="tree-fields" items="{nodeDetail>/fields}"
 													mode="SingleSelectMaster"
 													>
@@ -102,27 +131,27 @@
 															</customData>
 															<FlexBox alignItems="Start" width="100%">
 																<items>
-																	<Text width="130px" text="{nodeDetail>text}">
+																	<Text width="170px" text="{nodeDetail>text}">
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
 																	</Text>
-																	<Text width="120px" text="{nodeDetail>alias}">
+																	<Text visible="{= ${nodeDetail>isField} === true }" width="150px" text="{nodeDetail>alias}">
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
 																	</Text>
-																	<Text width="40px" text="{nodeDetail>datatype}">
+																	<Text visible="{= ${nodeDetail>isField} === true }" width="65px" textAlign="End" text="{nodeDetail>datatype}">
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
 																	</Text>
-																	<Text width="30px" text="{nodeDetail>length}">
+																	<!--Text width="30px" text="{nodeDetail>length}">
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>																	
-																	</Text>		
-																	<Text width="100%" textAlign="End" text="{nodeDetail>value}" >
+																	</Text-->		
+																	<Text visible="{= ${nodeDetail>isField} === false }" width="100%" textAlign="Begin" text="{nodeDetail>value}" >
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
@@ -168,14 +197,11 @@
 																}
 															}">
 															<columns>
-																<Column>
+																<Column width="70%">
 																	<Text text="Name" />
 																</Column>
-																<Column>
+																<Column width="30%">
 																	<Text text="Datatype" />
-																</Column>
-																<Column>
-																	<Text text="Length" />
 																</Column>
 															</columns>
 															<items>
@@ -183,9 +209,7 @@
 																	<cells>
 																		<Text
 																			text="{nodeDetail>Description}"/>
-																		<Text
-																			text="{nodeDetail>Datatype}" />
-																		<Text text="{nodeDetail>Length}" />
+																		<Text text="{nodeDetail>Datatype}" />
 																	</cells>
 																</ColumnListItem>
 															</items>
