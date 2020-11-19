@@ -472,12 +472,13 @@ sap.ui.define([
                     var aAnnotations = [];
                     oFieldValues.toAnnotations.__list.forEach((annotation) => {
                       var oAnnotationValues = oEvent.getSource().getModel().getProperty("/"+annotation);
-                      aAnnotations.push({"text": oAnnotationValues.AnnotationName, "value": oAnnotationValues.Value});
+                      aAnnotations.push({"text": oAnnotationValues.AnnotationName, "value": oAnnotationValues.Value, "isField": false,});
                     })
                     aFields.push({
                       "text": oFieldValues.FieldName, 
                       "datatype": oFieldValues.Datatype + '(' + parseInt(oFieldValues.Length,10) + ')', 
                       //"length": parseInt(oFieldValues.Length,10),
+                      "isField": true,
                       "alias": oFieldValues.FieldAlias,
                       "annotations": aAnnotations});
                   })
