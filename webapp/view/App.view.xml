@@ -141,7 +141,7 @@
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
 																	</Text>
-																	<Text visible="{= ${nodeDetail>isField} === true }" width="65px" textAlign="End" text="{nodeDetail>datatype}">
+																	<Text visible="{= ${nodeDetail>isField} === true }" width="80px" textAlign="End" text="{nodeDetail>datatype}">
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
