@@ -167,7 +167,10 @@ sap.ui.define([
               })
             },
             selectionChange: oController.filterSelectionChanged,
-            selectionFinish: oController.filterSelectionFinished
+            selectionFinish: oController.filterSelectionFinished,
+            onclick: function(oEvent) {
+              debugger;
+            }
           });
   
           oMultiComboBox.setModel(oNodesFilterModel);
@@ -186,6 +189,8 @@ sap.ui.define([
     },
 
     filterSelectionChanged: function() {
+      //debugger;
+      //var sHeight = $('#container-cmds---idAppControl--graph-divgroups').css('height');
     },
     filterSelectionFinished: function(oEvent) {
       oController.hideAllNodes();
@@ -231,7 +236,15 @@ sap.ui.define([
       if (oGraph) {
         var oMainNode = oGraph.getNodes()[0];
         if (oMainNode) {
-          oMainNode.setHidden(false);
+          
+          if (oController._multicombobox) {
+            if (oController._multicombobox.getSelectedKeys().length) {
+              oMainNode.setHidden(false);
+            } else {
+              oMainNode.setHidden(true);
+            }
+          }
+          
           oGraph.getNodes().forEach(function (oNode) { 
             if (oNode.getKey() != oMainNode.getKey()) {
               oNode.setHidden(true);
