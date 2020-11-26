@@ -590,7 +590,6 @@ sap.ui.define([
   },
   
   viewInAdtPressed: function (oEvent) {
-      debugger;
       window.open(oEvent.getSource().getCustomData()[0].getValue());
   },
 

@@ -44,7 +44,7 @@ builder:
         path: dist
         pattern: "**/*.*"
       connection:
-        server: http://3.95.195.22:8000
+        server: http://34.233.125.29:8000
       authentication:
         user: developer
         password: ABAPAse1
