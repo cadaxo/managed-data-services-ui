@@ -6,3 +6,7 @@
 .sapColumnCustomHeader {
     padding: .875rem 1rem;
 }
+
+.cadaxoCustomColumnHeaderFirst {
+    padding-left: 44px !important;
+}

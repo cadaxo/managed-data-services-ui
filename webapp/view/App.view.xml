@@ -70,18 +70,19 @@
 							</g:lines>
 						
 							</g:Graph>
-							<Panel visible="false" width="35%" height="100%" id="sideBar-panel">
+							<Panel visible="false" width="40%" height="100%" id="sideBar-panel">
 								<headerToolbar>
 									<OverflowToolbar>
 										<Title text="{ObjectName}"/>
+										<Title text="- {Description}"/>
 										<ToolbarSpacer />
 										<Button press="whereUsedPressed" id="btn-show-where-used" text="Show Where Used" enabled="false" />
-										<Button press="viewInBrowserPressed" icon="sap-icon://detail-view" tooltip="Show source in browser">
+										<Button press="viewInBrowserPressed" icon="sap-icon://detail-view" tooltip="Show source in browser" enabled="{=${ActionLink/Display}.length !== 0}">
 											<customData>
 												<core:CustomData key="url" value="{ActionLink/Display}"/>
 											</customData>
 										</Button>
-										<Button press="viewInAdtPressed" icon="sap-icon://edit-outside" tooltip="Show source in ADT">
+										<Button press="viewInAdtPressed" icon="sap-icon://edit-outside" tooltip="Show source in ADT" enabled="{=${ActionLink/Edit}.length !== 0}">
 											<customData>
 												<core:CustomData key="url" value="{ActionLink/Edit}"/>
 											</customData>										
@@ -105,17 +106,22 @@
 												<content>
 													<FlexBox id="fields-header">
 														<items>
-															<Text id="fields-header-column1" width="150px" text="Name">
+															<Text id="fields-header-column1" width="170px" text="Column">
 															<layoutData>
 																<FlexItemData growFactor="1" />
 															</layoutData>
 															</Text>
-															<Text id="fields-header-column2" text="Alias">
+															<Text id="fields-header-column2" width="145px" text="Data Element">
 															<layoutData>
 																<FlexItemData growFactor="1" />
 															</layoutData>
 															</Text>
-															<Text id="fields-header-column3" text="Datatype">
+															<Text id="fields-header-column3" width="100px" text="Data Type">
+															<layoutData>
+																<FlexItemData growFactor="1" />
+															</layoutData>
+															</Text>
+															<Text id="fields-header-column4" width="150px" text="Description">
 															<layoutData>
 																<FlexItemData growFactor="1" />
 															</layoutData>
@@ -131,26 +137,28 @@
 															</customData>
 															<FlexBox alignItems="Start" width="100%">
 																<items>
-																	<Text width="170px" text="{nodeDetail>text}">
+																	<core:Icon src="sap-icon://key" size="1rem" visible="{= ${nodeDetail>isKey} === true }" />
+																	<Text width="150px" text="{nodeDetail>text}">
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
 																	</Text>
-																	<Text visible="{= ${nodeDetail>isField} === true }" width="150px" text="{nodeDetail>alias}">
+																	
+																	<Text visible="{= ${nodeDetail>isField} === true }" width="145px" text="{nodeDetail>dataelement}">
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
-																	</Text>
-																	<Text visible="{= ${nodeDetail>isField} === true }" width="80px" textAlign="End" text="{nodeDetail>datatype}">
+																	</Text>				
+																	<Text visible="{= ${nodeDetail>isField} === true }" width="90px" text="{nodeDetail>datatype}">
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>
-																	</Text>
-																	<!--Text width="30px" text="{nodeDetail>length}">
+																	</Text>																														
+																	<Text visible="{= ${nodeDetail>isField} === true }" width="150px" text="{nodeDetail>description}">
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
-																	</layoutData>																	
-																	</Text-->		
+																	</layoutData>
+																	</Text>	
 																	<Text visible="{= ${nodeDetail>isField} === false }" width="100%" textAlign="Begin" text="{nodeDetail>value}" >
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
@@ -197,18 +205,21 @@
 																}
 															}">
 															<columns>
-																<Column width="70%">
-																	<Text text="Name" />
+																<Column width="60%">
+																	<Text text="Parameter" />
 																</Column>
-																<Column width="30%">
-																	<Text text="Datatype" />
+																<Column width="20%">
+																	<Text text="Data Element" />
+																</Column>
+																<Column width="20%">
+																	<Text text="Data Type" />
 																</Column>
 															</columns>
 															<items>
 																<ColumnListItem>
 																	<cells>
-																		<Text
-																			text="{nodeDetail>Description}"/>
+																		<Text text="{nodeDetail>Description}"/>
+																		<Text text="{nodeDetail>DataElement}"/>
 																		<Text text="{nodeDetail>Datatype}" />
 																	</cells>
 																</ColumnListItem>

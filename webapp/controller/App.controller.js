@@ -166,11 +166,7 @@ sap.ui.define([
                 text : "{name}"  
               })
             },
-            selectionChange: oController.filterSelectionChanged,
             selectionFinish: oController.filterSelectionFinished,
-            onclick: function(oEvent) {
-              debugger;
-            }
           });
   
           oMultiComboBox.setModel(oNodesFilterModel);
@@ -188,10 +184,6 @@ sap.ui.define([
 
     },
 
-    filterSelectionChanged: function() {
-      //debugger;
-      //var sHeight = $('#container-cmds---idAppControl--graph-divgroups').css('height');
-    },
     filterSelectionFinished: function(oEvent) {
       oController.hideAllNodes();
     },
@@ -421,14 +413,16 @@ sap.ui.define([
 
       var oPanel = oController.getView().byId("sideBar-panel");
       oPanel.setVisible(true);
-      oController._graph.setWidth("65%");
+      oController._graph.setWidth("60%");
       
       oController.getView().byId("btn-show-where-used").setEnabled(false);
 
       oController.getView().byId("fields-header").addStyleClass("sapMTableTH");
       oController.getView().byId("fields-header-column1").addStyleClass("sapColumnCustomHeaderFirst");
+      oController.getView().byId("fields-header-column1").addStyleClass("cadaxoCustomColumnHeaderFirst");
       oController.getView().byId("fields-header-column2").addStyleClass("sapColumnCustomHeader");
       oController.getView().byId("fields-header-column3").addStyleClass("sapColumnCustomHeader");
+      oController.getView().byId("fields-header-column4").addStyleClass("sapColumnCustomHeader");
 
       oPanel.bindElement({
           path: "/Datasources('"+oEvent.getSource().getKey()+"')",
@@ -443,17 +437,26 @@ sap.ui.define([
                   }
                   //Prepare fields + field annotations
                   var aFields = [];
+                  var sObjectType  = response.getParameters().data.ObjectType;
+
                   response.getParameters().data.toFields.forEach((field) => {
                     
                     var aAnnotations = [];
                     field.toAnnotations.forEach((annotation) => {
                       aAnnotations.push({"text": annotation.AnnotationName, "value": annotation.Value, "isField": false});
                     })
-                    aFields.push({"text": field.FieldName, 
+
+                    var sText = sObjectType === 'TABL' ? field.FieldName : field.FieldAlias;
+                    aFields.push({
+
+                    "text": sText,
+                    "dataelement": field.DataElement,
                     "datatype": field.Datatype + '(' + parseInt(field.Length,10) + ')', 
+                    "description": field.Description,
                     //"length": parseInt(field.Length,10),
-                    "alias": field.FieldAlias,
+                    //"alias": field.FieldAlias,
                     "isField": true,
+                    "iskey": field.IsKey,
                     "annotations": aAnnotations})
                   })
 
@@ -466,7 +469,11 @@ sap.ui.define([
                   //Prepare parameters
                   var aParameters = [];
                   response.getParameters().data.toParameters.forEach((parameter) => {
-                    aParameters.push({"Description": parameter.Description, "Datatype": parameter.Datatype + '(' + parseInt(parameter.Length, 10) + ')'})
+                    aParameters.push({
+                      "Description": parameter.Description,
+                      "DataElement": parameter.DataElement,
+                      "Datatype": parameter.Datatype + '(' + parseInt(parameter.Length, 10) + ')'
+                    })
                   })
 
                   var oNodeDetailModel = new sap.ui.model.json.JSONModel({"fields": aFields, "headerAnnotations": aHeaderAnnotations, "parameters": aParameters});
@@ -479,6 +486,9 @@ sap.ui.define([
                 var sPath = oEvent.getSource().getPath();
                 var aPathFields = oEvent.getSource().getModel().getProperty(sPath+"/toFields");
                 if (aPathFields !== undefined) {
+
+                  var sObjectType  = oEvent.getSource().getModel().getProperty(sPath).ObjectType;
+
                   var aFields = [];
                   aPathFields.forEach((field) => {
                     var oFieldValues = oEvent.getSource().getModel().getProperty("/"+field);
@@ -487,13 +497,17 @@ sap.ui.define([
                       var oAnnotationValues = oEvent.getSource().getModel().getProperty("/"+annotation);
                       aAnnotations.push({"text": oAnnotationValues.AnnotationName, "value": oAnnotationValues.Value, "isField": false,});
                     })
+                    var sText = sObjectType === 'TABL' ? oFieldValues.FieldName : oFieldValues.FieldAlias;
                     aFields.push({
-                      "text": oFieldValues.FieldName, 
+                      "text": sText,
+                      "dataelement": oFieldValues.DataElement,
                       "datatype": oFieldValues.Datatype + '(' + parseInt(oFieldValues.Length,10) + ')', 
-                      //"length": parseInt(oFieldValues.Length,10),
+                      "description": oFieldValues.Description,
                       "isField": true,
+                      "isKey": oFieldValues.IsKey,
                       "alias": oFieldValues.FieldAlias,
-                      "annotations": aAnnotations});
+                      "annotations": aAnnotations
+                    });
                   })
                  
                   //Prepare header annotations
@@ -509,7 +523,11 @@ sap.ui.define([
                   var aParameters = [];
                   aPathParameters.forEach((parameter) => {
                     var oParameterValues = oEvent.getSource().getModel().getProperty("/"+parameter);
-                    aParameters.push({"Description": oParameterValues.Description, "Datatype": oParameterValues.Datatype + '(' + parseInt(parameter.Length, 10) + ')'})
+                    aParameters.push({
+                      "Description": oParameterValues.Description,
+                      "DataElement": oParameterValues.DataElement,
+                      "Datatype": oParameterValues.Datatype + '(' + parseInt(oParameterValues.Length, 10) + ')'
+                    })
                   })
 
                   var oNodeDetailModel = new sap.ui.model.json.JSONModel({"fields": aFields, "headerAnnotations": aHeaderAnnotations, "parameters": aParameters});
