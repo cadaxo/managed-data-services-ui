@@ -81,7 +81,7 @@
 												<core:CustomData key="url" value="{ActionLink/Display}"/>
 											</customData>
 										</Button>
-										<Button press="viewInADTPressed" icon="sap-icon://edit-outside" tooltip="Show source in ADT">
+										<Button press="viewInAdtPressed" icon="sap-icon://edit-outside" tooltip="Show source in ADT">
 											<customData>
 												<core:CustomData key="url" value="{ActionLink/Edit}"/>
 											</customData>										
