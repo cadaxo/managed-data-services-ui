@@ -24,7 +24,7 @@ sap.ui.define([
       var oWhereUsedFilterModel = new JSONModel({enabled: false, field: ""});
       this.getView().setModel(oWhereUsedFilterModel, "whereUsedFilterModel");
 
-      var oVersionModel = new JSONModel({backend: null, frontend: "0.9.37"});
+      var oVersionModel = new JSONModel({backend: null, frontend: "0.9.-fd6cb05"});
       this.getView().setModel(oVersionModel, "versionModel");
 
       this.getView().attachAfterRendering(function() {
