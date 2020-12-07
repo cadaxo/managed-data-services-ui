@@ -24,6 +24,9 @@ sap.ui.define([
       var oWhereUsedFilterModel = new JSONModel({enabled: false, field: ""});
       this.getView().setModel(oWhereUsedFilterModel, "whereUsedFilterModel");
 
+      var oVersionModel = new JSONModel({backend: null, frontend: "0.9-4edb8be"});
+      this.getView().setModel(oVersionModel, "versionModel");
+
       this.getView().attachAfterRendering(function() {
 
           const fnSuccessGraphData = function(oData, oResponse) {
@@ -46,6 +49,10 @@ sap.ui.define([
                    });
                    this.setModel(oJson,'graphModel');
               }
+
+              //Set Backend Version info 
+              this.getModel("versionModel").setProperty("/backend", oData.results[0].Managed.Version);
+
               this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
                   success: fnSuccessLinksData.bind(this, oData.results),
                   error: oController.fnErrorHandler.bind(this)
@@ -370,6 +377,13 @@ sap.ui.define([
         //   enabled: false
         //   //press: 
         // }), 5);  
+
+        oToolbar.insertContent(new Button("btn-show-help",{
+          type: "Transparent",
+          tooltip: "Show Versio Info",
+          icon: "sap-icon://sys-help",
+          press: oController.onShowHelpPressed
+        }), 10);
     },
 
     fixNodeState: function(oNode) {
@@ -648,6 +662,15 @@ sap.ui.define([
 
   tabChanged: function(oEvent) {
     oController.getView().byId("btn-show-where-used").setEnabled(false);
+  },
+
+  onShowHelpPressed: function(oEvent) {
+
+    MessageBox.information(
+      "Cadaxo Managed Data Services - Version Information: \n\n" +
+      oController.getView().getModel("versionModel").getProperty("/backend") + "\n" +
+      "Frontend:" + oController.getView().getModel("versionModel").getProperty("/frontend")
+    );
   }
 
   });
