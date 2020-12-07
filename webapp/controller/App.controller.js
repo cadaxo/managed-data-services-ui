@@ -470,7 +470,7 @@ sap.ui.define([
                     //"length": parseInt(field.Length,10),
                     //"alias": field.FieldAlias,
                     "isField": true,
-                    "iskey": field.IsKey,
+                    "isKey": field.IsKey,
                     "annotations": aAnnotations})
                   })
 
