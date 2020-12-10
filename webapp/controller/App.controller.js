@@ -24,7 +24,7 @@ sap.ui.define([
       var oWhereUsedFilterModel = new JSONModel({enabled: false, field: ""});
       this.getView().setModel(oWhereUsedFilterModel, "whereUsedFilterModel");
 
-      var oVersionModel = new JSONModel({backend: null, frontend: "0.9.-fd6cb05"});
+      var oVersionModel = new JSONModel({backend: null, frontend: "1.01"});
       this.getView().setModel(oVersionModel, "versionModel");
 
       var oImageModel = new JSONModel({cadaxoLogo: sap.ui.require.toUrl("com/cadaxo/cmds/resources/img/cadaxo_logo.png")});
