@@ -4,6 +4,14 @@
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
+					<customHeader>
+						<Bar>
+							<contentLeft>
+								<Image height="40px" src="{imageModel>/cadaxoLogo}"></Image>
+								<Text class="cadaxoHeaderText" text = "Managed Data Services"></Text>
+							</contentLeft>
+						</Bar>	
+					</customHeader>
 					<content>
 						<FlexBox fitContainer="true" renderType="Bare" wrap="Wrap" id="graphWrapper">
 						
@@ -137,8 +145,11 @@
 															</customData>
 															<FlexBox alignItems="Start" width="100%">
 																<items>
-																	<core:Icon src="sap-icon://key" size="1rem" visible="{= ${nodeDetail>isKey} === true }" />
-																	<Text width="150px" text="{nodeDetail>text}">
+																	<core:Icon class="cadaxoCustomIcon" src="sap-icon://key" size="1rem" visible="{= ${nodeDetail>isKey} === true }" 
+																	tooltip="Primary Key" />
+																	<Text width="150px" text="{parts: [
+																		'nodeDetail>text', 'nodeDetail>isWhereUsed'
+																		], formatter:'externFormatter.setHighlighted'}">
 																	<layoutData>
 																		<FlexItemData growFactor="1" />
 																	</layoutData>

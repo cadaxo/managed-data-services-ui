@@ -27,6 +27,9 @@ sap.ui.define([
       var oVersionModel = new JSONModel({backend: null, frontend: "0.9.-fd6cb05"});
       this.getView().setModel(oVersionModel, "versionModel");
 
+      var oImageModel = new JSONModel({cadaxoLogo: sap.ui.require.toUrl("com/cadaxo/cmds/resources/img/cadaxo_logo.png")});
+      this.getView().setModel(oImageModel, "imageModel");
+
       this.getView().attachAfterRendering(function() {
 
           const fnSuccessGraphData = function(oData, oResponse) {
@@ -108,10 +111,14 @@ sap.ui.define([
       if (oGraph) {
         var oMainNode = oGraph.getNodes()[0];
         if (oMainNode) {
+          oController.openSidebar(oMainNode);
           oGraph.scrollToElement(oMainNode);
+          oMainNode.setSelected(true);
+          oController.hideAllNodes();
+          oController.fixNodeState(oMainNode);
         }
       }
-      oController.hideAllNodes();
+      
 
       this.getModel().read("/LegendCusts", {
         success: oController.fnSuccessLegendCusts.bind(this),
@@ -380,7 +387,7 @@ sap.ui.define([
 
         oToolbar.insertContent(new Button("btn-show-help",{
           type: "Transparent",
-          tooltip: "Show Versio Info",
+          tooltip: "Show Version Info",
           icon: "sap-icon://sys-help",
           press: oController.onShowHelpPressed
         }), 10);
@@ -420,10 +427,8 @@ sap.ui.define([
       oNode.setStatusIcon(bHasHiddenSiblings ? STATUS_ICON : undefined);
     },
   
-
-    onNodePressed: function(oEvent) {
-
-      oController.fixNodeState(oEvent.getSource());
+    openSidebar: function(oNode) {
+      oController.fixNodeState(oNode);
 
       var oPanel = oController.getView().byId("sideBar-panel");
       oPanel.setVisible(true);
@@ -437,16 +442,15 @@ sap.ui.define([
       oController.getView().byId("fields-header-column2").addStyleClass("sapColumnCustomHeader");
       oController.getView().byId("fields-header-column3").addStyleClass("sapColumnCustomHeader");
       oController.getView().byId("fields-header-column4").addStyleClass("sapColumnCustomHeader");
-
       oPanel.bindElement({
-          path: "/Datasources('"+oEvent.getSource().getKey()+"')",
+          path: "/Datasources('"+oNode.getKey()+"')",
           parameters: {
               expand: "toAnnotations,toFields/toAnnotations,toParameters"
           },
           events: {
               dataReceived: function(response) {
-                  if (oEvent.getParameter("error")) {
-                    fnErrorHandler(oEvent.getParameter("error"));
+                  if (response.getParameter("error")) {
+                    fnErrorHandler(response.getParameter("error"));
                     return;
                   }
                   //Prepare fields + field annotations
@@ -461,17 +465,27 @@ sap.ui.define([
                     })
 
                     var sText = sObjectType === 'TABL' ? field.FieldName : field.FieldAlias;
+                    var bWhereUsed = false;
+                    oController.getView().getModel("graphModel").getProperty('/nodes').forEach((node) => {
+                      if (node.ObjectName === response.getParameters().data.ObjectName ) {
+                        
+                        if (sText === node.FieldSearch.SearchFieldName) {
+                          bWhereUsed = true;
+                        }
+                      }
+                    })
+          
                     aFields.push({
 
-                    "text": sText,
-                    "dataelement": field.DataElement,
-                    "datatype": field.Datatype + '(' + parseInt(field.Length,10) + ')', 
-                    "description": field.Description,
-                    //"length": parseInt(field.Length,10),
-                    //"alias": field.FieldAlias,
-                    "isField": true,
-                    "isKey": field.IsKey,
-                    "annotations": aAnnotations})
+                      "text": sText,
+                      "dataelement": field.DataElement,
+                      "datatype": field.Datatype + '(' + parseInt(field.Length,10) + ')', 
+                      "description": field.Description,
+                      "isField": true,
+                      "isKey": field.IsKey,
+                      "annotations": aAnnotations,
+                      "isWhereUsed": bWhereUsed
+                    })
                   })
 
                    //Prepare header annotations
@@ -502,6 +516,7 @@ sap.ui.define([
                 if (aPathFields !== undefined) {
 
                   var sObjectType  = oEvent.getSource().getModel().getProperty(sPath).ObjectType;
+                  var sObjectName  = oEvent.getSource().getModel().getProperty(sPath).ObjectName;
 
                   var aFields = [];
                   aPathFields.forEach((field) => {
@@ -512,6 +527,17 @@ sap.ui.define([
                       aAnnotations.push({"text": oAnnotationValues.AnnotationName, "value": oAnnotationValues.Value, "isField": false,});
                     })
                     var sText = sObjectType === 'TABL' ? oFieldValues.FieldName : oFieldValues.FieldAlias;
+
+                    var bWhereUsed = false;
+                    oController.getView().getModel("graphModel").getProperty('/nodes').forEach((node) => {
+                      if (node.ObjectName === sObjectName ) {
+                        
+                        if (sText === node.FieldSearch.SearchFieldName) {
+                          bWhereUsed = true;
+                        }
+                      }
+                    })
+
                     aFields.push({
                       "text": sText,
                       "dataelement": oFieldValues.DataElement,
@@ -520,7 +546,8 @@ sap.ui.define([
                       "isField": true,
                       "isKey": oFieldValues.IsKey,
                       "alias": oFieldValues.FieldAlias,
-                      "annotations": aAnnotations
+                      "annotations": aAnnotations,
+                      "isWhereUsed": bWhereUsed
                     });
                   })
                  
@@ -550,9 +577,13 @@ sap.ui.define([
               }
             }
           })
-      
     },
 
+    onNodePressed: function(oEvent) {
+
+      this.openSidebar(oEvent.getSource());
+    },
+      
     onResetFilterPressed: function(oEvent) {
 
       oController.getView().getModel("whereUsedFilterModel").setProperty("/enabled", false);
@@ -560,6 +591,9 @@ sap.ui.define([
       var oGraphModel = oController.getView().getModel("graphModel");
       oGraphModel.getData().nodes.forEach(function(node, index){
         oController.getView().getModel("graphModel").setProperty('/nodes/'+index+'/ObjectState', 100);
+      })
+      $(".cadaxoHighlightedTreeLine").each(function(){
+        $(this).removeClass('cadaxoHighlightedTreeLine');
       })
     },
 
@@ -598,6 +632,7 @@ sap.ui.define([
                    nodes: aNodes,
                    links: links
                });
+               debugger;
                this.setModel(oJson,'graphModel');
           }
           this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
@@ -670,8 +705,26 @@ sap.ui.define([
       "Cadaxo Managed Data Services - Version Information: \n\n" +
       oController.getView().getModel("versionModel").getProperty("/backend") + "\n" +
       "Frontend:" + oController.getView().getModel("versionModel").getProperty("/frontend")
-    );
+    , {
+      actions: ["Download Manual (PDF)", MessageBox.Action.CLOSE],
+      onClose: function (sAction) {
+        if (sAction !== MessageBox.Action.CLOSE) {
+          window.open("http://cadaxo.com/mds/mdsonepage1_00.pdf");
+        }
+      }
+    });
   }
 
   });
 });
+
+var externFormatter  = {
+  setHighlighted: function (sText, bBold) {
+    if (bBold) {
+      this.getParent().getParent().addStyleClass('cadaxoHighlightedTreeLine');
+    } else {
+      this.getParent().getParent().removeStyleClass('cadaxoHighlightedTreeLine');
+    }
+    return sText;
+  }
+}

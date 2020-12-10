@@ -10,3 +10,19 @@
 .cadaxoCustomColumnHeaderFirst {
     padding-left: 44px !important;
 }
+
+.cadaxoHighlightedTreeLine {
+    background-color: #ffe;
+}
+
+.cadaxoCustomIcon {
+    position: absolute;
+    right: 5px;
+    font-size: 0.875rem !important;
+    color: #ff9d01;
+}
+
+.cadaxoHeaderText {
+    position: relative;
+    top: 3px;
+}
