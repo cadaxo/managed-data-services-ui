@@ -30,6 +30,9 @@ sap.ui.define([
       var oImageModel = new JSONModel({cadaxoLogo: sap.ui.require.toUrl("com/cadaxo/cmds/resources/img/cadaxo_logo.png")});
       this.getView().setModel(oImageModel, "imageModel");
 
+      var oSidebarModel = new JSONModel({sidebarEnabled: true});
+      this.getView().setModel(oSidebarModel, "sidebarModel");
+
       this.getView().attachAfterRendering(function() {
 
           const fnSuccessGraphData = function(oData, oResponse) {
@@ -67,20 +70,29 @@ sap.ui.define([
           //     mock.urlParameters = {"search" : jQuery.sap.getUriParameters().get("mainNode")}
           // }
 
-          this.getModel().read("/Datasources", {
-              //...mock,
-              urlParameters: {"search" : jQuery.sap.getUriParameters().get("cadaxoMainNode")},
-              success: fnSuccessGraphData.bind(this),
-              error: oController.fnErrorHandler.bind(this)
-          });
+          if (oController._cadaxoMainNode !== null && oController._cadaxoMainNode.length > 0) {
+            this.getModel().read("/Datasources", {
+                //...mock,
+                urlParameters: {"search" : oController._cadaxoMainNode},
+                success: fnSuccessGraphData.bind(this),
+                error: oController.fnErrorHandler.bind(this)
+            });
+          }
           
           
       })
       
       
       this._graph = this.getView().byId("graph");
-      this._mainNode = jQuery.sap.getUriParameters().get("cadaxoMainNode").split("|",1)[0];
-      //this._graph.attachEvent("graphReady", this.hideAllNodes);
+      
+      this._cadaxoMainNode = jQuery.sap.getUriParameters().get("cadaxoMainNode");
+      if (this._cadaxoMainNode == null || this._cadaxoMainNode.length == 0) {
+        MessageBox.error("CDS View not selected. \n\n Select CDS View in Search App or add GET Parameter cadaxoMainNode into URL.");
+        return;
+      }
+
+      this._mainNode = this._cadaxoMainNode.split("|",1)[0];
+      
       this._graph.attachEvent("graphReady", this.graphReady);
 
       this.setCustomToolbar(this._graph);
@@ -111,9 +123,11 @@ sap.ui.define([
       if (oGraph) {
         var oMainNode = oGraph.getNodes()[0];
         if (oMainNode) {
-          oController.openSidebar(oMainNode);
+          if (oController.getView().getModel("sidebarModel").getProperty("/sidebarEnabled")) {
+            oController.openSidebar(oMainNode);
+            oMainNode.setSelected(true);
+          }
           oGraph.scrollToElement(oMainNode);
-          oMainNode.setSelected(true);
           oController.hideAllNodes();
           oController.fixNodeState(oMainNode);
         }
@@ -172,7 +186,7 @@ sap.ui.define([
   
           var oMultiComboBox = new sap.m.MultiComboBox("multi-graph-filter",{
             width: "20%",
-            placeholder: "Show in graph...",
+            placeholder: oController.getResourceBundle().getText("placeholderShowInGraph"),
             items : {  
               path : "/items",  
               template : new Item({  
@@ -187,7 +201,7 @@ sap.ui.define([
           oMultiComboBox.setSelectedKeys(aStatuses);
 
           oToolbar.insertContent(new Text("text-filter-nodes-bar",{
-            text: "Show:"
+            text: oController.getResourceBundle().getText("labelShow")
           }), 3);
 
           oToolbar.insertContent(oMultiComboBox, 4);
@@ -361,21 +375,21 @@ sap.ui.define([
         var oToolbar = oGraph.getToolbar();
 
         oToolbar.insertContent(new Text("text-filter-bar",{
-          text: "Filter: Where Used - {whereUsedFilterModel>/field}",
+          text: oController.getResourceBundle().getText("labelFilterWhereUsed") + " - {whereUsedFilterModel>/field}",
           visible: "{whereUsedFilterModel>/enabled}"
           //press: 
         }), 0);
 
         oToolbar.insertContent(new Button("btn-filter-bar-reset",{
           type: "Transparent",
-          tooltip: "Reset Filter",
+          tooltip: oController.getResourceBundle().getText("tooltipResetFilter"),
           icon: "sap-icon://reset",
           visible: "{whereUsedFilterModel>/enabled}",
           press: oController.onResetFilterPressed
         }), 1);
 
         //Set Placeholder for Search Input Field
-        oToolbar.getContent()[3].setPlaceholder("Search in graph");
+        oToolbar.getContent()[3].setPlaceholder(oController.getResourceBundle().getText("placeholderSearchInGraph"));
 
         // oToolbar.insertContent(new Button("btn-new-main-node",{
         //   type: "Transparent",
@@ -387,7 +401,7 @@ sap.ui.define([
 
         oToolbar.insertContent(new Button("btn-show-help",{
           type: "Transparent",
-          tooltip: "Show Version Info",
+          tooltip: oController.getResourceBundle().getText("tooltipShowVersionInfo"),
           icon: "sap-icon://sys-help",
           press: oController.onShowHelpPressed
         }), 10);
@@ -405,10 +419,10 @@ sap.ui.define([
         if (oController.hasHiddenParent(oNode)) {
           bHasHiddenSiblings = true;
           oButton.setIcon(LEFT_ARROW);
-          oButton.setTitle("Expand");
+          oButton.setTitle(oController.getResourceBundle().getText("expand"));
         } else {
           oButton.setIcon(RIGHT_ARROW);
-          oButton.setTitle("Collapse");
+          oButton.setTitle(oController.getResourceBundle().getText("collapse"));
         }
       }
       oButton = oNode.getActionButtons()[1];
@@ -418,10 +432,10 @@ sap.ui.define([
         if (oController.hasHiddenChild(oNode)) {
           bHasHiddenSiblings = true;
           oButton.setIcon(RIGHT_ARROW);
-          oButton.setTitle("Expand");
+          oButton.setTitle(oController.getResourceBundle().getText("expand"));
         } else {
           oButton.setIcon(LEFT_ARROW);
-          oButton.setTitle("Collapse");
+          oButton.setTitle(oController.getResourceBundle().getText("collapse"));
         }
       }
       oNode.setStatusIcon(bHasHiddenSiblings ? STATUS_ICON : undefined);
@@ -580,7 +594,7 @@ sap.ui.define([
     },
 
     onNodePressed: function(oEvent) {
-
+      // // model setProperty sidebarDisabled (false)
       this.openSidebar(oEvent.getSource());
     },
       
@@ -609,7 +623,7 @@ sap.ui.define([
     whereUsedPressed: function(oEvent) {
         var oTree = oController.getView().byId("tree-fields");
         var sSearchField = oTree.getSelectedItem().getCustomData()[0].getValue();
-        var sMainNode = jQuery.sap.getUriParameters().get("cadaxoMainNode");
+        var sMainNode = oController._cadaxoMainNode;
 
         var aFilters = [new Filter({path: "FieldSearch/SearchFieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField})];
 
@@ -713,7 +727,14 @@ sap.ui.define([
         }
       }
     });
-  }
+  },
+
+  hideSidebarPressed: function(oEvent) {
+    var oPanel = oController.getView().byId("sideBar-panel");
+    oPanel.setVisible(false);
+    oController._graph.setWidth("100%");
+    oController.getView().getModel("sidebarModel").setProperty("/sidebarEnabled", false);
+  } 
 
   });
 });

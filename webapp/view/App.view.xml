@@ -8,7 +8,7 @@
 						<Bar>
 							<contentLeft>
 								<Image height="40px" src="{imageModel>/cadaxoLogo}"></Image>
-								<Text class="cadaxoHeaderText" text = "Managed Data Services"></Text>
+								<Text class="cadaxoHeaderText" text = "{i18n>headerText}"></Text>
 							</contentLeft>
 						</Bar>	
 					</customHeader>
@@ -51,13 +51,13 @@
 										<g:actionButtons>
 											<g:ActionButton
 													icon="sap-icon://navigation-left-arrow"
-													title="Show parent nodes"
+													title="{i18n>showParentNodes}"
 													position="Left"
 													press="leftExpandPressed"/>
 									
 											<g:ActionButton
 													icon="sap-icon://navigation-right-arrow"
-													title="Show child nodes"
+													title="{i18n>showChildNodes}"
 													press="rightExpandPressed"/>
 										</g:actionButtons>
 									</g:Node>
@@ -84,52 +84,44 @@
 										<Title text="{ObjectName}"/>
 										<Title text="- {Description}"/>
 										<ToolbarSpacer />
-										<Button press="whereUsedPressed" id="btn-show-where-used" text="Show Where Used" enabled="false" />
-										<Button press="viewInBrowserPressed" icon="sap-icon://detail-view" tooltip="Show source in browser" enabled="{=${ActionLink/Display}.length !== 0}">
+										<Button press="whereUsedPressed" id="btn-show-where-used" text="{i18n>showWhereUsed}" enabled="false" />
+										<Button press="viewInBrowserPressed" icon="sap-icon://detail-view" tooltip="{i18n>showSourceCode}" enabled="{=${ActionLink/Display}.length !== 0}">
 											<customData>
 												<core:CustomData key="url" value="{ActionLink/Display}"/>
 											</customData>
 										</Button>
-										<Button press="viewInAdtPressed" icon="sap-icon://edit-outside" tooltip="Show source in ADT" enabled="{=${ActionLink/Edit}.length !== 0}">
+										<Button press="viewInAdtPressed" icon="sap-icon://edit-outside" tooltip="{i18n>showSourceCodeAdt}" enabled="{=${ActionLink/Edit}.length !== 0}">
 											<customData>
 												<core:CustomData key="url" value="{ActionLink/Edit}"/>
 											</customData>										
 										</Button>
+										<Button press="hideSidebarPressed" icon="sap-icon://navigation-right-arrow" tooltip="{i18n>closeSidebar}" enabled="true">									
+										</Button>
 									</OverflowToolbar>
 								</headerToolbar>
 								<content>
-									<!--FlexBox>
-										<items>
-											<Text class="sapColumnCustomHeader" text="Type:"></Text>
-										</items>
-									</FlexBox>
-									<FlexBox>
-										<items>
-											<Text class="sapColumnCustomHeader" text="Description:"></Text>
-										</items>
-									</FlexBox-->
 									<TabContainer id="tabs" itemSelect="tabChanged">
 										<items>
-											<TabContainerItem name="Fields">
+											<TabContainerItem name="{i18n>fields}">
 												<content>
 													<FlexBox id="fields-header">
 														<items>
-															<Text id="fields-header-column1" width="170px" text="Column">
+															<Text id="fields-header-column1" width="170px" text="{i18n>column}">
 															<layoutData>
 																<FlexItemData growFactor="1" />
 															</layoutData>
 															</Text>
-															<Text id="fields-header-column2" width="145px" text="Data Element">
+															<Text id="fields-header-column2" width="145px" text="{i18n>dataElement}">
 															<layoutData>
 																<FlexItemData growFactor="1" />
 															</layoutData>
 															</Text>
-															<Text id="fields-header-column3" width="100px" text="Data Type">
+															<Text id="fields-header-column3" width="100px" text="{i18n>dataType}">
 															<layoutData>
 																<FlexItemData growFactor="1" />
 															</layoutData>
 															</Text>
-															<Text id="fields-header-column4" width="150px" text="Description">
+															<Text id="fields-header-column4" width="150px" text="{i18n>description}">
 															<layoutData>
 																<FlexItemData growFactor="1" />
 															</layoutData>
@@ -146,7 +138,7 @@
 															<FlexBox alignItems="Start" width="100%">
 																<items>
 																	<core:Icon class="cadaxoCustomIcon" src="sap-icon://key" size="1rem" visible="{= ${nodeDetail>isKey} === true }" 
-																	tooltip="Primary Key" />
+																	tooltip="{i18n>primaryKey}" />
 																	<Text width="150px" text="{parts: [
 																		'nodeDetail>text', 'nodeDetail>isWhereUsed'
 																		], formatter:'externFormatter.setHighlighted'}">
@@ -181,17 +173,17 @@
 													</Tree>
 												</content>
 											</TabContainerItem>
-											<TabContainerItem name="Header Annotations">
+											<TabContainerItem name="{i18n>headerAnnotations}">
 												<content>
 													<Table id="headerAnnotations"
 														inset="false"
 														items="{nodeDetail>/headerAnnotations}">
 														<columns>
 															<Column width="70%">
-																<Text text="Name" />
+																<Text text="{i18n>name}" />
 															</Column>
 															<Column width="30%">
-																<Text text="Value" />
+																<Text text="{i18n>value}" />
 															</Column>
 														</columns>
 														<items>
@@ -205,7 +197,7 @@
 													</Table>
 												</content>
 											</TabContainerItem>
-											<TabContainerItem name="Parameters">
+											<TabContainerItem name="{i18n>parameters}">
 												<content>
 														<Table id="parameters"
 															inset="false"
@@ -217,13 +209,13 @@
 															}">
 															<columns>
 																<Column width="60%">
-																	<Text text="Parameter" />
+																	<Text text="{i18n>parameter}" />
 																</Column>
 																<Column width="20%">
-																	<Text text="Data Element" />
+																	<Text text="{i18n>dataElement}" />
 																</Column>
 																<Column width="20%">
-																	<Text text="Data Type" />
+																	<Text text="{i18n>dataType}" />
 																</Column>
 															</columns>
 															<items>
