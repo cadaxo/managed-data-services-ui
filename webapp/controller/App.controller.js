@@ -159,7 +159,39 @@ sap.ui.define([
         this.getModel("graphModel").setProperty("/statuses", oData.results);
       }
 
+      $('.sapSuiteUiCommonsNetworkGraphLegend').children().each(function () {
 
+        var sLegendIcon = "";
+        switch ($(this).attr('status')) {
+          case 'DDLS':
+            $(this).children().eq(0).replaceWith("<img src='resources/img/node_cdsview.png' width='50' height='50' style='padding: 5px;'>");
+            break;
+          case 'YDLS':
+            $(this).children().eq(0).replaceWith("<img src='resources/img/node_cdsviewextenstion.png' width='50' height='50' style='padding: 5px;'>");
+            break;
+          case 'TABL':
+            $(this).children().eq(0).replaceWith("<img src='resources/img/node_table.png' width='50' height='50' style='padding: 5px;'>");
+            break;
+          case 'YABL':
+            $(this).children().eq(0).replaceWith("<img src='resources/img/node_sqlview.png' width='50' height='50' style='padding: 5px;'>");
+            break;
+          case 'XXFILTERED_DDLS':
+            $(this).children().eq(0).replaceWith("<img src='resources/img/node_cdsview_disabled.png' width='50' height='50' style='padding: 5px;'>");
+            break;
+          case 'XXFILTERED_YDLS':
+            $(this).children().eq(0).replaceWith("<img src='resources/img/node_cdsviewextenstion_disabled.png' width='50' height='50' style='padding: 5px;'>");
+            break;
+          case 'XXFILTERED_TABL':
+            $(this).children().eq(0).replaceWith("<img src='resources/img/node_table_disabled.png' width='50' height='50' style='padding: 5px;'>");
+            break;
+          case 'XXFILTERED_YABL':
+            $(this).children().eq(0).replaceWith("<img src='resources/img/node_sqlview_disabled.png' width='50' height='50' style='padding: 5px;'>");
+            break;                        
+        }
+
+       
+
+    });
       
       var aStatuses = [];
       oController._graph.getNodes().forEach(function(node) {
