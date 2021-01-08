@@ -1,4 +1,7 @@
 /* Enter your custom styles here */
+html {
+    font-size: .875rem !important;
+}
 .sapColumnCustomHeaderFirst {
     padding: .875rem 1rem 1rem;
 }

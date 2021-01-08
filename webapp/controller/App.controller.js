@@ -4,10 +4,15 @@ sap.ui.define([
   "sap/ui/model/Filter",
   "sap/m/Text",
   "sap/m/Button",
-  "sap/m/Popover",
   "sap/m/MessageBox",
-  "sap/ui/core/Item"
-], function(Controller, JSONModel, Filter, Text, Button, Popover, MessageBox, Item) {
+  "sap/ui/core/Item",
+  "sap/m/Dialog",
+  "sap/m/DialogType",
+  "sap/ui/layout/HorizontalLayout",
+  "sap/ui/layout/VerticalLayout",
+  "sap/m/MessageToast"
+], function(Controller, JSONModel, Filter, Text, Button, MessageBox, Item, 
+  Dialog, DialogType, HorizontalLayout, VerticalLayout, MessageToast) {
   "use strict";
   
   var oController;
@@ -32,6 +37,9 @@ sap.ui.define([
 
       var oSidebarModel = new JSONModel({sidebarEnabled: true});
       this.getView().setModel(oSidebarModel, "sidebarModel");
+
+      var oGraphLayoutModel = new JSONModel({orientation: 'LeftRight', nodePlacement: 'LinearSegments', nodeSpacing: 55});
+      this.getView().setModel(oGraphLayoutModel, "graphLayoutModel");
 
       this.getView().attachAfterRendering(function() {
 
@@ -221,7 +229,7 @@ sap.ui.define([
             placeholder: oController.getResourceBundle().getText("placeholderShowInGraph"),
             items : {  
               path : "/items",  
-              template : new Item({  
+              template : new sap.ui.core.Item({  
                 key : "{key}",  
                 text : "{name}"  
               })
@@ -284,6 +292,7 @@ sap.ui.define([
       //var bFilterEnabled = oController.getView().getModel("whereUsedFilterModel").getProperty("/enabled");
 
      //if (!bFilterEnabled) {
+
       var oGraph = oController._graph;
       if (oGraph) {
         var oMainNode = oGraph.getNodes()[0];
@@ -292,6 +301,8 @@ sap.ui.define([
           if (oController._multicombobox) {
             if (oController._multicombobox.getSelectedKeys().length) {
               oMainNode.setHidden(false);
+              oMainNode._fixed = true;
+              //oMainNode.addCustomData(oCustomDataFixer);
             } else {
               oMainNode.setHidden(true);
             }
@@ -311,6 +322,8 @@ sap.ui.define([
                 return oNode.getStatus().endsWith(key);
               })) {
                 oNode.setHidden(false);
+                oNode._fixed = true;
+                //oNode.addCustomData(new CustomData({key:"fixed", value: true}));
               }
 
               // if (oController._multicombobox.getSelectedKeys().indexOf(oNode.getStatus()) > -1) {
@@ -329,7 +342,11 @@ sap.ui.define([
               if (oController._multicombobox.getSelectedKeys().some(function(key){
                 return oNode.getStatus().endsWith(key);
               })) {
+                //oNode.addCustomData(new sap.ui.core.CustomData({key:"fixed", value: true}));
+                
                 oNode.setHidden(false);
+                oNode._fixed = true;
+                
               }
 
               // if (oController._multicombobox.getSelectedKeys().indexOf(oNode.getStatus()) > -1) {
@@ -352,26 +369,48 @@ sap.ui.define([
 
       var oNode = oEvent.getSource().getParent();
       var bExpand = oController.hasHiddenParent(oNode);
-      oNode.getParentNodes().forEach(function (oChild) {
 
-        if (oController._multicombobox) {
+      if (bExpand) {
+        oNode.getParentNodes().forEach(function (oChild) {
 
-          if (oController._multicombobox.getSelectedKeys().some(function(key){
-            return oChild.getStatus().endsWith(key);
-          })) {
-            oChild.setHidden(!bExpand);
+          if (oController._multicombobox) {
+  
+            if (oController._multicombobox.getSelectedKeys().some(function(key){
+              return oChild.getStatus().endsWith(key);
+            })) {
+              if (!oChild._fixed) {
+                oChild.setHidden(!bExpand);
+              }
+            }
+  
+            // if (oController._multicombobox.getSelectedKeys().indexOf(oChild.getStatus()) > -1) {
+            //   oChild.setHidden(!bExpand);
+            // }
+          } 
+  
+          
+          if ( oController.hasHiddenChild(oChild) || oController.hasHiddenParent(oChild) ) {
+            oChild.setStatusIcon(STATUS_ICON);
           }
+        });
+      } else {
 
-          // if (oController._multicombobox.getSelectedKeys().indexOf(oChild.getStatus()) > -1) {
-          //   oChild.setHidden(!bExpand);
-          // }
-        } 
-
-        
-        if ( oController.hasHiddenChild(oChild) || oController.hasHiddenParent(oChild) ) {
-          oChild.setStatusIcon(STATUS_ICON);
+        var aNodes = [];
+        function getParents(oNode) {
+          oNode.getParentNodes().forEach(function (n) {
+            aNodes.push(n);
+            getParents(n);
+          });
         }
-      });
+        getParents(oNode);
+        aNodes.forEach(function (n) {
+          if (n._fixed == null) {
+            n.setHidden(true);
+          }
+        });
+
+      }
+
 
       oController.fixNodeState(oNode);
     },
@@ -387,7 +426,9 @@ sap.ui.define([
           if (oController._multicombobox.getSelectedKeys().some(function(key){
             return oChild.getStatus().endsWith(key);
           })) {
-            oChild.setHidden(!bExpand);
+            if (!oChild._fixed) {
+              oChild.setHidden(!bExpand);
+            }
           }
 
           // if (oController._multicombobox.getSelectedKeys().indexOf(oChild.getStatus()) > -1) {
@@ -431,12 +472,21 @@ sap.ui.define([
         //   //press: 
         // }), 5);  
 
+        
+        oToolbar.insertContent(new Button("btn-show-layout-settings",{
+          type: "Transparent",
+          tooltip: oController.getResourceBundle().getText("showLayoutSettings"),
+          icon: "sap-icon://customize",
+          press: oController.onShowLayoutSettingsPressed
+        }), 4);
+        
+
         oToolbar.insertContent(new Button("btn-show-help",{
           type: "Transparent",
           tooltip: oController.getResourceBundle().getText("tooltipShowVersionInfo"),
           icon: "sap-icon://sys-help",
           press: oController.onShowHelpPressed
-        }), 10);
+        }), 11);
     },
 
     fixNodeState: function(oNode) {
@@ -455,6 +505,16 @@ sap.ui.define([
         } else {
           oButton.setIcon(RIGHT_ARROW);
           oButton.setTitle(oController.getResourceBundle().getText("collapse"));
+
+          var bColapsable = oNode.getParentNodes().some(function(n) {
+            return n._fixed == null;
+          });
+
+          if (!bColapsable) {
+            oButton.setEnabled(false);
+           // oNode.removeActionButton(0);
+          }
+
         }
       }
       oButton = oNode.getActionButtons()[1];
@@ -468,6 +528,15 @@ sap.ui.define([
         } else {
           oButton.setIcon(LEFT_ARROW);
           oButton.setTitle(oController.getResourceBundle().getText("collapse"));
+
+          var bColapsable = oNode.getChildNodes().some(function(n) {
+            return n._fixed == null;
+          });
+          if (!bColapsable) {
+            oButton.setEnabled(false);
+           // oNode.removeActionButton(1);
+          }
+
         }
       }
       oNode.setStatusIcon(bHasHiddenSiblings ? STATUS_ICON : undefined);
@@ -760,6 +829,89 @@ sap.ui.define([
       }
     });
   },
+
+  onShowLayoutSettingsPressed: function(oEvent) {
+  
+			if (!this.oConfirmDialog) {
+				this.oConfirmDialog = new Dialog({
+					type: DialogType.Message,
+					title: "Graph Layout Settings",
+					content: [
+            new HorizontalLayout({
+              content: [
+                //new VerticalLayout({
+									//width: "120px",
+									//content: [
+										//new Text({ text: "Orientation: " }),
+										//new Text({ text: "Node Placement: " }),
+										//new Text({ text: "Node Spacing: " })
+									//]
+								//}),
+								new VerticalLayout({
+									content: [
+										new sap.m.Select({
+                      id: 'graphDialog-orientation',
+                      selectedKey: oController.getView().getModel('graphLayoutModel').getProperty('/orientation'),
+                      items: [
+                        new sap.ui.core.Item({ key: "LeftRight", text:"Left-Right"}),
+                        new sap.ui.core.Item({ key: "RightLeft", text:"Right-Left"}),
+                        new sap.ui.core.Item({ key: "TopBottom", text:"Top-Bottom"})
+                      ]
+                    }),
+										new sap.m.Select({
+                      id: 'graphDialog-nodePlacement',
+                      selectedKey: oController.getView().getModel('graphLayoutModel').getProperty('/nodePlacement'),
+                      items: [
+                        new sap.ui.core.Item({ key: "BrandesKoepf", text:"Brandes-Koepf"}),
+                        new sap.ui.core.Item({ key: "LinearSegments", text:"Linear Segments"}),
+                        new sap.ui.core.Item({ key: "Simple", text:"Simple"})
+                      ]
+                    }),
+										new sap.m.Select({
+                      id: 'graphDialog-nodeSpacing',
+                      selectedKey: oController.getView().getModel('graphLayoutModel').getProperty('/nodeSpacing'),
+                      items: [
+                        new sap.ui.core.Item({ key: "5", text:"Node spacing (5)"}),
+                        new sap.ui.core.Item({ key: "10", text:"Node spacing (10)"}),
+                        new sap.ui.core.Item({ key: "20", text:"Node spacing (20)"}),
+                        new sap.ui.core.Item({ key: "40", text:"Node spacing (40)"}),
+                        new sap.ui.core.Item({ key: "55", text:"Node spacing (55)"}),
+                        new sap.ui.core.Item({ key: "80", text:"Node spacing (80)"}),
+                        new sap.ui.core.Item({ key: "100", text:"Node spacing (100)"})
+                      ]
+                    })
+									]
+								})
+              ]
+            })
+          ],
+          
+					beginButton: new Button({
+						text: "OK",
+						press: function () {
+              debugger;
+              var sOrientation = sap.ui.getCore().getElementById("graphDialog-orientation").getSelectedKey();
+              var sNodePlacement = sap.ui.getCore().getElementById("graphDialog-nodePlacement").getSelectedKey();
+              var iNodeSpacing = parseInt(sap.ui.getCore().getElementById("graphDialog-nodeSpacing").getSelectedKey());
+              oController.getView().getModel('graphLayoutModel').setProperty('/orientation', sOrientation);
+              oController.getView().getModel('graphLayoutModel').setProperty('/nodePlacement', sNodePlacement);
+              oController.getView().getModel('graphLayoutModel').setProperty('/nodeSpacing', iNodeSpacing);
+							MessageToast.show("Graph Layout Settings changed");
+							this.oConfirmDialog.close();
+						}.bind(this)
+					}),
+					endButton: new Button({
+						text: "Cancel",
+						press: function () {
+							this.oConfirmDialog.close();
+						}.bind(this)
+					})
+				});
+			}
+
+			this.oConfirmDialog.open();
+    },
+  
 
   hideSidebarPressed: function(oEvent) {
     var oPanel = oController.getView().byId("sideBar-panel");
