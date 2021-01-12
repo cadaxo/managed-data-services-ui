@@ -549,7 +549,7 @@ sap.ui.define([
       oPanel.setVisible(true);
       oController._graph.setWidth("60%");
       
-      oController.getView().byId("btn-show-where-used").setEnabled(false);
+      oController.getView().byId("btn-show-where-used").setEnabled(true);
 
       oController.getView().byId("fields-header").addStyleClass("sapMTableTH");
       oController.getView().byId("fields-header-column1").addStyleClass("sapColumnCustomHeaderFirst");
@@ -724,9 +724,11 @@ sap.ui.define([
     whereUsedPressed: function(oEvent) {
         var oTree = oController.getView().byId("tree-fields");
         var sSearchField = oTree.getSelectedItem().getCustomData()[0].getValue();
+        var sSearchObject = oTree.getSelectedItem().getBindingContext().getProperty("ObjectName");
         var sMainNode = oController._cadaxoMainNode;
 
-        var aFilters = [new Filter({path: "FieldSearch/SearchFieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField})];
+        var aFilters = [new Filter({path: "FieldSearch/SearchObjectName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchObject}),
+                        new Filter({path: "FieldSearch/SearchFieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField})];
 
 
         const fnSuccessGraphData = function(oData, oResponse) {
