@@ -26,7 +26,7 @@ sap.ui.define([
             
       oController = this;
 
-      var oWhereUsedFilterModel = new JSONModel({enabled: false, field: ""});
+      var oWhereUsedFilterModel = new JSONModel({enabled: false, field: "", cachedNodes: [], usedNodeId: null});
       this.getView().setModel(oWhereUsedFilterModel, "whereUsedFilterModel");
 
       var oVersionModel = new JSONModel({backend: null, frontend: "1.03"});
@@ -132,8 +132,12 @@ sap.ui.define([
         var oMainNode = oGraph.getNodes()[0];
         if (oMainNode) {
           if (oController.getView().getModel("sidebarModel").getProperty("/sidebarEnabled")) {
-            oController.openSidebar(oMainNode);
-            oMainNode.setSelected(true);
+
+            if (oController.getView().getModel("whereUsedFilterModel").getProperty("/enabled") == false) {
+              oController.openSidebar(oMainNode);
+              oMainNode.setSelected(true);
+            }
+
           }
           oGraph.scrollToElement(oMainNode);
           oController.hideAllNodes();
@@ -146,6 +150,22 @@ sap.ui.define([
         success: oController.fnSuccessLegendCusts.bind(this),
         error: oController.fnErrorHandler.bind(this)
       }); 
+
+      // We are in Where Used Mode
+      if (oController.getView().getModel("whereUsedFilterModel").getProperty("/enabled")) {
+        var aCachedNodes = oController.getView().getModel("whereUsedFilterModel").getProperty("/cachedNodes");
+        
+        oGraph.getNodes().forEach(function(node){
+        //refresh visible nodes
+          if ( aCachedNodes.indexOf(node.getKey()) > -1 ) {
+            node.setHidden(false);
+          }
+        //scroll to 'where used' node
+          if (node.getKey() == oController.getView().getModel("whereUsedFilterModel").getProperty("/usedNodeId")) {
+            oGraph.scrollToElement(node);
+          }
+        })
+      }
     },
 
     fnErrorHandler: function(oError) {
@@ -261,7 +281,7 @@ sap.ui.define([
         if (oController._multicombobox) {
 
           if (oController._multicombobox.getSelectedKeys().some(function(key){
-            return key.endsWith(n.getStatus());
+            return n.getStatus().indexOf(key) > -1;
           })) {
             return n.isHidden();
           }
@@ -276,7 +296,7 @@ sap.ui.define([
       return oNode.getChildNodes().some(function (n) {
         if (oController._multicombobox) {
           if (oController._multicombobox.getSelectedKeys().some(function(key){
-            return key.endsWith(n.getStatus());
+            return n.getStatus().indexOf(key) > -1;
           })) {
             return n.isHidden();
           }
@@ -396,18 +416,53 @@ sap.ui.define([
       } else {
 
         var aNodes = [];
-        function getParents(oNode) {
-          oNode.getParentNodes().forEach(function (n) {
-            aNodes.push(n);
-            getParents(n);
-          });
+
+        function getSubNodes(oNode) {
+          oNode.getChildNodes().forEach(function (node) {
+            if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false)) {
+  
+              aNodes.push(node);
+              getSubNodes(node);
+            } else {
+              return;
+            }
+          })
+          oNode.getParentNodes().forEach(function (node) {
+            if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false)) {
+              aNodes.push(node);
+              getSubNodes(node);
+            } else {
+              return;
+            }
+          })        
         }
-        getParents(oNode);
-        aNodes.forEach(function (n) {
-          if (n._fixed == null) {
-            n.setHidden(true);
+  
+        oNode.getParentNodes().forEach(function (node) {
+  
+          if (node._fixed == null) {
+            aNodes.push(node);
+            getSubNodes(node);
           }
-        });
+  
+        })
+  
+        aNodes.forEach(function (node) {
+          node.setHidden(true);
+        })
+
+        // var aNodes = [];
+        // function getParents(oNode) {
+        //   oNode.getParentNodes().forEach(function (n) {
+        //     aNodes.push(n);
+        //     getParents(n);
+        //   });
+        // }
+        // getParents(oNode);
+        // aNodes.forEach(function (n) {
+        //   if (n._fixed == null) {
+        //     n.setHidden(true);
+        //   }
+        // });
 
       }
 
@@ -419,6 +474,8 @@ sap.ui.define([
     
       var oNode = oEvent.getSource().getParent();
       var bExpand = oController.hasHiddenChild(oNode);
+
+      if (bExpand) {
       oNode.getChildNodes().forEach(function (oChild) {
 
         if (oController._multicombobox) {
@@ -440,6 +497,58 @@ sap.ui.define([
           oChild.setStatusIcon(STATUS_ICON);
         }
       });
+    } else {
+      var aNodes = [];
+
+      function getSubNodes(oNode) {
+        oNode.getChildNodes().forEach(function (node) {
+          if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false)) {
+
+            aNodes.push(node);
+            getSubNodes(node);
+          } else {
+            return;
+          }
+        })
+        oNode.getParentNodes().forEach(function (node) {
+          if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false)) {
+            aNodes.push(node);
+            getSubNodes(node);
+          } else {
+            return;
+          }
+        })        
+      }
+
+      oNode.getChildNodes().forEach(function (node) {
+
+        if (node._fixed == null) {
+          aNodes.push(node);
+          getSubNodes(node);
+        }
+
+      })
+
+      aNodes.forEach(function (node) {
+        node.setHidden(true);
+      })
+
+
+
+      // var aNodes = [];
+      // function getChilds(oNode) {
+      //   oNode.getChildNodes().forEach(function (n) {
+      //     aNodes.push(n);
+      //     getChilds(n);
+      //   });
+      // }
+      // getChilds(oNode);
+      // aNodes.forEach(function (n) {
+      //   if (n._fixed == null) {
+      //     n.setHidden(true);
+      //   }
+      // });
+    }
 
       oController.fixNodeState(oNode);
     },
@@ -549,7 +658,7 @@ sap.ui.define([
       oPanel.setVisible(true);
       oController._graph.setWidth("60%");
       
-      oController.getView().byId("btn-show-where-used").setEnabled(false);
+      oController.getView().byId("btn-show-where-used").setEnabled(true);
 
       oController.getView().byId("fields-header").addStyleClass("sapMTableTH");
       oController.getView().byId("fields-header-column1").addStyleClass("sapColumnCustomHeaderFirst");
@@ -579,20 +688,37 @@ sap.ui.define([
                       aAnnotations.push({"text": annotation.AnnotationName, "value": annotation.Value, "isField": false});
                     })
 
-                    var sText = sObjectType === 'TABL' ? field.FieldName : field.FieldAlias;
+                    var sDisplayedText = sObjectType === 'TABL' ? field.FieldName : field.FieldAlias;
+
+                    var sFieldTextWhereUsed = '';
+                    switch (sObjectType) {
+                      case 'TABL':
+                        sFieldTextWhereUsed = field.FieldName;
+                        break;
+                      case 'DDLS':
+                        sFieldTextWhereUsed = field.FieldName;
+                        break;
+                      default:
+                        sFieldTextWhereUsed = field.FieldAlias;
+                    }
+                    
+
                     var bWhereUsed = false;
-                    oController.getView().getModel("graphModel").getProperty('/nodes').forEach((node) => {
-                      if (node.ObjectName === response.getParameters().data.ObjectName ) {
-                        
-                        if (sText === node.FieldSearch.SearchFieldName) {
-                          bWhereUsed = true;
+
+                    if (oController.getView().getModel("whereUsedFilterModel").getProperty("/enabled")) {
+                      oController.getView().getModel("graphModel").getProperty('/nodes').forEach((node) => {
+                        if (node.ObjectName === response.getParameters().data.ObjectName ) {
+                          
+                          if (sFieldTextWhereUsed === node.FieldSearch.SearchFieldName) {
+                            bWhereUsed = true;
+                          }
                         }
-                      }
-                    })
+                      })
+                    }
           
                     aFields.push({
 
-                      "text": sText,
+                      "text": sDisplayedText,
                       "dataelement": field.DataElement,
                       "datatype": field.Datatype + '(' + parseInt(field.Length,10) + ')', 
                       "description": field.Description,
@@ -641,20 +767,34 @@ sap.ui.define([
                       var oAnnotationValues = oEvent.getSource().getModel().getProperty("/"+annotation);
                       aAnnotations.push({"text": oAnnotationValues.AnnotationName, "value": oAnnotationValues.Value, "isField": false,});
                     })
-                    var sText = sObjectType === 'TABL' ? oFieldValues.FieldName : oFieldValues.FieldAlias;
+                    var sDisplayedText = sObjectType === 'TABL' ? oFieldValues.FieldName : oFieldValues.FieldAlias;
+                    
+                    var sFieldTextWhereUsed = '';
+                    switch (sObjectType) {
+                      case 'TABL':
+                        sFieldTextWhereUsed = oFieldValues.FieldName;
+                        break;
+                      case 'DDLS':
+                        sFieldTextWhereUsed = oFieldValues.FieldName;
+                        break;
+                      default:
+                        sFieldTextWhereUsed = oFieldValues.FieldAlias;
+                    }
 
                     var bWhereUsed = false;
-                    oController.getView().getModel("graphModel").getProperty('/nodes').forEach((node) => {
-                      if (node.ObjectName === sObjectName ) {
-                        
-                        if (sText === node.FieldSearch.SearchFieldName) {
-                          bWhereUsed = true;
+                    if (oController.getView().getModel("whereUsedFilterModel").getProperty("/enabled")) {
+                      oController.getView().getModel("graphModel").getProperty('/nodes').forEach((node) => {
+                        if (node.ObjectName === sObjectName ) {
+                          
+                          if (sFieldTextWhereUsed === node.FieldSearch.SearchFieldName) {
+                            bWhereUsed = true;
+                          }
                         }
-                      }
-                    })
+                      })
+                    }
 
                     aFields.push({
-                      "text": sText,
+                      "text": sDisplayedText,
                       "dataelement": oFieldValues.DataElement,
                       "datatype": oFieldValues.Datatype + '(' + parseInt(oFieldValues.Length,10) + ')', 
                       "description": oFieldValues.Description,
@@ -724,10 +864,22 @@ sap.ui.define([
     whereUsedPressed: function(oEvent) {
         var oTree = oController.getView().byId("tree-fields");
         var sSearchField = oTree.getSelectedItem().getCustomData()[0].getValue();
+        var sSearchObject = oTree.getSelectedItem().getBindingContext().getProperty("ObjectName");
         var sMainNode = oController._cadaxoMainNode;
 
-        var aFilters = [new Filter({path: "FieldSearch/SearchFieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField})];
+        var aFilters = [new Filter({path: "FieldSearch/SearchObjectName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchObject}),
+                        new Filter({path: "FieldSearch/SearchFieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField})];
 
+        //cache visible Nodes due to graph refresh
+        var aVisibleNodes =  [];
+        oController.getView().getModel("whereUsedFilterModel").setProperty("/usedNodeId", oTree.getSelectedItem().getBindingContext().getProperty('DsId'));
+        oController._graph.getNodes().forEach(function(node) {
+          if (node.isHidden() == false) {
+            aVisibleNodes.push(node.getKey());
+          }
+        });
+        oController.getView().getModel("whereUsedFilterModel").setProperty("/cachedNodes", aVisibleNodes);
+        //end cache
 
         const fnSuccessGraphData = function(oData, oResponse) {
               
@@ -747,7 +899,6 @@ sap.ui.define([
                    nodes: aNodes,
                    links: links
                });
-               debugger;
                this.setModel(oJson,'graphModel');
           }
           this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
@@ -889,7 +1040,6 @@ sap.ui.define([
 					beginButton: new Button({
 						text: "OK",
 						press: function () {
-              debugger;
               var sOrientation = sap.ui.getCore().getElementById("graphDialog-orientation").getSelectedKey();
               var sNodePlacement = sap.ui.getCore().getElementById("graphDialog-nodePlacement").getSelectedKey();
               var iNodeSpacing = parseInt(sap.ui.getCore().getElementById("graphDialog-nodeSpacing").getSelectedKey());
