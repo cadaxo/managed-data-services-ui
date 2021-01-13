@@ -189,31 +189,65 @@ sap.ui.define([
 
       $('.sapSuiteUiCommonsNetworkGraphLegend').children().each(function () {
 
+        function nodesCount(sType) {
+          var sum = 0;
+          oController._graph.getNodes().forEach(function(node) {
+            if (node.getStatus() == sType) {
+              sum++;
+            }
+          })
+          return sum;
+        }
+
         var sLegendIcon = "";
         switch ($(this).attr('status')) {
           case 'DDLS':
             $(this).children().eq(0).replaceWith("<img src='resources/img/node_cdsview.png' width='50' height='50' style='padding: 5px;'>");
+            if ($(this).children().eq(2).text() == '') {
+              $(this).append('<p>('+ nodesCount('DDLS') +')</p>')
+            }
             break;
           case 'YDLS':
             $(this).children().eq(0).replaceWith("<img src='resources/img/node_cdsviewextenstion.png' width='50' height='50' style='padding: 5px;'>");
+            if ($(this).children().eq(2).text() == '') {
+              $(this).append('<p>('+ nodesCount('YDLS') +')</p>')
+            }
             break;
           case 'TABL':
             $(this).children().eq(0).replaceWith("<img src='resources/img/node_table.png' width='50' height='50' style='padding: 5px;'>");
+            if ($(this).children().eq(2).text() == '') {
+              $(this).append('<p>('+ nodesCount('TABL') +')</p>')
+            }
             break;
           case 'YABL':
             $(this).children().eq(0).replaceWith("<img src='resources/img/node_sqlview.png' width='50' height='50' style='padding: 5px;'>");
+            if ($(this).children().eq(2).text() == '') {
+              $(this).append('<p>('+ nodesCount('YABL') +')</p>')
+            }
             break;
           case 'XXFILTERED_DDLS':
             $(this).children().eq(0).replaceWith("<img src='resources/img/node_cdsview_disabled.png' width='50' height='50' style='padding: 5px;'>");
+            if ($(this).children().eq(2).text() == '') {
+              $(this).append('<p>('+ nodesCount('XXFILTERED_DDLS') +')</p>')
+            }
             break;
           case 'XXFILTERED_YDLS':
             $(this).children().eq(0).replaceWith("<img src='resources/img/node_cdsviewextenstion_disabled.png' width='50' height='50' style='padding: 5px;'>");
+            if ($(this).children().eq(2).text() == '') {
+              $(this).append('<p>('+ nodesCount('XXFILTERED_YDLS') +')</p>')
+            }
             break;
           case 'XXFILTERED_TABL':
             $(this).children().eq(0).replaceWith("<img src='resources/img/node_table_disabled.png' width='50' height='50' style='padding: 5px;'>");
+            if ($(this).children().eq(2).text() == '') {
+              $(this).append('<p>('+ nodesCount('XXFILTERED_TABL') +')</p>')
+            }
             break;
           case 'XXFILTERED_YABL':
             $(this).children().eq(0).replaceWith("<img src='resources/img/node_sqlview_disabled.png' width='50' height='50' style='padding: 5px;'>");
+            if ($(this).children().eq(2).text() == '') {
+              $(this).append('<p>('+ nodesCount('XXFILTERED_YABL') +')</p>')
+            }
             break;                        
         }
 
@@ -650,6 +684,12 @@ sap.ui.define([
       }
       oNode.setStatusIcon(bHasHiddenSiblings ? STATUS_ICON : undefined);
     },
+
+    fixAllNodesState: function() {
+      oController._graph.getNodes().forEach(function(node){
+        oController.fixNodeState(node);
+      })
+    },
   
     openSidebar: function(oNode) {
       oController.fixNodeState(oNode);
@@ -1068,7 +1108,79 @@ sap.ui.define([
     oPanel.setVisible(false);
     oController._graph.setWidth("100%");
     oController.getView().getModel("sidebarModel").setProperty("/sidebarEnabled", false);
-  } 
+  },
+
+  leftMultiExpandPressed: function(oEvent) {
+    var oNode = oEvent.getSource().getParent();
+    var aNodes = [];
+
+    function getSubNodes(oNode) {
+      oNode.getChildNodes().forEach(function (node) {
+        if (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false && node._fixed == null) {
+          aNodes.push(node);
+          getSubNodes(node);
+        } else {
+          return;
+        }
+      })
+      oNode.getParentNodes().forEach(function (node) {
+        if (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false && node._fixed == null ) {
+          aNodes.push(node);
+          getSubNodes(node);
+        } else {
+          return;
+        }
+      })        
+    }
+
+    oNode.getParentNodes().forEach(function (node) {
+        aNodes.push(node);
+        getSubNodes(node);
+    })
+
+    aNodes.forEach(function (node) {
+      node.setHidden(false);
+    })
+
+    oController.fixAllNodesState();
+  },
+
+  rightMultiExpandPressed: function(oEvent) {
+    var oNode = oEvent.getSource().getParent();
+    var aNodes = [];
+
+    function getSubNodes(oNode) {
+      oNode.getChildNodes().forEach(function (node) {
+        if (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false && node._fixed == null) {
+          aNodes.push(node);
+          getSubNodes(node);
+        } else {
+          return;
+        }
+      })
+      oNode.getParentNodes().forEach(function (node) {
+        if (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false && node._fixed == null ) {
+          aNodes.push(node);
+          getSubNodes(node);
+        } else {
+          return;
+        }
+      })        
+    }
+
+    oNode.getChildNodes().forEach(function (node) {
+        aNodes.push(node);
+        getSubNodes(node);
+    })
+
+    aNodes.forEach(function (node) {
+      node.setHidden(false);
+    })
+
+    oController.fixAllNodesState();
+
+    
+  }  
 
   });
 });
