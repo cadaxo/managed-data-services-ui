@@ -58,11 +58,19 @@
 													title="{i18n>showParentNodes}"
 													position="Left"
 													press="leftExpandPressed"/>
-									
 											<g:ActionButton
 													icon="sap-icon://navigation-right-arrow"
 													title="{i18n>showChildNodes}"
 													press="rightExpandPressed"/>
+											<g:ActionButton
+												icon="sap-icon://open-command-field"
+												title="Expand All"
+												press="rightMultiExpandPressed"/>	
+											<g:ActionButton
+													icon="sap-icon://close-command-field"
+													title="Expand All"
+													position="Left"
+													press="leftMultiExpandPressed"/>		
 										</g:actionButtons>
 									</g:Node>
 

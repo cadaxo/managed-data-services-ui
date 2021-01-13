@@ -801,7 +801,7 @@ sap.ui.define([
 
     this._oPopoverForLine = new sap.m.Popover({
       showHeader: false,
-      contentWidth: "350px",
+      contentWidth: "450px",
       content: [oFlexBoxTitle, oFlexBox]
     });
   
