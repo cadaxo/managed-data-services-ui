@@ -29,7 +29,7 @@ sap.ui.define([
       var oWhereUsedFilterModel = new JSONModel({enabled: false, field: "", cachedNodes: [], usedNodeId: null});
       this.getView().setModel(oWhereUsedFilterModel, "whereUsedFilterModel");
 
-      var oVersionModel = new JSONModel({backend: null, frontend: "1.03"});
+      var oVersionModel = new JSONModel({backend: null, frontend: "1.04"});
       this.getView().setModel(oVersionModel, "versionModel");
 
       var oImageModel = new JSONModel({cadaxoLogo: sap.ui.require.toUrl("com/cadaxo/cmds/resources/img/cadaxo_logo.png")});
