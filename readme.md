@@ -1,45 +1,21 @@
 # Cadaxo Managed Data Services - Graph App UI
 
-About deploying to ABAP Repository please check
-[ui5-task-nwabap-deployer](https://github.com/pfefferf/ui5-nwabap-deployer/tree/master/packages/ui5-task-nwabap-deployer)
+## Prototype
 
 ## Install UI5 CLI
 npm install --global @ui5/cli
  
 ## Run project locally
 1. clone project to your local folder
-2. run 'npm install' in the local/project folder
-3. create .env file in local/project folder
+2. run 'npm install' in the project folder
+3. run 'npm start' in the project folder
+4. open following URL in browser
+http://localhost:8080/test/mockServer.html?cadaxoMainNode=ZCDX_I_PARTNER%7CDDLS
 
-Example .env file:
-````
-PROXY_TARGET=http://cc0.cadaxo.com:8000
-PROXY_USERNAME=*******
-PROXY_PASSWORD=*******
-````
 
-4. run 'npm run start'
-
-## Deploy project to ABAP Repository
-1. clone project to your local folder
-2. open ui5.yaml
-3. edit ui5-task-nwabap-deployer values correctly.
-````
-      connection:
-        server: http://YOUR_SERVER:8000
-      authentication:
-        user: USER_NAME
-        password: USER_PASS
-      ui5:
-        language: EN
-        package: PACKAGE_NAME
-        bspContainer: BSP_NAME
-        bspContainerText: Cadaxo Managed Data Services UI
-        transportNo: TRANSPORT_NO
-        calculateApplicationIndex: false
-````
-
-4. run 'npm run deploy'
-
-## Credits
-This project has been generated with 💙 and [easy-ui5](https://github.com/SAP)
+## Working USE CASE
+1. click ZCDX_PARTNER_FIELDS
+2. select column FirstName
+3. click Display Field Source
+4. click '3 more objects'
+5. click Expand on '3 more objects'
