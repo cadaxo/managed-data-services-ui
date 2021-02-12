@@ -1,7 +1,7 @@
 {
   "_version": "1.21.0",
   "sap.app": {
-    "id": "com.cadaxo.cmds",
+    "id": "com.cadaxo.cmds.PrototypeMDS",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -21,8 +21,24 @@
       "toAllLinks": {
         "uri": "localService/mockdata/toAllLinks.json",
         "type": "JSON"
-      }
-    }    
+      },
+      "step2Model": {
+        "uri": "localService/mockdata/step2Model.json",
+        "type": "JSON"
+      },
+      "step2ModelLinks": {
+        "uri": "localService/mockdata/step2ModelLinks.json",
+        "type": "JSON"
+      },
+      "step3Model": {
+        "uri": "localService/mockdata/step3Model.json",
+        "type": "JSON"
+      },
+      "step3ModelLinks": {
+        "uri": "localService/mockdata/step3ModelLinks.json",
+        "type": "JSON"
+      } 
+    }   
   },
   "sap.ui": {
     "technology": "UI5",
@@ -67,19 +83,28 @@
         }
       },
       "": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {
-          "defaultBindingMode": "TwoWay",
-          "defaultCountMode": "Inline",
-          "refreshAfterChange": false,
-          "useBatch": false
-        }
+        "dataSource": "mainService"
       },
       "toAllLinks" :{
         "type": "sap.ui.model.json.JSONModel",
         "dataSource": "toAllLinks"
-      }      
+      },
+      "step2Model" :{
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "step2Model"
+      },
+      "step2ModelLinks" :{
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "step2ModelLinks"
+      },
+      "step3Model" :{
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "step3Model"
+      },
+      "step3ModelLinks" :{
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "step3ModelLinks"
+      }             
     },
     "resources": {
       "css": [
@@ -107,7 +132,7 @@
         }
       ],
       "targets": {
-        "TargetApp": {
+        "TargetMainView": {
           "viewType": "XML",
           "viewLevel": 1,
           "viewId": "app",

@@ -1,0 +1,27 @@
+[
+
+    {
+      "__metadata": {
+        "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('1BEBC287006B3ECFFB74046E0B9B504DF7A74191')",
+        "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('1BEBC287006B3ECFFB74046E0B9B504DF7A74191')",
+        "type": "/CADAXO/MDS_SRV.Link"
+      },
+      "LinkId": "1BEBC287006B3ECFFB74046E0B9B504DF7A74191",
+      "ObjectId1": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+      "ObjectId2": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+      "Description": "as select from",
+      "Type": "BASE",
+      "CardMin": 0,
+      "CardMax": 0,
+      "toDatasource1": {
+        "__deferred": {
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('1BEBC287006B3ECFFB74046E0B9B504DF7A74191')/toDatasource1"
+        }
+      },
+      "toDatasource2": {
+        "__deferred": {
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('1BEBC287006B3ECFFB74046E0B9B504DF7A74191')/toDatasource2"
+        }
+      }
+    }
+]

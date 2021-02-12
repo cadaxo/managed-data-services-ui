@@ -1,0 +1,218 @@
+[
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('1')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('1')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "1",
+        "StatusKey": "TABL",
+        "Color1": "darkblue",
+        "Color2": "blue",
+        "Description": "Table"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('2')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('2')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "2",
+        "StatusKey": "DDLS",
+        "Color1": "darkgreen",
+        "Color2": "green",
+        "Description": "CDS View"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('3')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('3')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "3",
+        "StatusKey": "DDLX",
+        "Color1": "lime",
+        "Color2": "green",
+        "Description": "CDS Extension"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('12')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('12')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "12",
+        "StatusKey": "YDLS",
+        "Color1": "teal",
+        "Color2": "teal",
+        "Description": "CDS View Extension"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('13')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('13')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "13",
+        "StatusKey": "YABL",
+        "Color1": "navy",
+        "Color2": "navy",
+        "Description": "SQL View"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('101')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('101')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "101",
+        "StatusKey": "XXFILTERED_TABL",
+        "Color1": "grey",
+        "Color2": "grey",
+        "Description": "Table - filtered"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('102')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('102')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "102",
+        "StatusKey": "XXFILTERED_DDLS",
+        "Color1": "grey",
+        "Color2": "grey",
+        "Description": "CDS View - filtered"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('103')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('103')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "103",
+        "StatusKey": "XXFILTERED_DDLX",
+        "Color1": "grey",
+        "Color2": "grey",
+        "Description": "CDS Extension - filtered"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('112')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('112')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "112",
+        "StatusKey": "XXFILTERED_YDLS",
+        "Color1": "grey",
+        "Color2": "grey",
+        "Description": "CDS View Extension - filtered"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('113')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('113')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "113",
+        "StatusKey": "XXFILTERED_YABL",
+        "Color1": "grey",
+        "Color2": "grey",
+        "Description": "SQL View - filtered"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('4')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('4')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "4",
+        "StatusKey": "BASE",
+        "Color1": "blue",
+        "Color2": "silver",
+        "Description": "As select from"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('5')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('5')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "5",
+        "StatusKey": "ASSOCIATION",
+        "Color1": "green",
+        "Color2": "fuchsia",
+        "Description": "Association"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('6')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('6')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "6",
+        "StatusKey": "EXTERNAL_ASSOCIATION",
+        "Color1": "darkgreen",
+        "Color2": "yellow",
+        "Description": "Ext. Association"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('7')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('7')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "7",
+        "StatusKey": "ISUSED",
+        "Color1": "orange",
+        "Color2": "aqua",
+        "Description": "Is used in"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('8')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('8')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "8",
+        "StatusKey": "SQLVIEW",
+        "Color1": "darkblue",
+        "Color2": "lime",
+        "Description": "Has SQL View"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('9')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('9')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "9",
+        "StatusKey": "METADATAEXTENSION",
+        "Color1": "lime",
+        "Color2": "teal",
+        "Description": "Has Metadata Extension"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('10')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('10')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "10",
+        "StatusKey": "ENHANCEMENT",
+        "Color1": "darkmagenta",
+        "Color2": "olive",
+        "Description": "Enhances"
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('11')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/LegendCusts('11')",
+          "type": "/CADAXO/MDS_SRV.LegendCust"
+        },
+        "LegendId": "11",
+        "StatusKey": "DISABLED",
+        "Color1": "grey",
+        "Color2": "grey",
+        "Description": "Disabled"
+      }
+    ]

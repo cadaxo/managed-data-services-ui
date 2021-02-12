@@ -1,640 +1,3920 @@
 [
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')",
+          "type": "/CADAXO/MDS_SRV.Field"
+        },
+        "Datatype": "CHAR",
+        "FieldAlias": "PartnerNumber",
+        "FieldId": "59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB",
+        "IsKey": false,
+        "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Length": "10",
+        "DataElement": "BU_PARTNER",
+        "FieldName": "PARTNERNUMBER",
+        "Position": 1,
+        "Description": "Business Partner Number",
+        "ObjectState": 0,
+        "toDatasource": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')/toDatasource"
+          }
+        },
+        "toProperties": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')/toProperties"
+          }
+        },
+        "toAnnotations": {
+          "results": []
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')",
+          "type": "/CADAXO/MDS_SRV.Field"
+        },
+        "Datatype": "CHAR",
+        "FieldAlias": "FirstName",
+        "FieldId": "6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD",
+        "IsKey": false,
+        "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Length": "40",
+        "DataElement": "BU_NAMEP_F",
+        "FieldName": "FIRSTNAME",
+        "Position": 2,
+        "Description": "First name of business partner (person)",
+        "ObjectState": 0,
+        "toDatasource": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')/toDatasource"
+          }
+        },
+        "toProperties": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')/toProperties"
+          }
+        },
+        "toAnnotations": {
+          "results": []
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')",
+          "type": "/CADAXO/MDS_SRV.Field"
+        },
+        "Datatype": "CHAR",
+        "FieldAlias": "LastName",
+        "FieldId": "73633441058E1BB709AA2C0448B80C5F0FC55FF1",
+        "IsKey": false,
+        "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Length": "40",
+        "DataElement": "BU_NAMEP_L",
+        "FieldName": "LASTNAME",
+        "Position": 3,
+        "Description": "Last name of business partner (person)",
+        "ObjectState": 0,
+        "toDatasource": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')/toDatasource"
+          }
+        },
+        "toProperties": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')/toProperties"
+          }
+        },
+        "toAnnotations": {
+          "results": []
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')",
+          "type": "/CADAXO/MDS_SRV.Field"
+        },
+        "Datatype": "CHAR",
+        "FieldAlias": "AddrNumber",
+        "FieldId": "504DB59A29465DF78076833DA1B9E9D1193CF8E0",
+        "IsKey": false,
+        "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Length": "10",
+        "DataElement": "AD_ADDRNUM",
+        "FieldName": "ADDRNUMBER",
+        "Position": 4,
+        "Description": "Address number",
+        "ObjectState": 0,
+        "toDatasource": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')/toDatasource"
+          }
+        },
+        "toProperties": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')/toProperties"
+          }
+        },
+        "toAnnotations": {
+          "results": []
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')",
+          "type": "/CADAXO/MDS_SRV.Field"
+        },
+        "Datatype": "CHAR",
+        "FieldAlias": "Street",
+        "FieldId": "891E7643223CD015A70DCBE9FBCB57D1E601F8F0",
+        "IsKey": false,
+        "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Length": "60",
+        "DataElement": "AD_STREET",
+        "FieldName": "STREET",
+        "Position": 5,
+        "Description": "Street",
+        "ObjectState": 0,
+        "toDatasource": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')/toDatasource"
+          }
+        },
+        "toProperties": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')/toProperties"
+          }
+        },
+        "toAnnotations": {
+          "results": []
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')",
+          "type": "/CADAXO/MDS_SRV.Field"
+        },
+        "Datatype": "CHAR",
+        "FieldAlias": "City",
+        "FieldId": "37D0F450734DE9720B4F8248385E5D552F160631",
+        "IsKey": false,
+        "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Length": "40",
+        "DataElement": "AD_CITY1",
+        "FieldName": "CITY",
+        "Position": 6,
+        "Description": "City",
+        "ObjectState": 0,
+        "toDatasource": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')/toDatasource"
+          }
+        },
+        "toProperties": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')/toProperties"
+          }
+        },
+        "toAnnotations": {
+          "results": []
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')",
+          "type": "/CADAXO/MDS_SRV.Field"
+        },
+        "Datatype": "CHAR",
+        "FieldAlias": "PostCode",
+        "FieldId": "1B72A96E56EA908C57BF4D9E05659E3C65110155",
+        "IsKey": false,
+        "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Length": "10",
+        "DataElement": "AD_PSTCD1",
+        "FieldName": "POSTCODE",
+        "Position": 7,
+        "Description": "City postal code",
+        "ObjectState": 0,
+        "toDatasource": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')/toDatasource"
+          }
+        },
+        "toProperties": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')/toProperties"
+          }
+        },
+        "toAnnotations": {
+          "results": []
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')",
+          "type": "/CADAXO/MDS_SRV.Field"
+        },
+        "Datatype": "CHAR",
+        "FieldAlias": "Country",
+        "FieldId": "A378C27F3099845E031A61FB5E9B2E9DC917B495",
+        "IsKey": false,
+        "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Length": "3",
+        "DataElement": "LAND1",
+        "FieldName": "COUNTRY",
+        "Position": 8,
+        "Description": "Country Key",
+        "ObjectState": 0,
+        "toDatasource": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')/toDatasource"
+          }
+        },
+        "toProperties": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')/toProperties"
+          }
+        },
+        "toAnnotations": {
+          "results": []
+        }
+      },
+
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3DD0A9A7CB1B8CB515A23EDA1ACDA4387A13EBF7')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3DD0A9A7CB1B8CB515A23EDA1ACDA4387A13EBF7')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "67A6DAADECBBF47371EAD38C300FF0FB682EF51E",
-          "FieldAlias": "ProductUUID",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "PRODUCTUUID",
+          "Datatype": "CLNT",
+          "FieldAlias": "CLIENT",
+          "FieldId": "3DD0A9A7CB1B8CB515A23EDA1ACDA4387A13EBF7",
+          "IsKey": true,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "3",
+          "DataElement": "MANDT",
+          "FieldName": "CLIENT",
           "Position": 1,
-          "Description": "",
+          "Description": "Client",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3DD0A9A7CB1B8CB515A23EDA1ACDA4387A13EBF7')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3DD0A9A7CB1B8CB515A23EDA1ACDA4387A13EBF7')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67A6DAADECBBF47371EAD38C300FF0FB682EF51E')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('17E4633A5AC09CDAB9E437599E2AE89D8EA6D088')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('17E4633A5AC09CDAB9E437599E2AE89D8EA6D088')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('761A5821929BA87AB815EE81E91E4C6097C5725F')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('761A5821929BA87AB815EE81E91E4C6097C5725F')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "17E4633A5AC09CDAB9E437599E2AE89D8EA6D088",
-          "FieldAlias": "Product",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "PRODUCT",
+          "Datatype": "CHAR",
+          "FieldAlias": "PARTNER",
+          "FieldId": "761A5821929BA87AB815EE81E91E4C6097C5725F",
+          "IsKey": true,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "10",
+          "DataElement": "BU_PARTNER",
+          "FieldName": "PARTNER",
           "Position": 2,
-          "Description": "",
+          "Description": "Business Partner Number",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('17E4633A5AC09CDAB9E437599E2AE89D8EA6D088')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('761A5821929BA87AB815EE81E91E4C6097C5725F')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('17E4633A5AC09CDAB9E437599E2AE89D8EA6D088')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('761A5821929BA87AB815EE81E91E4C6097C5725F')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('17E4633A5AC09CDAB9E437599E2AE89D8EA6D088')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D29827DD6E601A33B9313D7F391BC264C5FDBCF1')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D29827DD6E601A33B9313D7F391BC264C5FDBCF1')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C18B7607F8018EE475635F7EFDFD913A521256C0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C18B7607F8018EE475635F7EFDFD913A521256C0')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "D29827DD6E601A33B9313D7F391BC264C5FDBCF1",
-          "FieldAlias": "ProductType",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "PRODUCTTYPE",
-          "Position": 3,
-          "Description": "",
-          "ObjectState": 0,
-          "toDatasource": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D29827DD6E601A33B9313D7F391BC264C5FDBCF1')/toDatasource"
-            }
-          },
-          "toParameters": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D29827DD6E601A33B9313D7F391BC264C5FDBCF1')/toParameters"
-            }
-          },
-          "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D29827DD6E601A33B9313D7F391BC264C5FDBCF1')/toAnnotations"
-            }
-          }
-        },
-        {
-          "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('604663556FF5A9F12A6379A8505D99A69C47FCAF')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('604663556FF5A9F12A6379A8505D99A69C47FCAF')",
-            "type": "CADAXO_MDS_SRV.Field"
-          },
-          "FieldId": "604663556FF5A9F12A6379A8505D99A69C47FCAF",
-          "FieldAlias": "ProductCategory",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "PRODUCTCATEGORY",
-          "Position": 4,
-          "Description": "",
-          "ObjectState": 0,
-          "toDatasource": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('604663556FF5A9F12A6379A8505D99A69C47FCAF')/toDatasource"
-            }
-          },
-          "toParameters": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('604663556FF5A9F12A6379A8505D99A69C47FCAF')/toParameters"
-            }
-          },
-          "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('604663556FF5A9F12A6379A8505D99A69C47FCAF')/toAnnotations"
-            }
-          }
-        },
-        {
-          "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('664E8FBAC7FF64AF0C763AF517F4101BA92376B2')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('664E8FBAC7FF64AF0C763AF517F4101BA92376B2')",
-            "type": "CADAXO_MDS_SRV.Field"
-          },
-          "FieldId": "664E8FBAC7FF64AF0C763AF517F4101BA92376B2",
-          "FieldAlias": "CreatedByUser",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "CREATEDBYUSER",
-          "Position": 5,
-          "Description": "",
-          "ObjectState": 0,
-          "toDatasource": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('664E8FBAC7FF64AF0C763AF517F4101BA92376B2')/toDatasource"
-            }
-          },
-          "toParameters": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('664E8FBAC7FF64AF0C763AF517F4101BA92376B2')/toParameters"
-            }
-          },
-          "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('664E8FBAC7FF64AF0C763AF517F4101BA92376B2')/toAnnotations"
-            }
-          }
-        },
-        {
-          "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('63C0898A925EA026F7ED57E0CB25EF98E972A75C')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('63C0898A925EA026F7ED57E0CB25EF98E972A75C')",
-            "type": "CADAXO_MDS_SRV.Field"
-          },
-          "FieldId": "63C0898A925EA026F7ED57E0CB25EF98E972A75C",
-          "FieldAlias": "CreationDateTime",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "CREATIONDATETIME",
+          "Datatype": "CHAR",
+          "FieldAlias": "TYPE",
+          "FieldId": "C18B7607F8018EE475635F7EFDFD913A521256C0",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_TYPE",
+          "FieldName": "TYPE",
           "Position": 6,
-          "Description": "",
+          "Description": "Business partner category",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('63C0898A925EA026F7ED57E0CB25EF98E972A75C')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C18B7607F8018EE475635F7EFDFD913A521256C0')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('63C0898A925EA026F7ED57E0CB25EF98E972A75C')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C18B7607F8018EE475635F7EFDFD913A521256C0')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('63C0898A925EA026F7ED57E0CB25EF98E972A75C')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('900BE40EFF0861D351F722319F44C9FE76559A04')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('900BE40EFF0861D351F722319F44C9FE76559A04')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6A63D817CACB7DD16CA7399305D37358F6A72FA0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6A63D817CACB7DD16CA7399305D37358F6A72FA0')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "900BE40EFF0861D351F722319F44C9FE76559A04",
-          "FieldAlias": "LastChangedByUser",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "LASTCHANGEDBYUSER",
+          "Datatype": "CHAR",
+          "FieldAlias": "BPKIND",
+          "FieldId": "6A63D817CACB7DD16CA7399305D37358F6A72FA0",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "BU_BPKIND",
+          "FieldName": "BPKIND",
           "Position": 7,
-          "Description": "",
+          "Description": "Business Partner Type",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('900BE40EFF0861D351F722319F44C9FE76559A04')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6A63D817CACB7DD16CA7399305D37358F6A72FA0')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('900BE40EFF0861D351F722319F44C9FE76559A04')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6A63D817CACB7DD16CA7399305D37358F6A72FA0')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('900BE40EFF0861D351F722319F44C9FE76559A04')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('76989952A87725F3B8692D98F57B2DD14F1DBC66')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('76989952A87725F3B8692D98F57B2DD14F1DBC66')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('953209B5FC72B40B5848FFFB6F448AF94734A4F0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('953209B5FC72B40B5848FFFB6F448AF94734A4F0')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "76989952A87725F3B8692D98F57B2DD14F1DBC66",
-          "FieldAlias": "LastChangedDateTime",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "LASTCHANGEDDATETIME",
+          "Datatype": "CHAR",
+          "FieldAlias": "BU_GROUP",
+          "FieldId": "953209B5FC72B40B5848FFFB6F448AF94734A4F0",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "BU_GROUP",
+          "FieldName": "BU_GROUP",
           "Position": 8,
-          "Description": "",
+          "Description": "Business Partner Grouping",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('76989952A87725F3B8692D98F57B2DD14F1DBC66')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('953209B5FC72B40B5848FFFB6F448AF94734A4F0')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('76989952A87725F3B8692D98F57B2DD14F1DBC66')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('953209B5FC72B40B5848FFFB6F448AF94734A4F0')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('76989952A87725F3B8692D98F57B2DD14F1DBC66')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C5201C2DB9C4AC8685B6009630E3C0E4CA477740')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C5201C2DB9C4AC8685B6009630E3C0E4CA477740')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D",
-          "FieldAlias": "Price",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "PRICE",
+          "Datatype": "CHAR",
+          "FieldAlias": "BPEXT",
+          "FieldId": "C5201C2DB9C4AC8685B6009630E3C0E4CA477740",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "20",
+          "DataElement": "BU_BPEXT",
+          "FieldName": "BPEXT",
           "Position": 9,
-          "Description": "",
+          "Description": "Business Partner Number in External System",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C5201C2DB9C4AC8685B6009630E3C0E4CA477740')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C5201C2DB9C4AC8685B6009630E3C0E4CA477740')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('062CD9049B03D4C8B6A000D8EF5C2883DC1EDB5D')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5FC3E4517FDF27D9247C5E06F207752A1EFCF51')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5FC3E4517FDF27D9247C5E06F207752A1EFCF51')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F380B9715E35073793DAD9D3CE40E370FFFE7831')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F380B9715E35073793DAD9D3CE40E370FFFE7831')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "A5FC3E4517FDF27D9247C5E06F207752A1EFCF51",
-          "FieldAlias": "Currency",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "CURRENCY",
-          "Position": 10,
-          "Description": "",
-          "ObjectState": 0,
-          "toDatasource": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5FC3E4517FDF27D9247C5E06F207752A1EFCF51')/toDatasource"
-            }
-          },
-          "toParameters": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5FC3E4517FDF27D9247C5E06F207752A1EFCF51')/toParameters"
-            }
-          },
-          "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5FC3E4517FDF27D9247C5E06F207752A1EFCF51')/toAnnotations"
-            }
-          }
-        },
-        {
-          "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C70A126A7F2624016753DB12E580A3EE6F26FD8A')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C70A126A7F2624016753DB12E580A3EE6F26FD8A')",
-            "type": "CADAXO_MDS_SRV.Field"
-          },
-          "FieldId": "C70A126A7F2624016753DB12E580A3EE6F26FD8A",
-          "FieldAlias": "Height",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "HEIGHT",
+          "Datatype": "CHAR",
+          "FieldAlias": "BU_SORT1",
+          "FieldId": "F380B9715E35073793DAD9D3CE40E370FFFE7831",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "20",
+          "DataElement": "BU_SORT1",
+          "FieldName": "BU_SORT1",
           "Position": 11,
-          "Description": "",
+          "Description": "Search term 1 for business partner",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C70A126A7F2624016753DB12E580A3EE6F26FD8A')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F380B9715E35073793DAD9D3CE40E370FFFE7831')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C70A126A7F2624016753DB12E580A3EE6F26FD8A')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F380B9715E35073793DAD9D3CE40E370FFFE7831')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C70A126A7F2624016753DB12E580A3EE6F26FD8A')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8D21D32B061033C20C0693CF58F43F7F1E697C5')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8D21D32B061033C20C0693CF58F43F7F1E697C5')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67BB0E5A8FB0CB12429251FDBD4A4F7F5E26A974')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67BB0E5A8FB0CB12429251FDBD4A4F7F5E26A974')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "F8D21D32B061033C20C0693CF58F43F7F1E697C5",
-          "FieldAlias": "Width",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "WIDTH",
+          "Datatype": "CHAR",
+          "FieldAlias": "BU_SORT2",
+          "FieldId": "67BB0E5A8FB0CB12429251FDBD4A4F7F5E26A974",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "20",
+          "DataElement": "BU_SORT2",
+          "FieldName": "BU_SORT2",
           "Position": 12,
-          "Description": "",
+          "Description": "Search term 2 for business partner",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8D21D32B061033C20C0693CF58F43F7F1E697C5')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67BB0E5A8FB0CB12429251FDBD4A4F7F5E26A974')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8D21D32B061033C20C0693CF58F43F7F1E697C5')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('67BB0E5A8FB0CB12429251FDBD4A4F7F5E26A974')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8D21D32B061033C20C0693CF58F43F7F1E697C5')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('57ACD2A327EF26F196CE387468C82FBBA9317D8A')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('57ACD2A327EF26F196CE387468C82FBBA9317D8A')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CBE1D164037A73D41A350F0C39529CE4D5F707F6')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CBE1D164037A73D41A350F0C39529CE4D5F707F6')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "57ACD2A327EF26F196CE387468C82FBBA9317D8A",
-          "FieldAlias": "Depth",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "DEPTH",
+          "Datatype": "CHAR",
+          "FieldAlias": "SOURCE",
+          "FieldId": "CBE1D164037A73D41A350F0C39529CE4D5F707F6",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "BU_SOURCE",
+          "FieldName": "SOURCE",
           "Position": 13,
-          "Description": "",
+          "Description": "Data Origin Types",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('57ACD2A327EF26F196CE387468C82FBBA9317D8A')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CBE1D164037A73D41A350F0C39529CE4D5F707F6')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('57ACD2A327EF26F196CE387468C82FBBA9317D8A')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CBE1D164037A73D41A350F0C39529CE4D5F707F6')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('57ACD2A327EF26F196CE387468C82FBBA9317D8A')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7830DCEFDAB4968319183FD34F1A088944DF5848')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7830DCEFDAB4968319183FD34F1A088944DF5848')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4",
-          "FieldAlias": "DimensionUnit",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "DIMENSIONUNIT",
+          "Datatype": "CHAR",
+          "FieldAlias": "TITLE",
+          "FieldId": "7830DCEFDAB4968319183FD34F1A088944DF5848",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "AD_TITLE",
+          "FieldName": "TITLE",
           "Position": 14,
-          "Description": "",
+          "Description": "Form-of-Address Key",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7830DCEFDAB4968319183FD34F1A088944DF5848')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7830DCEFDAB4968319183FD34F1A088944DF5848')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0C9EA41046D6F3D1D64220D4842F3A3243CD5BF4')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F55B5FD75ED853C9683062327B2C83CF5CBFAF91')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F55B5FD75ED853C9683062327B2C83CF5CBFAF91')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('072C33F1053A6119CB75580E0275CDEFE31E0012')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('072C33F1053A6119CB75580E0275CDEFE31E0012')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "F55B5FD75ED853C9683062327B2C83CF5CBFAF91",
-          "FieldAlias": "ProductPictureURL",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "PRODUCTPICTUREURL",
+          "Datatype": "CHAR",
+          "FieldAlias": "XDELE",
+          "FieldId": "072C33F1053A6119CB75580E0275CDEFE31E0012",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_XDELE",
+          "FieldName": "XDELE",
           "Position": 15,
-          "Description": "",
+          "Description": "Central Archiving Flag",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F55B5FD75ED853C9683062327B2C83CF5CBFAF91')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('072C33F1053A6119CB75580E0275CDEFE31E0012')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F55B5FD75ED853C9683062327B2C83CF5CBFAF91')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('072C33F1053A6119CB75580E0275CDEFE31E0012')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F55B5FD75ED853C9683062327B2C83CF5CBFAF91')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('14975A1BD4869A35A29CF622EA5CA522E78AAA56')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('14975A1BD4869A35A29CF622EA5CA522E78AAA56')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30",
-          "FieldAlias": "ProductValueAddedTax",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "PRODUCTVALUEADDEDTAX",
+          "Datatype": "CHAR",
+          "FieldAlias": "XBLCK",
+          "FieldId": "14975A1BD4869A35A29CF622EA5CA522E78AAA56",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_XBLCK",
+          "FieldName": "XBLCK",
           "Position": 16,
-          "Description": "",
+          "Description": "Central Block for Business Partner",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('14975A1BD4869A35A29CF622EA5CA522E78AAA56')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('14975A1BD4869A35A29CF622EA5CA522E78AAA56')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E03CB9F1FF66C348D0377141F5CE58D7FB8EDB30')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EE1B1322EB2BC4E831780F6CA56B6B6085F594CE')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EE1B1322EB2BC4E831780F6CA56B6B6085F594CE')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('827363A9423AAC48CA0C9DCA12DE4DAC6A39B028')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('827363A9423AAC48CA0C9DCA12DE4DAC6A39B028')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "EE1B1322EB2BC4E831780F6CA56B6B6085F594CE",
-          "FieldAlias": "ProductNameGroupUUID",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "PRODUCTNAMEGROUPUUID",
+          "Datatype": "CHAR",
+          "FieldAlias": "AUGRP",
+          "FieldId": "827363A9423AAC48CA0C9DCA12DE4DAC6A39B028",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "BU_AUGRP",
+          "FieldName": "AUGRP",
           "Position": 17,
-          "Description": "",
+          "Description": "Authorization Group",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EE1B1322EB2BC4E831780F6CA56B6B6085F594CE')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('827363A9423AAC48CA0C9DCA12DE4DAC6A39B028')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EE1B1322EB2BC4E831780F6CA56B6B6085F594CE')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('827363A9423AAC48CA0C9DCA12DE4DAC6A39B028')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EE1B1322EB2BC4E831780F6CA56B6B6085F594CE')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('316700621E74F14F22A89E4A1484ACD83D4C9972')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('316700621E74F14F22A89E4A1484ACD83D4C9972')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1FD2B37C064902D818A5E1F016900D86F3B32E98')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1FD2B37C064902D818A5E1F016900D86F3B32E98')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "316700621E74F14F22A89E4A1484ACD83D4C9972",
-          "FieldAlias": "ProductDescriptionGroupUUID",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "PRODUCTDESCRIPTIONGROUPUUID",
+          "Datatype": "CHAR",
+          "FieldAlias": "TITLE_LET",
+          "FieldId": "1FD2B37C064902D818A5E1F016900D86F3B32E98",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "50",
+          "DataElement": "BU_TITLE_LET",
+          "FieldName": "TITLE_LET",
           "Position": 18,
-          "Description": "",
+          "Description": "Salutation",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('316700621E74F14F22A89E4A1484ACD83D4C9972')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1FD2B37C064902D818A5E1F016900D86F3B32E98')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('316700621E74F14F22A89E4A1484ACD83D4C9972')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1FD2B37C064902D818A5E1F016900D86F3B32E98')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('316700621E74F14F22A89E4A1484ACD83D4C9972')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8D72BE1AD86F5B701496926D3FCF128D2E4A750F')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8D72BE1AD86F5B701496926D3FCF128D2E4A750F')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7E31F1FD4C48579DBF18FB21F48F84EFBCA5713B')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7E31F1FD4C48579DBF18FB21F48F84EFBCA5713B')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "8D72BE1AD86F5B701496926D3FCF128D2E4A750F",
-          "FieldAlias": "SupplierUUID",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "SUPPLIERUUID",
+          "Datatype": "CHAR",
+          "FieldAlias": "BU_LOGSYS",
+          "FieldId": "7E31F1FD4C48579DBF18FB21F48F84EFBCA5713B",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "10",
+          "DataElement": "LOGSYS",
+          "FieldName": "BU_LOGSYS",
           "Position": 19,
-          "Description": "",
+          "Description": "Logical system",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8D72BE1AD86F5B701496926D3FCF128D2E4A750F')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7E31F1FD4C48579DBF18FB21F48F84EFBCA5713B')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8D72BE1AD86F5B701496926D3FCF128D2E4A750F')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7E31F1FD4C48579DBF18FB21F48F84EFBCA5713B')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8D72BE1AD86F5B701496926D3FCF128D2E4A750F')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('981CB32361A0D87E62B33DBDE2499A5DE53E5A0D')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('981CB32361A0D87E62B33DBDE2499A5DE53E5A0D')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3E6D4CA4753226420C879B7596E69CD7D6EC225C')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3E6D4CA4753226420C879B7596E69CD7D6EC225C')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "981CB32361A0D87E62B33DBDE2499A5DE53E5A0D",
-          "FieldAlias": "ProductBaseUnit",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "PRODUCTBASEUNIT",
+          "Datatype": "CHAR",
+          "FieldAlias": "CONTACT",
+          "FieldId": "3E6D4CA4753226420C879B7596E69CD7D6EC225C",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_CONTACT",
+          "FieldName": "CONTACT",
           "Position": 20,
-          "Description": "",
+          "Description": "Business Partner: Contact Permission",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('981CB32361A0D87E62B33DBDE2499A5DE53E5A0D')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3E6D4CA4753226420C879B7596E69CD7D6EC225C')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('981CB32361A0D87E62B33DBDE2499A5DE53E5A0D')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3E6D4CA4753226420C879B7596E69CD7D6EC225C')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('981CB32361A0D87E62B33DBDE2499A5DE53E5A0D')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7950FFA899B006500978E59D81B9FD792FF73349')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7950FFA899B006500978E59D81B9FD792FF73349')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2BC3B0184F3ADD959072F2657EB8895CB60BEE61')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2BC3B0184F3ADD959072F2657EB8895CB60BEE61')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "7950FFA899B006500978E59D81B9FD792FF73349",
-          "FieldAlias": "Weight",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "WEIGHT",
+          "Datatype": "CHAR",
+          "FieldAlias": "NOT_RELEASED",
+          "FieldId": "2BC3B0184F3ADD959072F2657EB8895CB60BEE61",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_XNOT_RELEASED",
+          "FieldName": "NOT_RELEASED",
           "Position": 21,
-          "Description": "",
+          "Description": "Indicator: Not Released",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7950FFA899B006500978E59D81B9FD792FF73349')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2BC3B0184F3ADD959072F2657EB8895CB60BEE61')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7950FFA899B006500978E59D81B9FD792FF73349')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2BC3B0184F3ADD959072F2657EB8895CB60BEE61')/toProperties"
             }
           },
           "toAnnotations": {
-            "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7950FFA899B006500978E59D81B9FD792FF73349')/toAnnotations"
-            }
+            "results": []
           }
         },
         {
           "__metadata": {
-            "id": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('91457F1C1DDF4F6711675AFA3A5B620A1471F2B7')",
-            "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('91457F1C1DDF4F6711675AFA3A5B620A1471F2B7')",
-            "type": "CADAXO_MDS_SRV.Field"
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1ABDE57442106F143207E522DD7DF19C3955DBCE')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1ABDE57442106F143207E522DD7DF19C3955DBCE')",
+            "type": "/CADAXO/MDS_SRV.Field"
           },
-          "FieldId": "91457F1C1DDF4F6711675AFA3A5B620A1471F2B7",
-          "FieldAlias": "WeightUnit",
-          "DsId": "329B61282C89297F1D5B273AD60BDE95F62E1AAD",
-          "FieldName": "WEIGHTUNIT",
+          "Datatype": "CHAR",
+          "FieldAlias": "NOT_LG_COMPETENT",
+          "FieldId": "1ABDE57442106F143207E522DD7DF19C3955DBCE",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_NOT_LEG_COMPETENT",
+          "FieldName": "NOT_LG_COMPETENT",
           "Position": 22,
+          "Description": "Indicator: Not Legally Competent",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1ABDE57442106F143207E522DD7DF19C3955DBCE')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1ABDE57442106F143207E522DD7DF19C3955DBCE')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('4B8301CC14171E6CF7F5EF8A83A0DA99107FBD05')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('4B8301CC14171E6CF7F5EF8A83A0DA99107FBD05')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PRINT_MODE",
+          "FieldId": "4B8301CC14171E6CF7F5EF8A83A0DA99107FBD05",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_PRINT_MODE",
+          "FieldName": "PRINT_MODE",
+          "Position": 23,
+          "Description": "Business Partner Print Format",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('4B8301CC14171E6CF7F5EF8A83A0DA99107FBD05')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('4B8301CC14171E6CF7F5EF8A83A0DA99107FBD05')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6494B3931C916EBBC453FE6F60EB2D9FB0502053')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6494B3931C916EBBC453FE6F60EB2D9FB0502053')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "BP_EEW_DUMMY",
+          "FieldId": "6494B3931C916EBBC453FE6F60EB2D9FB0502053",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "DUMMY",
+          "FieldName": "BP_EEW_DUMMY",
+          "Position": 25,
+          "Description": "Dummy function in length 1",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6494B3931C916EBBC453FE6F60EB2D9FB0502053')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6494B3931C916EBBC453FE6F60EB2D9FB0502053')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D7327E5161A7A5B097C34B98642091F2CA567BCB')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D7327E5161A7A5B097C34B98642091F2CA567BCB')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "ZZZPARTNERTY",
+          "FieldId": "D7327E5161A7A5B097C34B98642091F2CA567BCB",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "2",
+          "DataElement": "ZBU_009DKIUZ",
+          "FieldName": "ZZZPARTNERTY",
+          "Position": 28,
+          "Description": "Generated Data Element ZPARTNERTYPE",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D7327E5161A7A5B097C34B98642091F2CA567BCB')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D7327E5161A7A5B097C34B98642091F2CA567BCB')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3928BF8C1DD6229F80AE4D7AA99FB015B6C68CA6')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3928BF8C1DD6229F80AE4D7AA99FB015B6C68CA6')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAME_ORG1",
+          "FieldId": "3928BF8C1DD6229F80AE4D7AA99FB015B6C68CA6",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_NAMEOR1",
+          "FieldName": "NAME_ORG1",
+          "Position": 31,
+          "Description": "Name 1 of organization",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3928BF8C1DD6229F80AE4D7AA99FB015B6C68CA6')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3928BF8C1DD6229F80AE4D7AA99FB015B6C68CA6')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('749C0ECEC59A65D309A68556B75E2A81C9DC63B6')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('749C0ECEC59A65D309A68556B75E2A81C9DC63B6')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAME_ORG2",
+          "FieldId": "749C0ECEC59A65D309A68556B75E2A81C9DC63B6",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_NAMEOR2",
+          "FieldName": "NAME_ORG2",
+          "Position": 32,
+          "Description": "Name 2 of organization",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('749C0ECEC59A65D309A68556B75E2A81C9DC63B6')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('749C0ECEC59A65D309A68556B75E2A81C9DC63B6')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('36588936386A8841027C24D040B8175656CE1688')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('36588936386A8841027C24D040B8175656CE1688')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAME_ORG3",
+          "FieldId": "36588936386A8841027C24D040B8175656CE1688",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_NAMEOR3",
+          "FieldName": "NAME_ORG3",
+          "Position": 33,
+          "Description": "Name 3 of organization",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('36588936386A8841027C24D040B8175656CE1688')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('36588936386A8841027C24D040B8175656CE1688')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6D47394BA661C71240DA8110D5E3084581FA8FF3')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6D47394BA661C71240DA8110D5E3084581FA8FF3')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAME_ORG4",
+          "FieldId": "6D47394BA661C71240DA8110D5E3084581FA8FF3",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_NAMEOR4",
+          "FieldName": "NAME_ORG4",
+          "Position": 34,
+          "Description": "Name 4 of organization",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6D47394BA661C71240DA8110D5E3084581FA8FF3')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6D47394BA661C71240DA8110D5E3084581FA8FF3')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D97C1D281448233F4C1542588E1015E025832873')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D97C1D281448233F4C1542588E1015E025832873')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "LEGAL_ENTY",
+          "FieldId": "D97C1D281448233F4C1542588E1015E025832873",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "2",
+          "DataElement": "BU_LEGENTY",
+          "FieldName": "LEGAL_ENTY",
+          "Position": 35,
+          "Description": "BP: Legal form of organization",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D97C1D281448233F4C1542588E1015E025832873')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('D97C1D281448233F4C1542588E1015E025832873')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5841785AFEEB03EB5448E47C11095A31808A188')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5841785AFEEB03EB5448E47C11095A31808A188')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "IND_SECTOR",
+          "FieldId": "A5841785AFEEB03EB5448E47C11095A31808A188",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "10",
+          "DataElement": "BU_INDSECT",
+          "FieldName": "IND_SECTOR",
+          "Position": 36,
+          "Description": "Industry sector",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5841785AFEEB03EB5448E47C11095A31808A188')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5841785AFEEB03EB5448E47C11095A31808A188')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('459114171AA519788D37FB94FC2967C5D222ECAB')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('459114171AA519788D37FB94FC2967C5D222ECAB')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "LEGAL_ORG",
+          "FieldId": "459114171AA519788D37FB94FC2967C5D222ECAB",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "2",
+          "DataElement": "BU_LEGAL_ORG",
+          "FieldName": "LEGAL_ORG",
+          "Position": 37,
+          "Description": "Legal Entity of Organization",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('459114171AA519788D37FB94FC2967C5D222ECAB')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('459114171AA519788D37FB94FC2967C5D222ECAB')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('061B855160AB311DC5B7DA5BEE420E65F987A3E3')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('061B855160AB311DC5B7DA5BEE420E65F987A3E3')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "DATS",
+          "FieldAlias": "FOUND_DAT",
+          "FieldId": "061B855160AB311DC5B7DA5BEE420E65F987A3E3",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "8",
+          "DataElement": "BU_FOUND_DAT",
+          "FieldName": "FOUND_DAT",
+          "Position": 39,
+          "Description": "Date organization founded",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('061B855160AB311DC5B7DA5BEE420E65F987A3E3')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('061B855160AB311DC5B7DA5BEE420E65F987A3E3')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0F6FA28A92F5A4232310E66B91B6C288352E0CB1')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0F6FA28A92F5A4232310E66B91B6C288352E0CB1')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "DATS",
+          "FieldAlias": "LIQUID_DAT",
+          "FieldId": "0F6FA28A92F5A4232310E66B91B6C288352E0CB1",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "8",
+          "DataElement": "BU_LIQUID_DAT",
+          "FieldName": "LIQUID_DAT",
+          "Position": 40,
           "Description": "",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('91457F1C1DDF4F6711675AFA3A5B620A1471F2B7')/toDatasource"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0F6FA28A92F5A4232310E66B91B6C288352E0CB1')/toDatasource"
             }
           },
-          "toParameters": {
+          "toProperties": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('91457F1C1DDF4F6711675AFA3A5B620A1471F2B7')/toParameters"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0F6FA28A92F5A4232310E66B91B6C288352E0CB1')/toProperties"
             }
           },
           "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('99D3926D028625EAF36E865668F5537FD13C6F74')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('99D3926D028625EAF36E865668F5537FD13C6F74')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "NUMC",
+          "FieldAlias": "LOCATION_1",
+          "FieldId": "99D3926D028625EAF36E865668F5537FD13C6F74",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "7",
+          "DataElement": "BBBNR",
+          "FieldName": "LOCATION_1",
+          "Position": 41,
+          "Description": "International location number  (part 1)",
+          "ObjectState": 0,
+          "toDatasource": {
             "__deferred": {
-              "uri": "http://52.91.224.17:50000/sap/opu/odata/CADAXO/MDS_SRV/Fields('91457F1C1DDF4F6711675AFA3A5B620A1471F2B7')/toAnnotations"
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('99D3926D028625EAF36E865668F5537FD13C6F74')/toDatasource"
             }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('99D3926D028625EAF36E865668F5537FD13C6F74')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2C192EE8ADA5A507DB19B102A376DDF3D5B4DB3E')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2C192EE8ADA5A507DB19B102A376DDF3D5B4DB3E')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "NUMC",
+          "FieldAlias": "LOCATION_2",
+          "FieldId": "2C192EE8ADA5A507DB19B102A376DDF3D5B4DB3E",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "5",
+          "DataElement": "BBSNR",
+          "FieldName": "LOCATION_2",
+          "Position": 42,
+          "Description": "International location number (Part 2)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2C192EE8ADA5A507DB19B102A376DDF3D5B4DB3E')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2C192EE8ADA5A507DB19B102A376DDF3D5B4DB3E')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B53098901CCAFAB07B96FFA385664800935C6172')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B53098901CCAFAB07B96FFA385664800935C6172')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "NUMC",
+          "FieldAlias": "LOCATION_3",
+          "FieldId": "B53098901CCAFAB07B96FFA385664800935C6172",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BUBKZ",
+          "FieldName": "LOCATION_3",
+          "Position": 43,
+          "Description": "Check digit for the international location number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B53098901CCAFAB07B96FFA385664800935C6172')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B53098901CCAFAB07B96FFA385664800935C6172')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('94D30685C3F60463FA2ADF90DE7F583AF1936C1C')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('94D30685C3F60463FA2ADF90DE7F583AF1936C1C')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAME_LAST",
+          "FieldId": "94D30685C3F60463FA2ADF90DE7F583AF1936C1C",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_NAMEP_L",
+          "FieldName": "NAME_LAST",
+          "Position": 46,
+          "Description": "Last name of business partner (person)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('94D30685C3F60463FA2ADF90DE7F583AF1936C1C')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('94D30685C3F60463FA2ADF90DE7F583AF1936C1C')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EC9171F8152F4A78240BF737F66E03A1F67C986B')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EC9171F8152F4A78240BF737F66E03A1F67C986B')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAME_FIRST",
+          "FieldId": "EC9171F8152F4A78240BF737F66E03A1F67C986B",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_NAMEP_F",
+          "FieldName": "NAME_FIRST",
+          "Position": 47,
+          "Description": "First name of business partner (person)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EC9171F8152F4A78240BF737F66E03A1F67C986B')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('EC9171F8152F4A78240BF737F66E03A1F67C986B')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E303C6AC2FFBC24FD34D2BFA557E4C5E065E0619')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E303C6AC2FFBC24FD34D2BFA557E4C5E065E0619')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAME_LST2",
+          "FieldId": "E303C6AC2FFBC24FD34D2BFA557E4C5E065E0619",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_NAMEPL2",
+          "FieldName": "NAME_LST2",
+          "Position": 48,
+          "Description": "Other Last Name of a Person",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E303C6AC2FFBC24FD34D2BFA557E4C5E065E0619')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E303C6AC2FFBC24FD34D2BFA557E4C5E065E0619')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('365C8C00AE980C0F65C00A22BF5E90123E3347C5')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('365C8C00AE980C0F65C00A22BF5E90123E3347C5')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAME_LAST2",
+          "FieldId": "365C8C00AE980C0F65C00A22BF5E90123E3347C5",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_BIRTHNM",
+          "FieldName": "NAME_LAST2",
+          "Position": 49,
+          "Description": "Name at birth of business partner",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('365C8C00AE980C0F65C00A22BF5E90123E3347C5')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('365C8C00AE980C0F65C00A22BF5E90123E3347C5')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('063986170AE8EAE0A524B7911EF56FB1870F1BBC')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('063986170AE8EAE0A524B7911EF56FB1870F1BBC')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAMEMIDDLE",
+          "FieldId": "063986170AE8EAE0A524B7911EF56FB1870F1BBC",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_NAMEMID",
+          "FieldName": "NAMEMIDDLE",
+          "Position": 50,
+          "Description": "Middle name or second forename of a person",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('063986170AE8EAE0A524B7911EF56FB1870F1BBC')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('063986170AE8EAE0A524B7911EF56FB1870F1BBC')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('BD52EABC9B742C633DC1EFBF51598C32B5BC8278')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('BD52EABC9B742C633DC1EFBF51598C32B5BC8278')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "TITLE_ACA1",
+          "FieldId": "BD52EABC9B742C633DC1EFBF51598C32B5BC8278",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "AD_TITLE1",
+          "FieldName": "TITLE_ACA1",
+          "Position": 51,
+          "Description": "Academic Title: Key",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('BD52EABC9B742C633DC1EFBF51598C32B5BC8278')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('BD52EABC9B742C633DC1EFBF51598C32B5BC8278')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('107C7C8A7779A1A8CBE94953E2D0DC2571492EA0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('107C7C8A7779A1A8CBE94953E2D0DC2571492EA0')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "TITLE_ACA2",
+          "FieldId": "107C7C8A7779A1A8CBE94953E2D0DC2571492EA0",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "AD_TITLE2",
+          "FieldName": "TITLE_ACA2",
+          "Position": 52,
+          "Description": "Second academic title (key)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('107C7C8A7779A1A8CBE94953E2D0DC2571492EA0')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('107C7C8A7779A1A8CBE94953E2D0DC2571492EA0')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7813BE6B7AB342FF8E597C84A87FBC62454C5C0B')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7813BE6B7AB342FF8E597C84A87FBC62454C5C0B')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "TITLE_ROYL",
+          "FieldId": "7813BE6B7AB342FF8E597C84A87FBC62454C5C0B",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "AD_TITLES",
+          "FieldName": "TITLE_ROYL",
+          "Position": 53,
+          "Description": "Name supplement, e.g. noble title (key)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7813BE6B7AB342FF8E597C84A87FBC62454C5C0B')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('7813BE6B7AB342FF8E597C84A87FBC62454C5C0B')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B0617F4C1200A317432C5539FC6E75C019CF19B6')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B0617F4C1200A317432C5539FC6E75C019CF19B6')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PREFIX1",
+          "FieldId": "B0617F4C1200A317432C5539FC6E75C019CF19B6",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "AD_PREFIX",
+          "FieldName": "PREFIX1",
+          "Position": 54,
+          "Description": "Name Prefix (Key)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B0617F4C1200A317432C5539FC6E75C019CF19B6')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B0617F4C1200A317432C5539FC6E75C019CF19B6')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CE7E57348ECA3F120896D87821E0D0668CDC188B')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CE7E57348ECA3F120896D87821E0D0668CDC188B')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PREFIX2",
+          "FieldId": "CE7E57348ECA3F120896D87821E0D0668CDC188B",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "AD_PREFIX2",
+          "FieldName": "PREFIX2",
+          "Position": 55,
+          "Description": "2nd name prefix (key)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CE7E57348ECA3F120896D87821E0D0668CDC188B')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CE7E57348ECA3F120896D87821E0D0668CDC188B')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('46C0308721D7B52286F30AF118602EE0D005D34C')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('46C0308721D7B52286F30AF118602EE0D005D34C')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAME1_TEXT",
+          "FieldId": "46C0308721D7B52286F30AF118602EE0D005D34C",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "80",
+          "DataElement": "BU_NAME1TX",
+          "FieldName": "NAME1_TEXT",
+          "Position": 56,
+          "Description": "Full Name",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('46C0308721D7B52286F30AF118602EE0D005D34C')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('46C0308721D7B52286F30AF118602EE0D005D34C')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6BF5826C6E924A52F5FF3425BD2096273A082524')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6BF5826C6E924A52F5FF3425BD2096273A082524')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NICKNAME",
+          "FieldId": "6BF5826C6E924A52F5FF3425BD2096273A082524",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_NICKNAM",
+          "FieldName": "NICKNAME",
+          "Position": 57,
+          "Description": "Nickname of Business Partner (Person)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6BF5826C6E924A52F5FF3425BD2096273A082524')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6BF5826C6E924A52F5FF3425BD2096273A082524')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73C0B21897C51AF8B0FDD1E66A596A768D913A53')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73C0B21897C51AF8B0FDD1E66A596A768D913A53')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "INITIALS",
+          "FieldId": "73C0B21897C51AF8B0FDD1E66A596A768D913A53",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "10",
+          "DataElement": "AD_INITS",
+          "FieldName": "INITIALS",
+          "Position": 58,
+          "Description": "\"Middle Initial\" or personal initials",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73C0B21897C51AF8B0FDD1E66A596A768D913A53')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73C0B21897C51AF8B0FDD1E66A596A768D913A53')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2F4408FEC8EDCBBB338EBE3D3547A3EC70C920E5')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2F4408FEC8EDCBBB338EBE3D3547A3EC70C920E5')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAMEFORMAT",
+          "FieldId": "2F4408FEC8EDCBBB338EBE3D3547A3EC70C920E5",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "2",
+          "DataElement": "AD_FORMAT",
+          "FieldName": "NAMEFORMAT",
+          "Position": 59,
+          "Description": "Name format",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2F4408FEC8EDCBBB338EBE3D3547A3EC70C920E5')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2F4408FEC8EDCBBB338EBE3D3547A3EC70C920E5')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('90E7BE8EBCF34362F972361871243075AB7C691E')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('90E7BE8EBCF34362F972361871243075AB7C691E')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAMCOUNTRY",
+          "FieldId": "90E7BE8EBCF34362F972361871243075AB7C691E",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "3",
+          "DataElement": "AD_NAMCTRY",
+          "FieldName": "NAMCOUNTRY",
+          "Position": 60,
+          "Description": "Country for name format rule",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('90E7BE8EBCF34362F972361871243075AB7C691E')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('90E7BE8EBCF34362F972361871243075AB7C691E')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('332613949BD5280FCBF26FAB253119C6FD2D7B76')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('332613949BD5280FCBF26FAB253119C6FD2D7B76')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "LANG",
+          "FieldAlias": "LANGU_CORR",
+          "FieldId": "332613949BD5280FCBF26FAB253119C6FD2D7B76",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_LANGU_CORR",
+          "FieldName": "LANGU_CORR",
+          "Position": 61,
+          "Description": "Business Partner: Correspondence Language",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('332613949BD5280FCBF26FAB253119C6FD2D7B76')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('332613949BD5280FCBF26FAB253119C6FD2D7B76')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5A7EAC4981BE14D7621B797D232447166966C1A3')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5A7EAC4981BE14D7621B797D232447166966C1A3')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "XSEXM",
+          "FieldId": "5A7EAC4981BE14D7621B797D232447166966C1A3",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_XSEXM",
+          "FieldName": "XSEXM",
+          "Position": 62,
+          "Description": "Selection: Business partner is male",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5A7EAC4981BE14D7621B797D232447166966C1A3')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5A7EAC4981BE14D7621B797D232447166966C1A3')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A58DFAE4405C345E56FA7775B37467CFA2EAF7A2')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A58DFAE4405C345E56FA7775B37467CFA2EAF7A2')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "XSEXF",
+          "FieldId": "A58DFAE4405C345E56FA7775B37467CFA2EAF7A2",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_XSEXF",
+          "FieldName": "XSEXF",
+          "Position": 63,
+          "Description": "Selection: Business partner is female",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A58DFAE4405C345E56FA7775B37467CFA2EAF7A2')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A58DFAE4405C345E56FA7775B37467CFA2EAF7A2')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C7DE89A52E4F7BFFF40857AE6D047AB2C8C57A22')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C7DE89A52E4F7BFFF40857AE6D047AB2C8C57A22')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "BIRTHPL",
+          "FieldId": "C7DE89A52E4F7BFFF40857AE6D047AB2C8C57A22",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_BIRTHPL",
+          "FieldName": "BIRTHPL",
+          "Position": 64,
+          "Description": "Birthplace of business partner",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C7DE89A52E4F7BFFF40857AE6D047AB2C8C57A22')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C7DE89A52E4F7BFFF40857AE6D047AB2C8C57A22')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6CCD48B98A80673D55BA1424F4A8AE1E20A414BD')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6CCD48B98A80673D55BA1424F4A8AE1E20A414BD')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "MARST",
+          "FieldId": "6CCD48B98A80673D55BA1424F4A8AE1E20A414BD",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_MARST",
+          "FieldName": "MARST",
+          "Position": 65,
+          "Description": "Marital Status of Business Partner",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6CCD48B98A80673D55BA1424F4A8AE1E20A414BD')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6CCD48B98A80673D55BA1424F4A8AE1E20A414BD')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('622BA8639437F1429F830394BF77C1BD70B51EA2')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('622BA8639437F1429F830394BF77C1BD70B51EA2')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "EMPLO",
+          "FieldId": "622BA8639437F1429F830394BF77C1BD70B51EA2",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "35",
+          "DataElement": "BU_EMPLO",
+          "FieldName": "EMPLO",
+          "Position": 66,
+          "Description": "Name of Employer of a Natural Person",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('622BA8639437F1429F830394BF77C1BD70B51EA2')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('622BA8639437F1429F830394BF77C1BD70B51EA2')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('9601A8819BCD3918071F4852F41EF56E8C2367AA')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('9601A8819BCD3918071F4852F41EF56E8C2367AA')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "JOBGR",
+          "FieldId": "9601A8819BCD3918071F4852F41EF56E8C2367AA",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "BU_JOBGR",
+          "FieldName": "JOBGR",
+          "Position": 67,
+          "Description": "Occupation/group",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('9601A8819BCD3918071F4852F41EF56E8C2367AA')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('9601A8819BCD3918071F4852F41EF56E8C2367AA')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('810CE5E9DFC786B3EF355ACBA85BF53AFBDBF11B')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('810CE5E9DFC786B3EF355ACBA85BF53AFBDBF11B')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NATIO",
+          "FieldId": "810CE5E9DFC786B3EF355ACBA85BF53AFBDBF11B",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "3",
+          "DataElement": "BU_NATIO",
+          "FieldName": "NATIO",
+          "Position": 68,
+          "Description": "Nationality",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('810CE5E9DFC786B3EF355ACBA85BF53AFBDBF11B')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('810CE5E9DFC786B3EF355ACBA85BF53AFBDBF11B')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5B6B4B031EB42B2E76F03E9AD513973D6413BCB')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5B6B4B031EB42B2E76F03E9AD513973D6413BCB')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "CNTAX",
+          "FieldId": "A5B6B4B031EB42B2E76F03E9AD513973D6413BCB",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "3",
+          "DataElement": "BU_CNTAX",
+          "FieldName": "CNTAX",
+          "Position": 69,
+          "Description": "Obsolete Field",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5B6B4B031EB42B2E76F03E9AD513973D6413BCB')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A5B6B4B031EB42B2E76F03E9AD513973D6413BCB')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('369D445DD23269AE6E2135F0DE153C04947BAC21')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('369D445DD23269AE6E2135F0DE153C04947BAC21')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "CNDSC",
+          "FieldId": "369D445DD23269AE6E2135F0DE153C04947BAC21",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "3",
+          "DataElement": "BU_CNDSC",
+          "FieldName": "CNDSC",
+          "Position": 70,
+          "Description": "Ctry of Origin: Non-Res. Companies",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('369D445DD23269AE6E2135F0DE153C04947BAC21')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('369D445DD23269AE6E2135F0DE153C04947BAC21')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3B8EF1678D0DB676D48AA0C4C0A83354AD2C5269')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3B8EF1678D0DB676D48AA0C4C0A83354AD2C5269')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PERSNUMBER",
+          "FieldId": "3B8EF1678D0DB676D48AA0C4C0A83354AD2C5269",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "10",
+          "DataElement": "AD_PERSNUM",
+          "FieldName": "PERSNUMBER",
+          "Position": 71,
+          "Description": "Person number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3B8EF1678D0DB676D48AA0C4C0A83354AD2C5269')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3B8EF1678D0DB676D48AA0C4C0A83354AD2C5269')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C51A11E99D220C98B2793F2441BF2B5E121FC745')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C51A11E99D220C98B2793F2441BF2B5E121FC745')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "XSEXU",
+          "FieldId": "C51A11E99D220C98B2793F2441BF2B5E121FC745",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_XSEXU",
+          "FieldName": "XSEXU",
+          "Position": 72,
+          "Description": "Selection: Sex of business partner is not known",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C51A11E99D220C98B2793F2441BF2B5E121FC745')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C51A11E99D220C98B2793F2441BF2B5E121FC745')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A7876CC6434063B8D894A0775779FBDD6EDA4302')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A7876CC6434063B8D894A0775779FBDD6EDA4302')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "XUBNAME",
+          "FieldId": "A7876CC6434063B8D894A0775779FBDD6EDA4302",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "12",
+          "DataElement": "BU_XUBNAME",
+          "FieldName": "XUBNAME",
+          "Position": 73,
+          "Description": "Obsolete Field",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A7876CC6434063B8D894A0775779FBDD6EDA4302')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A7876CC6434063B8D894A0775779FBDD6EDA4302')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('35D6DF023A3F7E37E74137225ACAB2534C0F0480')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('35D6DF023A3F7E37E74137225ACAB2534C0F0480')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "LANG",
+          "FieldAlias": "BU_LANGU",
+          "FieldId": "35D6DF023A3F7E37E74137225ACAB2534C0F0480",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_LANGU",
+          "FieldName": "BU_LANGU",
+          "Position": 74,
+          "Description": "Business partner: Language",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('35D6DF023A3F7E37E74137225ACAB2534C0F0480')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('35D6DF023A3F7E37E74137225ACAB2534C0F0480')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('55E94728283750D196E30B74C3D9660089C23E2F')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('55E94728283750D196E30B74C3D9660089C23E2F')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "DATS",
+          "FieldAlias": "BIRTHDT",
+          "FieldId": "55E94728283750D196E30B74C3D9660089C23E2F",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "8",
+          "DataElement": "BU_BIRTHDT",
+          "FieldName": "BIRTHDT",
+          "Position": 76,
+          "Description": "Date of Birth of Business Partner",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('55E94728283750D196E30B74C3D9660089C23E2F')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('55E94728283750D196E30B74C3D9660089C23E2F')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2EC51D3928E6D1B6465BA8BF95924D7A30E9AFC3')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2EC51D3928E6D1B6465BA8BF95924D7A30E9AFC3')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "DATS",
+          "FieldAlias": "DEATHDT",
+          "FieldId": "2EC51D3928E6D1B6465BA8BF95924D7A30E9AFC3",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "8",
+          "DataElement": "BU_DEATHDT",
+          "FieldName": "DEATHDT",
+          "Position": 77,
+          "Description": "Date of death of business partner",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2EC51D3928E6D1B6465BA8BF95924D7A30E9AFC3')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('2EC51D3928E6D1B6465BA8BF95924D7A30E9AFC3')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5E95DA7E825F3241011B746ED3649D71FDB58C03')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5E95DA7E825F3241011B746ED3649D71FDB58C03')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "NUMC",
+          "FieldAlias": "PERNO",
+          "FieldId": "5E95DA7E825F3241011B746ED3649D71FDB58C03",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "8",
+          "DataElement": "BU_PERNO",
+          "FieldName": "PERNO",
+          "Position": 78,
+          "Description": "Personnel Number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5E95DA7E825F3241011B746ED3649D71FDB58C03')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5E95DA7E825F3241011B746ED3649D71FDB58C03')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1F6E614D1551398E497AC099EC81B62F64A94A0C')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1F6E614D1551398E497AC099EC81B62F64A94A0C')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "NUMC",
+          "FieldAlias": "CHILDREN",
+          "FieldId": "1F6E614D1551398E497AC099EC81B62F64A94A0C",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "2",
+          "DataElement": "BU_CHILDREN",
+          "FieldName": "CHILDREN",
+          "Position": 79,
+          "Description": "Obsolete Field",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1F6E614D1551398E497AC099EC81B62F64A94A0C')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1F6E614D1551398E497AC099EC81B62F64A94A0C')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F70610D1CF398C595696F395F391C7DCE886AA18')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F70610D1CF398C595696F395F391C7DCE886AA18')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "DEC",
+          "FieldAlias": "MEM_HOUSE",
+          "FieldId": "F70610D1CF398C595696F395F391C7DCE886AA18",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "2",
+          "DataElement": "BU_MEM_HOUSE",
+          "FieldName": "MEM_HOUSE",
+          "Position": 80,
+          "Description": "Obsolete Field",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F70610D1CF398C595696F395F391C7DCE886AA18')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F70610D1CF398C595696F395F391C7DCE886AA18')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CB602961AA7D969D480DE5620A7B1FAFFCDAE1B9')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CB602961AA7D969D480DE5620A7B1FAFFCDAE1B9')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PARTGRPTYP",
+          "FieldId": "CB602961AA7D969D480DE5620A7B1FAFFCDAE1B9",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "4",
+          "DataElement": "BU_GRPTYP",
+          "FieldName": "PARTGRPTYP",
+          "Position": 82,
+          "Description": "Group type",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CB602961AA7D969D480DE5620A7B1FAFFCDAE1B9')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('CB602961AA7D969D480DE5620A7B1FAFFCDAE1B9')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('DA14A7C1BE8369282195CCE1742759EDFEA44BEE')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('DA14A7C1BE8369282195CCE1742759EDFEA44BEE')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAME_GRP1",
+          "FieldId": "DA14A7C1BE8369282195CCE1742759EDFEA44BEE",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_NAMEGR1",
+          "FieldName": "NAME_GRP1",
+          "Position": 83,
+          "Description": "Name 1 (group)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('DA14A7C1BE8369282195CCE1742759EDFEA44BEE')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('DA14A7C1BE8369282195CCE1742759EDFEA44BEE')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5400915220077AB06162309988CFC64636C18D47')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5400915220077AB06162309988CFC64636C18D47')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NAME_GRP2",
+          "FieldId": "5400915220077AB06162309988CFC64636C18D47",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "40",
+          "DataElement": "BU_NAMEGR2",
+          "FieldName": "NAME_GRP2",
+          "Position": 84,
+          "Description": "Name 2 (group)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5400915220077AB06162309988CFC64636C18D47')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5400915220077AB06162309988CFC64636C18D47')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8518E99C86845F810FB35122575FF1944BE07721')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8518E99C86845F810FB35122575FF1944BE07721')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "MC_NAME1",
+          "FieldId": "8518E99C86845F810FB35122575FF1944BE07721",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "35",
+          "DataElement": "BU_MCNAME1",
+          "FieldName": "MC_NAME1",
+          "Position": 87,
+          "Description": "Search Help Field 1 (Name 1/Last Name)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8518E99C86845F810FB35122575FF1944BE07721')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('8518E99C86845F810FB35122575FF1944BE07721')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('300AB2D5D171E9C26F99535E6C40EF7D63E44F14')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('300AB2D5D171E9C26F99535E6C40EF7D63E44F14')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "MC_NAME2",
+          "FieldId": "300AB2D5D171E9C26F99535E6C40EF7D63E44F14",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "35",
+          "DataElement": "BU_MCNAME2",
+          "FieldName": "MC_NAME2",
+          "Position": 88,
+          "Description": "Search Help Field 2 (Name 2/First Name)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('300AB2D5D171E9C26F99535E6C40EF7D63E44F14')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('300AB2D5D171E9C26F99535E6C40EF7D63E44F14')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B81DF575503780F118FD87B222779E690B6E45A7')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B81DF575503780F118FD87B222779E690B6E45A7')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "CRUSR",
+          "FieldId": "B81DF575503780F118FD87B222779E690B6E45A7",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "12",
+          "DataElement": "BU_CRUSR",
+          "FieldName": "CRUSR",
+          "Position": 89,
+          "Description": "User who created the object",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B81DF575503780F118FD87B222779E690B6E45A7')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B81DF575503780F118FD87B222779E690B6E45A7')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1071C7CF91CC055E988C125A65EAFCA9BD06B1EB')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1071C7CF91CC055E988C125A65EAFCA9BD06B1EB')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "DATS",
+          "FieldAlias": "CRDAT",
+          "FieldId": "1071C7CF91CC055E988C125A65EAFCA9BD06B1EB",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "8",
+          "DataElement": "BU_CRDAT",
+          "FieldName": "CRDAT",
+          "Position": 90,
+          "Description": "Date on which the object was created",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1071C7CF91CC055E988C125A65EAFCA9BD06B1EB')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1071C7CF91CC055E988C125A65EAFCA9BD06B1EB')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3D47CAA78343E199AE34BECD135CB6F0652A0717')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3D47CAA78343E199AE34BECD135CB6F0652A0717')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "TIMS",
+          "FieldAlias": "CRTIM",
+          "FieldId": "3D47CAA78343E199AE34BECD135CB6F0652A0717",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "6",
+          "DataElement": "BU_CRTIM",
+          "FieldName": "CRTIM",
+          "Position": 91,
+          "Description": "Time at which the object was created",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3D47CAA78343E199AE34BECD135CB6F0652A0717')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3D47CAA78343E199AE34BECD135CB6F0652A0717')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37CC348893DC5D7EC4F14226C32943FF7C7D1B8E')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37CC348893DC5D7EC4F14226C32943FF7C7D1B8E')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "CHUSR",
+          "FieldId": "37CC348893DC5D7EC4F14226C32943FF7C7D1B8E",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "12",
+          "DataElement": "BU_CHUSR",
+          "FieldName": "CHUSR",
+          "Position": 92,
+          "Description": "Last user to change object",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37CC348893DC5D7EC4F14226C32943FF7C7D1B8E')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37CC348893DC5D7EC4F14226C32943FF7C7D1B8E')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E25F1BE7B1DE056C76CB9D07E9A6A3257BCA0396')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E25F1BE7B1DE056C76CB9D07E9A6A3257BCA0396')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "DATS",
+          "FieldAlias": "CHDAT",
+          "FieldId": "E25F1BE7B1DE056C76CB9D07E9A6A3257BCA0396",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "8",
+          "DataElement": "BU_CHDAT",
+          "FieldName": "CHDAT",
+          "Position": 93,
+          "Description": "Date when object was last changed",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E25F1BE7B1DE056C76CB9D07E9A6A3257BCA0396')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E25F1BE7B1DE056C76CB9D07E9A6A3257BCA0396')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8703A52725D9EAD8F0F5C94690B055B5E84D03B')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8703A52725D9EAD8F0F5C94690B055B5E84D03B')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "TIMS",
+          "FieldAlias": "CHTIM",
+          "FieldId": "F8703A52725D9EAD8F0F5C94690B055B5E84D03B",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "6",
+          "DataElement": "BU_CHTIM",
+          "FieldName": "CHTIM",
+          "Position": 94,
+          "Description": "Time at which object was last changed",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8703A52725D9EAD8F0F5C94690B055B5E84D03B')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('F8703A52725D9EAD8F0F5C94690B055B5E84D03B')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0CF9BEBAC4C513083392A6523711D8E055DD3C06')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0CF9BEBAC4C513083392A6523711D8E055DD3C06')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "RAW",
+          "FieldAlias": "PARTNER_GUID",
+          "FieldId": "0CF9BEBAC4C513083392A6523711D8E055DD3C06",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "16",
+          "DataElement": "BU_PARTNER_GUID",
+          "FieldName": "PARTNER_GUID",
+          "Position": 95,
+          "Description": "Business Partner GUID",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0CF9BEBAC4C513083392A6523711D8E055DD3C06')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0CF9BEBAC4C513083392A6523711D8E055DD3C06')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0EC21FE2BD66BEEADA18E44BFD8A99F674083BB9')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0EC21FE2BD66BEEADA18E44BFD8A99F674083BB9')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "ADDRCOMM",
+          "FieldId": "0EC21FE2BD66BEEADA18E44BFD8A99F674083BB9",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "10",
+          "DataElement": "BU_ADDRCOMM",
+          "FieldName": "ADDRCOMM",
+          "Position": 96,
+          "Description": "Address Number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0EC21FE2BD66BEEADA18E44BFD8A99F674083BB9')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('0EC21FE2BD66BEEADA18E44BFD8A99F674083BB9')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('FA316B4CADBE326F4AB949E58FC15BD6B4231D7C')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('FA316B4CADBE326F4AB949E58FC15BD6B4231D7C')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "TD_SWITCH",
+          "FieldId": "FA316B4CADBE326F4AB949E58FC15BD6B4231D7C",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_TD_SWITCH",
+          "FieldName": "TD_SWITCH",
+          "Position": 97,
+          "Description": "Planned Change Documents for Partner Were Converted",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('FA316B4CADBE326F4AB949E58FC15BD6B4231D7C')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('FA316B4CADBE326F4AB949E58FC15BD6B4231D7C')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5923677C379098D714C42B8E3FDBACD9F27714BE')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5923677C379098D714C42B8E3FDBACD9F27714BE')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "IS_ORG_CENTRE",
+          "FieldId": "5923677C379098D714C42B8E3FDBACD9F27714BE",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_IS_ORG_CENTRE",
+          "FieldName": "IS_ORG_CENTRE",
+          "Position": 98,
+          "Description": "Indicator: Business Partner Is Also an Organizational Center",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5923677C379098D714C42B8E3FDBACD9F27714BE')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('5923677C379098D714C42B8E3FDBACD9F27714BE')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('FBB2A13976BA7A0052CAB3D34B905E08DC3E388A')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('FBB2A13976BA7A0052CAB3D34B905E08DC3E388A')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "RAW",
+          "FieldAlias": "DB_KEY",
+          "FieldId": "FBB2A13976BA7A0052CAB3D34B905E08DC3E388A",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "16",
+          "DataElement": "SYSUUID_X",
+          "FieldName": "DB_KEY",
+          "Position": 99,
+          "Description": "UUID in X form (binary)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('FBB2A13976BA7A0052CAB3D34B905E08DC3E388A')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('FBB2A13976BA7A0052CAB3D34B905E08DC3E388A')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3C12A5EBDE337F994EF90FF5621EB1AD0D66EDC3')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3C12A5EBDE337F994EF90FF5621EB1AD0D66EDC3')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "DEC",
+          "FieldAlias": "VALID_FROM",
+          "FieldId": "3C12A5EBDE337F994EF90FF5621EB1AD0D66EDC3",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "15",
+          "DataElement": "BU_BP_VALID_FROM",
+          "FieldName": "VALID_FROM",
+          "Position": 100,
+          "Description": "Validity Start BUT000 BP Data",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3C12A5EBDE337F994EF90FF5621EB1AD0D66EDC3')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('3C12A5EBDE337F994EF90FF5621EB1AD0D66EDC3')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B0557C44BBB28D4B63A0162176EC600DDCD8D5DF')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B0557C44BBB28D4B63A0162176EC600DDCD8D5DF')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "DEC",
+          "FieldAlias": "VALID_TO",
+          "FieldId": "B0557C44BBB28D4B63A0162176EC600DDCD8D5DF",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "15",
+          "DataElement": "BU_BP_VALID_TO",
+          "FieldName": "VALID_TO",
+          "Position": 101,
+          "Description": "Validity End BUT000 BP Data",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B0557C44BBB28D4B63A0162176EC600DDCD8D5DF')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('B0557C44BBB28D4B63A0162176EC600DDCD8D5DF')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('31BB887A19C4F2A3BF941BFFC7C817B77D26EC40')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('31BB887A19C4F2A3BF941BFFC7C817B77D26EC40')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "XPCPT",
+          "FieldId": "31BB887A19C4F2A3BF941BFFC7C817B77D26EC40",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_XPCPT",
+          "FieldName": "XPCPT",
+          "Position": 102,
+          "Description": "Business Purpose Completed Flag",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('31BB887A19C4F2A3BF941BFFC7C817B77D26EC40')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('31BB887A19C4F2A3BF941BFFC7C817B77D26EC40')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E5FABE6A0179EFDC0AE8E43605C08C1006A322B0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E5FABE6A0179EFDC0AE8E43605C08C1006A322B0')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NATPERS",
+          "FieldId": "E5FABE6A0179EFDC0AE8E43605C08C1006A322B0",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "1",
+          "DataElement": "BU_NATURAL_PERSON",
+          "FieldName": "NATPERS",
+          "Position": 104,
+          "Description": "Business Partner Is a Natural Person Under the Tax Laws",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E5FABE6A0179EFDC0AE8E43605C08C1006A322B0')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('E5FABE6A0179EFDC0AE8E43605C08C1006A322B0')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PartnerNumber",
+          "FieldId": "59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "10",
+          "DataElement": "BU_PARTNER",
+          "FieldName": "PARTNERNUMBER",
+          "Position": 1,
+          "Description": "Business Partner Number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "FirstNameData",
+          "FieldId": "6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "40",
+          "DataElement": "BU_NAMEP_F",
+          "FieldName": "FIRSTNAME",
+          "Position": 2,
+          "Description": "First name of business partner (person)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "LastName",
+          "FieldId": "73633441058E1BB709AA2C0448B80C5F0FC55FF1",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "40",
+          "DataElement": "BU_NAMEP_L",
+          "FieldName": "LASTNAME",
+          "Position": 3,
+          "Description": "Last name of business partner (person)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "AddrNumber",
+          "FieldId": "504DB59A29465DF78076833DA1B9E9D1193CF8E0",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "10",
+          "DataElement": "AD_ADDRNUM",
+          "FieldName": "ADDRNUMBER",
+          "Position": 4,
+          "Description": "Address number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "Street",
+          "FieldId": "891E7643223CD015A70DCBE9FBCB57D1E601F8F0",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "60",
+          "DataElement": "AD_STREET",
+          "FieldName": "STREET",
+          "Position": 5,
+          "Description": "Street",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "City",
+          "FieldId": "37D0F450734DE9720B4F8248385E5D552F160631",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "40",
+          "DataElement": "AD_CITY1",
+          "FieldName": "CITY",
+          "Position": 6,
+          "Description": "City",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PostCode",
+          "FieldId": "1B72A96E56EA908C57BF4D9E05659E3C65110155",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "10",
+          "DataElement": "AD_PSTCD1",
+          "FieldName": "POSTCODE",
+          "Position": 7,
+          "Description": "City postal code",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "Country",
+          "FieldId": "A378C27F3099845E031A61FB5E9B2E9DC917B495",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "3",
+          "DataElement": "LAND1",
+          "FieldName": "COUNTRY",
+          "Position": 8,
+          "Description": "Country Key",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+
+
+
+        
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PartnerNumber",
+          "FieldId": "59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE11",
+          "Length": "10",
+          "DataElement": "BU_PARTNER",
+          "FieldName": "PARTNERNUMBER",
+          "Position": 1,
+          "Description": "Business Partner Number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "NameFirst",
+          "FieldId": "6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE11",
+          "Length": "40",
+          "DataElement": "BU_NAMEP_F",
+          "FieldName": "FIRSTNAME",
+          "Position": 2,
+          "Description": "First name of business partner (person)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "LastName",
+          "FieldId": "73633441058E1BB709AA2C0448B80C5F0FC55FF1",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE11",
+          "Length": "40",
+          "DataElement": "BU_NAMEP_L",
+          "FieldName": "LASTNAME",
+          "Position": 3,
+          "Description": "Last name of business partner (person)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "AddrNumber",
+          "FieldId": "504DB59A29465DF78076833DA1B9E9D1193CF8E0",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE11",
+          "Length": "10",
+          "DataElement": "AD_ADDRNUM",
+          "FieldName": "ADDRNUMBER",
+          "Position": 4,
+          "Description": "Address number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "Street",
+          "FieldId": "891E7643223CD015A70DCBE9FBCB57D1E601F8F0",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE11",
+          "Length": "60",
+          "DataElement": "AD_STREET",
+          "FieldName": "STREET",
+          "Position": 5,
+          "Description": "Street",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "City",
+          "FieldId": "37D0F450734DE9720B4F8248385E5D552F160631",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE11",
+          "Length": "40",
+          "DataElement": "AD_CITY1",
+          "FieldName": "CITY",
+          "Position": 6,
+          "Description": "City",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PostCode",
+          "FieldId": "1B72A96E56EA908C57BF4D9E05659E3C65110155",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE11",
+          "Length": "10",
+          "DataElement": "AD_PSTCD1",
+          "FieldName": "POSTCODE",
+          "Position": 7,
+          "Description": "City postal code",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "Country",
+          "FieldId": "A378C27F3099845E031A61FB5E9B2E9DC917B495",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE11",
+          "Length": "3",
+          "DataElement": "LAND1",
+          "FieldName": "COUNTRY",
+          "Position": 8,
+          "Description": "Country Key",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PartnerNumber",
+          "FieldId": "59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "10",
+          "DataElement": "BU_PARTNER",
+          "FieldName": "PARTNERNUMBER",
+          "Position": 1,
+          "Description": "Business Partner Number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "LastName",
+          "FieldId": "73633441058E1BB709AA2C0448B80C5F0FC55FF1",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "40",
+          "DataElement": "BU_NAMEP_L",
+          "FieldName": "LASTNAME",
+          "Position": 3,
+          "Description": "Last name of business partner (person)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "AddrNumber",
+          "FieldId": "504DB59A29465DF78076833DA1B9E9D1193CF8E0",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "10",
+          "DataElement": "AD_ADDRNUM",
+          "FieldName": "ADDRNUMBER",
+          "Position": 4,
+          "Description": "Address number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "Street",
+          "FieldId": "891E7643223CD015A70DCBE9FBCB57D1E601F8F0",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "60",
+          "DataElement": "AD_STREET",
+          "FieldName": "STREET",
+          "Position": 5,
+          "Description": "Street",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "City",
+          "FieldId": "37D0F450734DE9720B4F8248385E5D552F160631",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "40",
+          "DataElement": "AD_CITY1",
+          "FieldName": "CITY",
+          "Position": 6,
+          "Description": "City",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PostCode",
+          "FieldId": "1B72A96E56EA908C57BF4D9E05659E3C65110155",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "10",
+          "DataElement": "AD_PSTCD1",
+          "FieldName": "POSTCODE",
+          "Position": 7,
+          "Description": "City postal code",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "Country",
+          "FieldId": "A378C27F3099845E031A61FB5E9B2E9DC917B495",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE12",
+          "Length": "3",
+          "DataElement": "LAND1",
+          "FieldName": "COUNTRY",
+          "Position": 8,
+          "Description": "Country Key",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+
+
+
+        
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PartnerNumber",
+          "FieldId": "59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE10",
+          "Length": "10",
+          "DataElement": "BU_PARTNER",
+          "FieldName": "PARTNERNUMBER",
+          "Position": 1,
+          "Description": "Business Partner Number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('59821D89655F0B3828F59CAC3D1E8EA0EC4FE7EB')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "name_first",
+          "FieldId": "6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE10",
+          "Length": "40",
+          "DataElement": "BU_NAMEP_F",
+          "FieldName": "FIRSTNAME",
+          "Position": 2,
+          "Description": "First name of business partner (person)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('6EEAE42B5EB9C3715DE4B9BEDC70DA48483672BD')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "LastName",
+          "FieldId": "73633441058E1BB709AA2C0448B80C5F0FC55FF1",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE10",
+          "Length": "40",
+          "DataElement": "BU_NAMEP_L",
+          "FieldName": "LASTNAME",
+          "Position": 3,
+          "Description": "Last name of business partner (person)",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('73633441058E1BB709AA2C0448B80C5F0FC55FF1')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "AddrNumber",
+          "FieldId": "504DB59A29465DF78076833DA1B9E9D1193CF8E0",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE10",
+          "Length": "10",
+          "DataElement": "AD_ADDRNUM",
+          "FieldName": "ADDRNUMBER",
+          "Position": 4,
+          "Description": "Address number",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('504DB59A29465DF78076833DA1B9E9D1193CF8E0')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "Street",
+          "FieldId": "891E7643223CD015A70DCBE9FBCB57D1E601F8F0",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE10",
+          "Length": "60",
+          "DataElement": "AD_STREET",
+          "FieldName": "STREET",
+          "Position": 5,
+          "Description": "Street",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('891E7643223CD015A70DCBE9FBCB57D1E601F8F0')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "City",
+          "FieldId": "37D0F450734DE9720B4F8248385E5D552F160631",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE10",
+          "Length": "40",
+          "DataElement": "AD_CITY1",
+          "FieldName": "CITY",
+          "Position": 6,
+          "Description": "City",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('37D0F450734DE9720B4F8248385E5D552F160631')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "PostCode",
+          "FieldId": "1B72A96E56EA908C57BF4D9E05659E3C65110155",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE10",
+          "Length": "10",
+          "DataElement": "AD_PSTCD1",
+          "FieldName": "POSTCODE",
+          "Position": 7,
+          "Description": "City postal code",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('1B72A96E56EA908C57BF4D9E05659E3C65110155')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "Country",
+          "FieldId": "A378C27F3099845E031A61FB5E9B2E9DC917B495",
+          "IsKey": false,
+          "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE10",
+          "Length": "3",
+          "DataElement": "LAND1",
+          "FieldName": "COUNTRY",
+          "Position": 8,
+          "Description": "Country Key",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('A378C27F3099845E031A61FB5E9B2E9DC917B495')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
           }
         }
-      ]
+    ]

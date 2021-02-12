@@ -1,0 +1,65 @@
+{
+	"nodeBoxWidth": 200,
+	"nodes": [
+		{
+			"key": 0,
+			"title": "CDS_VIEW",
+			"icon": "sap-icon://table-view",
+            "status": "Error"
+            
+        },
+        {
+			"key": 1,
+			"title": "BUT000",
+			"icon": "sap-icon://database",
+            "status": "Error"
+            
+        },
+        {
+			"key": 2,
+			"title": "BUT020",
+			"icon": "sap-icon://database",
+            "status": "Error"
+            
+        },
+        {
+			"key": 3,
+			"title": "ADRC",
+			"icon": "sap-icon://database",
+            "status": "Error"
+            
+        },
+        {
+			"key": 4,
+			"title": "TEST_DB",
+			"icon": "sap-icon://database",
+            "status": "Error"
+            
+        }
+
+        
+
+	],
+	"lines": [
+        {
+			"from": 0,
+			"to": 1
+        },
+
+		{
+			"from": 0,
+			"to": 2
+        },
+    
+        {
+			"from": 0,
+			"to": 3
+        },
+   
+        {
+			"from": 0,
+			"to": 4
+        }
+
+	]
+}
