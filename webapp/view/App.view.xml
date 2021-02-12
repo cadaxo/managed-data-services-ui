@@ -4,12 +4,12 @@
 	<Shell id="shell" appWidthLimited="false">
 		<App id="app">
 			<pages>
-				<Page id="page" title="{i18n>title}">
+				<Page id="page" title="{i18n>title} Test">
 					<customHeader>
 						<Bar>
 							<contentLeft>
 								<Image height="40px" src="{imageModel>/cadaxoLogo}"></Image>
-								<Text class="cadaxoHeaderText" text = "{i18n>headerText}"></Text>
+								<Text class="cadaxoHeaderText" text = "{i18n>headerText} Test"></Text>
 							</contentLeft>
 						</Bar>	
 					</customHeader>
