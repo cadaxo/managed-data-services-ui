@@ -55,6 +55,13 @@
 											formatter: '.formatter.setNodeStatus'
 										}"
 										press="onNodePressed">
+										<g:actionButtons>
+												<g:ActionButton
+													id="expand-action-button"
+													title='Expand'
+													icon='sap-icon://expand'
+													press="getTablesPressed"/>
+										</g:actionButtons>
 										<!--g:actionButtons>
 											<g:ActionButton
 													icon="sap-icon://navigation-left-arrow"
@@ -117,22 +124,23 @@
 									</OverflowToolbar>
 								</headerToolbar>
 								<infoToolbar>
-									<OverflowToolbar id="toolbar" active="true" design="Info" height="2rem" press="onToolbarPress" ariaHasPopup="dialog" ariaLabelledBy="myText">
-										<Text id="myText" text="Mode: Show Database Tables"/>
+									<OverflowToolbar id="toolbar" active="false" design="Info" height="2rem" press="onToolbarPress"  ariaLabelledBy="myText">
+										<Text id="myText" text="Mode: Show CDS View Sources"/>
 										<ToolbarSpacer/>
 										<!--core:Icon src="sap-icon://undo" width="2rem" press="onIconPress"/-->
 									</OverflowToolbar>
 								</infoToolbar>
 								<content>
 									<OverflowToolbar id="toolbar-buttons">
-										<Button icon="sap-icon://hint" type="Transparent" press="handlePopoverPress" ariaHasPopup="Dialog"/>
-										<Button tooltip="Display Field Source for selected Field" type="Transparent" press="getFieldSourcePressed" id="btn-show-where-used" text="Display Field Source" enabled="false" />
-										<Button type="Transparent" press="getFieldSourcePressed" id="btn-show-full-mode" text="Switch to Freestyle Mode" enabled="true" />
+										<Button icon="sap-icon://hint" type="Transparent" press="handlePopoverPress" />
+										<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-where-used" text="Path To DB  / Display Field Source" enabled="false" />
+										<Button tooltip="Display Field Target for selected Field"  type="Transparent" press="get3MoreFields" id="btn-show-target" text="Path To UI / Display Field Target" enabled="false" />
+										<!--Button type="Transparent" press="getFieldSourcePressed" id="btn-show-full-mode" text="Switch to Freestyle Mode" enabled="true" />
 										<Button type="Transparent" press="getFieldSourcePressed" id="btn-show-full-mode2" text="Button 3" enabled="false" />
 										<Button type="Transparent" press="getFieldSourcePressed" id="btn-show-full-mode3" text="Button 4" enabled="false" />
 										<Button type="Transparent" press="getFieldSourcePressed" id="btn-show-full-mode5" text="Button 5" enabled="false" />
 										<Button type="Transparent" press="getFieldSourcePressed" id="btn-show-full-mode6" text="Button 6" enabled="false" />
-										<Button type="Transparent" press="getFieldSourcePressed" id="btn-show-full-mode7" text="Button 7" enabled="false" />
+										<Button type="Transparent" press="getFieldSourcePressed" id="btn-show-full-mode7" text="Button 7" enabled="false" /-->
 										<ToolbarSpacer/>
 									</OverflowToolbar>
 									<TabContainer id="tabs" itemSelect="tabChanged">
@@ -272,18 +280,18 @@
 							</Panel>
 						</FlexBox>
           			</content>
-					<footer>
+					<!--footer>
 						<OverflowToolbar>
 							<Button id="messagePopoverBtn"
 								icon="{ path: 'messagePopoverModel>/', formatter: '.formatter.buttonIconFormatter' }"
 								type="{ path: 'messagePopoverModel>/', formatter: '.formatter.buttonTypeFormatter' }"
 								text= "{path: 'messagePopoverModel>/', formatter: '.formatter.highestSeverityMessages' }"
 								press="handleMessagePopoverPress"
-								ariaHasPopup="Dialog"/>
+								/>
 							<ToolbarSpacer/>
 							<Text text="System: CC0, User: cadaxo" />
 						</OverflowToolbar>
-					</footer>
+					</footer-->
 				</Page>
 			</pages>
 		</App>

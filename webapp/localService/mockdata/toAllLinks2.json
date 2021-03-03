@@ -1,0 +1,147 @@
+[
+
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('1BEBC287006B3ECFFB74046E0B9B504DF7A74191')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('1BEBC287006B3ECFFB74046E0B9B504DF7A74191')",
+          "type": "/CADAXO/MDS_SRV.Link"
+        },
+        "LinkId": "1BEBC287006B3ECFFB74046E0B9B504DF7A74191",
+        "ObjectId1": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+        "ObjectId2": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Description": "as select from",
+        "Type": "BASE",
+        "CardMin": 0,
+        "CardMax": 0,
+        "toDatasource1": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('1BEBC287006B3ECFFB74046E0B9B504DF7A74191')/toDatasource1"
+          }
+        },
+        "toDatasource2": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('1BEBC287006B3ECFFB74046E0B9B504DF7A74191')/toDatasource2"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('B3FFFC31908225475B90AD18EE7D744F13B2D970')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('B3FFFC31908225475B90AD18EE7D744F13B2D970')",
+          "type": "/CADAXO/MDS_SRV.Link"
+        },
+        "LinkId": "B3FFFC31908225475B90AD18EE7D744F13B2D970",
+        "ObjectId1": "1D8330863BFD0AD6B990A12F6B727DFB3519FE6E",
+        "ObjectId2": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Description": "as select from",
+        "Type": "BASE",
+        "CardMin": 0,
+        "CardMax": 0,
+        "toDatasource1": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('B3FFFC31908225475B90AD18EE7D744F13B2D970')/toDatasource1"
+          }
+        },
+        "toDatasource2": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('B3FFFC31908225475B90AD18EE7D744F13B2D970')/toDatasource2"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('0B9A8376B52D5D40273804E67648B99EF553AE04')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('0B9A8376B52D5D40273804E67648B99EF553AE04')",
+          "type": "/CADAXO/MDS_SRV.Link"
+        },
+        "LinkId": "0B9A8376B52D5D40273804E67648B99EF553AE04",
+        "ObjectId1": "20273EC8A4305070A6EB4F5DB2FF9B83BC5A15E2",
+        "ObjectId2": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Description": "_IDENTIFICATION",
+        "Type": "ASSOCIATION",
+        "CardMin": 0,
+        "CardMax": 2147483647,
+        "toDatasource1": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('0B9A8376B52D5D40273804E67648B99EF553AE04')/toDatasource1"
+          }
+        },
+        "toDatasource2": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('0B9A8376B52D5D40273804E67648B99EF553AE04')/toDatasource2"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('85C0116814E42321F27E6EE37EB6BF2F07C41280')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('85C0116814E42321F27E6EE37EB6BF2F07C41280')",
+          "type": "/CADAXO/MDS_SRV.Link"
+        },
+        "LinkId": "85C0116814E42321F27E6EE37EB6BF2F07C41280",
+        "ObjectId1": "369BCC786D595D147B96BED561CDA1E8EC546F96",
+        "ObjectId2": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Description": "_ROLES",
+        "Type": "ASSOCIATION",
+        "CardMin": 0,
+        "CardMax": 2147483647,
+        "toDatasource1": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('85C0116814E42321F27E6EE37EB6BF2F07C41280')/toDatasource1"
+          }
+        },
+        "toDatasource2": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('85C0116814E42321F27E6EE37EB6BF2F07C41280')/toDatasource2"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('64C478A5A84576EEAA42CC6317EC74F9DD4D02E4')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('64C478A5A84576EEAA42CC6317EC74F9DD4D02E4')",
+          "type": "/CADAXO/MDS_SRV.Link"
+        },
+        "LinkId": "64C478A5A84576EEAA42CC6317EC74F9DD4D02E4",
+        "ObjectId1": "5137E27D14013E8608A7ECB988658B6457BB29DF",
+        "ObjectId2": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Description": "_BANK",
+        "Type": "ASSOCIATION",
+        "CardMin": 0,
+        "CardMax": 2147483647,
+        "toDatasource1": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('64C478A5A84576EEAA42CC6317EC74F9DD4D02E4')/toDatasource1"
+          }
+        },
+        "toDatasource2": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('64C478A5A84576EEAA42CC6317EC74F9DD4D02E4')/toDatasource2"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('A07C795C1D86C3A142366219A5BAA2068EC717E5')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('A07C795C1D86C3A142366219A5BAA2068EC717E5')",
+          "type": "/CADAXO/MDS_SRV.Link"
+        },
+        "LinkId": "A07C795C1D86C3A142366219A5BAA2068EC717E5",
+        "ObjectId1": "EAC9DB1520C509297D1A985BAEFD398F27E8A80B",
+        "ObjectId2": "202D23CF499BC4567191AE30B0721FB69F4CCE09",
+        "Description": "as select from",
+        "Type": "BASE",
+        "CardMin": 0,
+        "CardMax": 0,
+        "toDatasource1": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('A07C795C1D86C3A142366219A5BAA2068EC717E5')/toDatasource1"
+          }
+        },
+        "toDatasource2": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Links('A07C795C1D86C3A142366219A5BAA2068EC717E5')/toDatasource2"
+          }
+        }
+      }
+    ]

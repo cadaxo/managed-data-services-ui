@@ -37,6 +37,14 @@
       "step3ModelLinks": {
         "uri": "localService/mockdata/step3ModelLinks.json",
         "type": "JSON"
+      },
+      "datasources2": {
+        "uri": "localService/mockdata/Datasources2.json",
+        "type": "JSON"
+      },
+      "datasources2allLinks": {
+        "uri": "localService/mockdata/toAllLinks2.json",
+        "type": "JSON"
       } 
     }   
   },
@@ -73,7 +81,7 @@
     },
     "contentDensities": {
       "compact": true,
-      "cozy": true
+      "cozy": false
     },
     "models": {
       "i18n": {
@@ -104,7 +112,15 @@
       "step3ModelLinks" :{
         "type": "sap.ui.model.json.JSONModel",
         "dataSource": "step3ModelLinks"
-      }             
+      },
+      "datasources2" :{
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "datasources2"
+      },
+      "datasources2allLinks" :{
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "datasources2allLinks"
+      }       
     },
     "resources": {
       "css": [

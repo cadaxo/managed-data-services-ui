@@ -263,7 +263,7 @@
           "DataElement": "MANDT",
           "FieldName": "CLIENT",
           "Position": 1,
-          "Description": "Client",
+          "Description": "ClientEdit",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {
@@ -326,6 +326,37 @@
           "FieldName": "TYPE",
           "Position": 6,
           "Description": "Business partner category",
+          "ObjectState": 0,
+          "toDatasource": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C18B7607F8018EE475635F7EFDFD913A521256C0')/toDatasource"
+            }
+          },
+          "toProperties": {
+            "__deferred": {
+              "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C18B7607F8018EE475635F7EFDFD913A521256C0')/toProperties"
+            }
+          },
+          "toAnnotations": {
+            "results": []
+          }
+        },
+        {
+          "__metadata": {
+            "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C18B7607F8018EE475635F7EFDFD913A521256C0')",
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Fields('C18B7607F8018EE475635F7EFDFD913A521256C0')",
+            "type": "/CADAXO/MDS_SRV.Field"
+          },
+          "Datatype": "CHAR",
+          "FieldAlias": "BU_EXT_ID",
+          "FieldId": "C18B7607F8018EE475635F7EFDFD913A521256C1",
+          "IsKey": false,
+          "DsId": "122C19583ECEFA0E7363D37D5314FDB855CC2F42",
+          "Length": "10",
+          "DataElement": "ZEXT_ID",
+          "FieldName": "BUEXT_ID",
+          "Position": 6,
+          "Description": "Business partner External ID",
           "ObjectState": 0,
           "toDatasource": {
             "__deferred": {

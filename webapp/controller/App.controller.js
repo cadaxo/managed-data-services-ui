@@ -128,7 +128,7 @@ sap.ui.define([
 		var oModel = new JSONModel();
 		oModel.setData(aMockMessages);
 		this.getView().setModel(oModel, 'messagePopoverModel');
-		this.byId("messagePopoverBtn").addDependent(oMessagePopover);
+		//this.byId("messagePopoverBtn").addDependent(oMessagePopover);
 
 
 
@@ -240,6 +240,10 @@ sap.ui.define([
 			oGraph.scrollToElement(oMainNode);
 			//oController.hideAllNodes();
 			//oController.fixNodeState(oMainNode);
+
+			if (oGraph.getNodes()[3].getTitle() === "BUT000") {
+			oGraph.getNodes()[3].setHidden(true);
+		}
 		  }
 		}
 		
@@ -801,7 +805,7 @@ sap.ui.define([
 		oPanel.setVisible(true);
 		oController._graph.setWidth("60%");
 		
-		oController.getView().byId("btn-show-where-used").setEnabled(true);
+		oController.getView().byId("btn-show-where-used").setEnabled(false);
   
 		oController.getView().byId("fields-header").addStyleClass("sapMTableTH");
 		oController.getView().byId("fields-header-column1").addStyleClass("sapColumnCustomHeaderFirst");
@@ -956,10 +960,10 @@ sap.ui.define([
 						})
 					  }
 
-					  debugger;
+			
 					  if (
 						oController._displayFieldActive &&  
-						(sFieldTextWhereUsed == 'FIRSTNAME' ||
+						(sFieldTextWhereUsed == 'BUEXT_ID' ||
 						sFieldTextWhereUsed == 'NAME_FIRST')) {
 						bWhereUsed = true;
 					  }
@@ -1030,6 +1034,7 @@ sap.ui.define([
 			oController.getView().byId("btn-show-where-used").setEnabled(true);
 		  }
 		  
+		  oController.getView().byId("btn-show-target").setEnabled(true);
 	  },
   
 	  whereUsedPressed: function(oEvent) {
@@ -1137,6 +1142,8 @@ sap.ui.define([
 	},
   
 	onShowHelpPressed: function(oEvent) {
+		
+		console.log(oController.getOwnerComponent().getContentDensityClass());
   
 	  MessageBox.information(
 		"Cadaxo Managed Data Services - Version Information: \n\n" +
@@ -1399,8 +1406,10 @@ sap.ui.define([
 			var oLayeredLayout = new sap.suite.ui.commons.networkgraph.layout.LayeredLayout({});
 			oController._graph.setLayoutAlgorithm(oLayeredLayout);
 
-			oController.getView().byId("myText").setText("Mode: Display Field Source - FirstName + expand");
+			oController.getView().byId("myText").setText("Mode: Display Field Target - BUEXT_ID");
 			oController.getView().byId("toolbar").setActive(false);
+
+			oController._displayFieldActive = true;
 		}
 				
 		this.getModel().read("/Datasources", {
@@ -1429,6 +1438,36 @@ sap.ui.define([
 				// })]
 			});
 			oPopover.openBy(oButton);
+		},
+
+		getTablesPressed: function(oEvent) {
+			const fnSuccessGraphData = function(oData, oResponse) {	
+
+				var allNodes = this.getModel('datasources2').getData();
+				var allLinks = this.getModel('datasources2allLinks').getData();
+				const oJson = new JSONModel({new: 'test'});
+				oJson.setSizeLimit(Number.MAX_SAFE_INTEGER);
+				oJson.setData({
+					nodes: allNodes,
+					links: allLinks
+				});
+				oController._graph.destroyAllElements();			
+				oController.setModel(oJson,'graphModel');
+	
+				//var oLayeredLayout = new sap.suite.ui.commons.networkgraph.layout.LayeredLayout({});
+				//oController._graph.setLayoutAlgorithm(oLayeredLayout);
+	
+				oController.getView().byId("myText").setText("Mode: Database Tables for CDS View");
+				oController.getView().byId("toolbar").setActive(false);
+			}
+					
+			this.getModel().read("/Datasources", {
+				parameters: {
+					expand: "toAnnotations,toFields/toAnnotations,toParameters"
+				},
+				success: fnSuccessGraphData.bind(this),
+				error: oController.fnErrorHandler.bind(this)
+			});
 		}
 			
 	});

@@ -33,7 +33,7 @@
       "ObjectType": "DDLS",
       "ObjectName": "ZCDX_PARTNER_FIELDS",
       "Description": "CDS View Partner",
-      "ObjectState": 100,
+      "ObjectState": 200,
       "toLinks": {
         "__deferred": {
           "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toLinks"
@@ -98,6 +98,138 @@
         "DsId": "202D23CF499BC4567191AE30B0721FB69F4CCE10",
         "ObjectType": "DDLS",
         "ObjectName": "ZCDX_I_PARTNER",
+        "Description": "CDS View Partner",
+        "ObjectState": 100,
+        "toLinks": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toLinks"
+          }
+        },
+        "toParameters": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toParameters"
+          }
+        },
+        "toAnnotations": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toAnnotations"
+          }
+        },
+        "toFields": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toFields"
+          }
+        },
+        "toAllLinks": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toAllLinks"
+          }
+        },
+        "toProperties": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toProperties"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')",
+          "type": "/CADAXO/MDS_SRV.Datasource"
+        },
+        "FieldSearch": {
+          "__metadata": {
+            "type": "/CADAXO/MDS_SRV.FieldSearch"
+          },
+          "SearchObjectName": "",
+          "SearchFieldName": "",
+          "BaseObjectName": "",
+          "BaseFieldName": ""
+        },
+        "ActionLink": {
+          "__metadata": {
+            "type": "/CADAXO/MDS_SRV.ActionLink"
+          },
+          "Display": "/sap/bc/adt/ddic/ddl/sources/ZCDX_CIRCLS_FIELDS/source/main?version=active&sap-client=010",
+          "Edit": "adt://cc0/sap/bc/adt/ddic/ddl/sources/zcdx_circls_fields"
+        },
+        "Managed": {
+          "__metadata": {
+            "type": "/CADAXO/MDS_SRV.Managed"
+          },
+          "ChangedBy": "",
+          "ChangedAt": null,
+          "Version": "Backend: Odata 0.9-14af9d5 API 0.9-f9c93fe"
+        },
+        "DsId": "666D23CF499BC4567191AE30B0721FB69F4CCE10",
+        "ObjectType": "DDLS",
+        "ObjectName": "SAP_CDS_PARTNER_VIEW",
+        "Description": "CDS View Partner",
+        "ObjectState": 100,
+        "toLinks": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toLinks"
+          }
+        },
+        "toParameters": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toParameters"
+          }
+        },
+        "toAnnotations": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toAnnotations"
+          }
+        },
+        "toFields": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toFields"
+          }
+        },
+        "toAllLinks": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toAllLinks"
+          }
+        },
+        "toProperties": {
+          "__deferred": {
+            "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toProperties"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')",
+          "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')",
+          "type": "/CADAXO/MDS_SRV.Datasource"
+        },
+        "FieldSearch": {
+          "__metadata": {
+            "type": "/CADAXO/MDS_SRV.FieldSearch"
+          },
+          "SearchObjectName": "",
+          "SearchFieldName": "",
+          "BaseObjectName": "",
+          "BaseFieldName": ""
+        },
+        "ActionLink": {
+          "__metadata": {
+            "type": "/CADAXO/MDS_SRV.ActionLink"
+          },
+          "Display": "/sap/bc/adt/ddic/ddl/sources/ZCDX_CIRCLS_FIELDS/source/main?version=active&sap-client=010",
+          "Edit": "adt://cc0/sap/bc/adt/ddic/ddl/sources/zcdx_circls_fields"
+        },
+        "Managed": {
+          "__metadata": {
+            "type": "/CADAXO/MDS_SRV.Managed"
+          },
+          "ChangedBy": "",
+          "ChangedAt": null,
+          "Version": "Backend: Odata 0.9-14af9d5 API 0.9-f9c93fe"
+        },
+        "DsId": "777D23CF499BC4567191AE30B0721FB69F4CCE10",
+        "ObjectType": "DDLS",
+        "ObjectName": "SAP_CDS_PARTNER_ODATA_VIEW",
         "Description": "CDS View Partner",
         "ObjectState": 100,
         "toLinks": {
@@ -231,7 +363,7 @@
         "ObjectType": "DDLS",
         "ObjectName": "ZCDX_E_DATA",
         "Description": "CDS View Partner",
-        "ObjectState": 100,
+        "ObjectState": 200,
         "toLinks": {
           "__deferred": {
             "uri": "http://cc0.cadaxo.com:8000/sap/opu/odata/CADAXO/MDS_SRV/Datasources('202D23CF499BC4567191AE30B0721FB69F4CCE09')/toLinks"
