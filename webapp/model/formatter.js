@@ -1,6 +1,24 @@
 sap.ui.define([], function () {
 	"use strict";
 	return {
+		setRootNodeName: function(sObjectType) {
+			switch (sObjectType) {
+				case "TABL":
+					return "Database Tables";
+				case "YDLS":
+						return "CDS View Extensions";	
+				case "YABL":
+						return "SQL Views";	
+                // case "DDLX":
+                //     return "sap-icon://address-book";
+                // case "COMPOSITE":
+                //         return "sap-icon://table-view";
+                // case "CONSUMPTION":
+                //         return "sap-icon://table-view";
+				// default:
+				// 	return "sap-icon://table-view";
+			}
+		},
 		setNodeIcon: function (sObjectType) {
 			switch (sObjectType) {
 				case "DDLS":

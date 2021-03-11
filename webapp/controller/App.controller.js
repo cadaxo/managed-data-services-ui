@@ -10,9 +10,10 @@ sap.ui.define([
   "sap/m/DialogType",
   "sap/ui/layout/HorizontalLayout",
   "sap/ui/layout/VerticalLayout",
-  "sap/m/MessageToast"
+  "sap/m/MessageToast",
+  "com/cadaxo/cmds/model/formatter"
 ], function(Controller, JSONModel, Filter, Text, Button, MessageBox, Item, 
-  Dialog, DialogType, HorizontalLayout, VerticalLayout, MessageToast) {
+  Dialog, DialogType, HorizontalLayout, VerticalLayout, MessageToast, formatter) {
   "use strict";
   
   var oController;
@@ -21,6 +22,7 @@ sap.ui.define([
   var RIGHT_ARROW = "sap-icon://navigation-right-arrow";
 
   return Controller.extend("com.cadaxo.cmds.controller.App", {
+    formatter: formatter,
 
     onInit: function() {
             
@@ -62,7 +64,7 @@ sap.ui.define([
                     oResponse.results.forEach(node => {
                     nodes.push({
                       'DsId': node.DsId+node.ObjectType,
-                      'ObjectName': node.ObjectName + ' (' + node.Count + ')',
+                      'ObjectName': formatter.setRootNodeName(node.ObjectType) + ' (' + node.Count + ')',
                       'ObjectType': node.ObjectType,
                       'isRoot': true
                     })
