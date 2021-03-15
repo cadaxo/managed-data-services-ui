@@ -132,6 +132,8 @@
 										<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source" text="Display Field Source" enabled="false" />
 										<Button tooltip="Display Field Target for selected Field"  type="Transparent" press="getTargetPressed" id="btn-show-target" text="Display Field Target" enabled="false" />
 										<Button tooltip="Expand selected object"  type="Transparent" press="getExpandPressed" id="btn-expand-object" text="Expand Object" enabled="false" />
+										<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source-add" text="Display Field Source + all related objects" enabled="false" />
+										<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getTargetPressed" id="btn-show-target-add" text="Display Field Target + all related objects" enabled="false" />
 										<ToolbarSpacer/>
 									</OverflowToolbar>
 									<TabContainer id="tabs" itemSelect="tabChanged">
@@ -281,12 +283,16 @@
 											<Column width="60%">
 												<Text text="{i18n>description}" />
 											</Column>
+											<Column width="60%" visible="false">
+												<Text text="{i18n>type}" />
+											</Column>											
 										</columns>
 										<items>
 											<ColumnListItem>
 												<cells>
 													<Text text="{rootDetail>ObjectName}"/>
 													<Text text="{rootDetail>Description}"/>
+													<Text text="{rootDetail>ObjectType}"/>
 												</cells>
 											</ColumnListItem>
 										</items>

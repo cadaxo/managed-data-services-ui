@@ -184,6 +184,10 @@ sap.ui.define([
           }
         })
       }
+
+      oGraph.getNodes().forEach(function(node){
+        node.setSelected(false);
+      })
     },
 
     fnErrorHandler: function(oError) {
@@ -743,13 +747,15 @@ sap.ui.define([
       oController.getView().byId("fields-header-column3").addStyleClass("sapColumnCustomHeader");
       oController.getView().byId("fields-header-column4").addStyleClass("sapColumnCustomHeader");
 
+      if (typeof oNode.getCustomData !== "undefined") {
+
+      
       if (oNode.getCustomData()[0] && (oNode.getCustomData()[0].getKey() === 'isRoot') && (oNode.getCustomData()[0].getValue() === true) ) {
     
           //oController.getModel().read("/RootDatasource('"+oNode.getKey().slice(0, -4)+"')/",{
             oController.getModel().read("/RootDatasources(DsId='"+oNode.getKey().slice(0, -4)+"',ObjectType='"+oNode.getKey().slice(-4)+"')/toChildDatasources",{
             
             success: function(aNodes, oResponse) {
-              console.log(oNode.getKey());
 
               var tmpNodes = []; 
               aNodes.results.forEach(function(node) {
@@ -938,6 +944,7 @@ sap.ui.define([
             }
           })
         }
+      } 
     },
 
     onNodePressed: function(oEvent) {
@@ -947,6 +954,9 @@ sap.ui.define([
       oController.getView().byId("btn-show-source").setEnabled(false);
       oController.getView().byId("btn-show-target").setEnabled(false);
       oController.getView().byId("btn-expand-object").setEnabled(false);
+
+      oController.getView().byId("btn-show-source-add").setEnabled(false);
+      oController.getView().byId("btn-show-target-add").setEnabled(false);
     },
       
     onResetFilterPressed: function(oEvent) {
@@ -967,6 +977,9 @@ sap.ui.define([
       oController.getView().byId("btn-show-source").setEnabled(true);
       oController.getView().byId("btn-show-target").setEnabled(true);
       oController.getView().byId("btn-expand-object").setEnabled(false);
+
+      oController.getView().byId("btn-show-source-add").setEnabled(true);
+      oController.getView().byId("btn-show-target-add").setEnabled(true);
         
     },
 
@@ -974,11 +987,19 @@ sap.ui.define([
       var oTree = oController.getView().byId("tree-fields");
       var sSearchField = oTree.getSelectedItem().getCustomData()[0].getValue();
       var sSearchObject = oTree.getSelectedItem().getBindingContext().getProperty("ObjectName");
+      var sSearchObjectType = oTree.getSelectedItem().getBindingContext().getProperty("ObjectType");
       var sMainNode = oController._cadaxoMainNode;
 
+      var oAction = new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: "GetFieldSource"})
+
+      if (oEvent.getSource().getId().indexOf('btn-show-source-add') > 0 ) {
+        var oAction = new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: "GetFieldSourceAll"})
+
+      }
+      
       var aFilters = [new Filter({path: "FieldSearch/SearchObjectName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchObject}),
                       new Filter({path: "FieldSearch/SearchFieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField}),
-                      new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: "GetFieldSource"})];
+                      oAction];
       
       const fnSuccessGraphData = function(oData, oResponse) {
 
@@ -1006,6 +1027,8 @@ sap.ui.define([
               links: alinks
           });
           this.setModel(oJson,'graphModel');
+          
+      oController.openSidebar(aNodes[0]);
         }
         this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
             success: fnSuccessLinksData.bind(this, oData.results),
@@ -1018,7 +1041,8 @@ sap.ui.define([
 
       oController.getView().getModel().read("/Datasources", {
         filters: aFilters,
-        urlParameters: {"search": sMainNode},
+        //urlParameters: {"search": sMainNode},
+        urlParameters: {"search": sSearchObject+'|'+sSearchObjectType},
         success: fnSuccessGraphData.bind(this),
         error: oController.fnErrorHandler.bind(this)
       });
@@ -1028,7 +1052,6 @@ sap.ui.define([
       
       oController.getView().byId("myText").setText("Mode: Display Field Source");
 
-      oController.openSidebar(aNodes[0]);
 
     },
 
@@ -1036,11 +1059,19 @@ sap.ui.define([
       var oTree = oController.getView().byId("tree-fields");
       var sSearchField = oTree.getSelectedItem().getCustomData()[0].getValue();
       var sSearchObject = oTree.getSelectedItem().getBindingContext().getProperty("ObjectName");
+      var sSearchObjectType = oTree.getSelectedItem().getBindingContext().getProperty("ObjectType");
       var sMainNode = oController._cadaxoMainNode;
+
+      var oAction = new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: "GetFieldTarget"})
+
+      if (oEvent.getSource().getId().indexOf('btn-show-target-add') > 0 ) {
+        var oAction = new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: "GetFieldTargetAll"})
+
+      }
 
       var aFilters = [new Filter({path: "FieldSearch/SearchObjectName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchObject}),
                       new Filter({path: "FieldSearch/SearchFieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField}),
-                      new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: "GetFieldTarget"})];
+                      oAction];
       const fnSuccessGraphData = function(oData, oResponse) {
 
         const fnSuccessLinksData = function(aNodes, oResponse) {
@@ -1067,6 +1098,7 @@ sap.ui.define([
               links: alinks
           });
           this.setModel(oJson,'graphModel');
+          oController.openSidebar(aNodes[0]);
         }
         this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
             success: fnSuccessLinksData.bind(this, oData.results),
@@ -1079,7 +1111,8 @@ sap.ui.define([
 
       oController.getView().getModel().read("/Datasources", {
         filters: aFilters,
-        urlParameters: {"search": sMainNode},
+        //urlParameters: {"search": sMainNode},
+        urlParameters: {"search": sSearchObject+'|'+sSearchObjectType},
         success: fnSuccessGraphData.bind(this),
         error: oController.fnErrorHandler.bind(this)
       });
@@ -1090,20 +1123,70 @@ sap.ui.define([
       oController.getView().byId("myText").setText("Mode: Display Field Target");
 
 
-      oController.openSidebar(aNodes[0]);
+
       
     },
 
     getExpandPressed: function(oEvent) {
-      var oTree = oController.getView().byId("tree-fields");
-      var sSearchField = oTree.getSelectedItem().getCustomData()[0].getValue();
-      var sSearchObject = oTree.getSelectedItem().getBindingContext().getProperty("ObjectName");
+      var oTree = oController.getView().byId("root-detail");
+     // var sSearchField = oTree.getSelectedItem().getCustomData()[0].getValue();
+      //var sSearchObject = oTree.getSelectedItem().getBindingContext().getProperty("ObjectName");
+      var sSearchObject = oTree.getSelectedItem().getCells()[0].getText();
+      var sSearchObjectType = oTree.getSelectedItem().getCells()[2].getText();
+
       var sMainNode = oController._cadaxoMainNode;
 
-      var aFilters = [new Filter({path: "FieldSearch/SearchObjectName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchObject}),
-                      new Filter({path: "FieldSearch/SearchFieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField}),
+      var aFilters = [//new Filter({path: "FieldSearch/SearchObjectName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchObject}),
+                      //new Filter({path: "FieldSearch/SearchFieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField}),
                       new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: 'ExpandObject'})];
+                      const fnSuccessGraphData = function(oData, oResponse) {
 
+                        const fnSuccessLinksData = function(aNodes, oResponse) {
+                
+                          var links = oResponse.results
+                          var alinks = [];
+                          var tmpNodes = [];
+                
+                          aNodes.forEach(function(node) {
+                            tmpNodes.push(node.DsId);
+                          });
+                          
+                          links.forEach(function(link) {
+                            if (tmpNodes.includes(link.ObjectId1) && tmpNodes.includes(link.ObjectId2)) {
+                              alinks.push(link);
+                            }
+                          });
+                
+                
+                          const oJson = new JSONModel({new: 'test'});
+                          oJson.setSizeLimit(Number.MAX_SAFE_INTEGER);
+                          oJson.setData({
+                              nodes: aNodes,
+                              links: alinks
+                          });
+                          this.setModel(oJson,'graphModel');
+                          oController.openSidebar(aNodes[0]);   
+                        }
+                        this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
+                            success: fnSuccessLinksData.bind(this, oData.results),
+                            error: oController.fnErrorHandler.bind(this)
+                        })
+                
+                        //var oLayeredLayout = new sap.suite.ui.commons.networkgraph.layout.LayeredLayout({});
+                        //oController._graph.setLayoutAlgorithm(oLayeredLayout);
+                      }
+                
+                      oController.getView().getModel().read("/Datasources", {
+                        filters: aFilters,
+                        //urlParameters: {"search": sMainNode},
+                        urlParameters: {"search": sSearchObject+'|'+sSearchObjectType},
+                        success: fnSuccessGraphData.bind(this),
+                        error: oController.fnErrorHandler.bind(this)
+                      });
+                      oController.getView().byId("myText").setText("Mode: Expand Object");
+
+
+                                         
     },
 
     whereUsedPressed: function(oEvent) {
@@ -1211,6 +1294,9 @@ sap.ui.define([
     oController.getView().byId("btn-show-source").setEnabled(false);
 		oController.getView().byId("btn-show-target").setEnabled(false);
 		oController.getView().byId("btn-expand-object").setEnabled(false);
+
+    oController.getView().byId("btn-show-source-add").setEnabled(false);
+    oController.getView().byId("btn-show-target-add").setEnabled(false);
   },
 
   onShowHelpPressed: function(oEvent) {
@@ -1395,6 +1481,8 @@ sap.ui.define([
     oController.getView().byId("btn-show-source").setEnabled(false);
 		oController.getView().byId("btn-show-target").setEnabled(false);
 		oController.getView().byId("btn-expand-object").setEnabled(true);
+    oController.getView().byId("btn-show-source-add").setEnabled(false);
+    oController.getView().byId("btn-show-target-add").setEnabled(false);
   }
 
   });
