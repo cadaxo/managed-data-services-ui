@@ -123,19 +123,19 @@
 									<OverflowToolbar id="toolbar" active="false" design="Info" height="2rem" press="onToolbarPress"  ariaLabelledBy="myText">
 										<Text id="myText" text="Mode: Show CDS View Sources"/>
 										<ToolbarSpacer/>
-										<!--core:Icon src="sap-icon://undo" width="2rem" press="onIconPress"/-->
-									</OverflowToolbar>
-								</infoToolbar>								
-								<content>
-									<OverflowToolbar id="toolbar-buttons">
-										<!--Button icon="sap-icon://hint" type="Transparent" press="handlePopoverPress" /-->
-										<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source" text="Display Field Source" enabled="false" />
+																				<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source" text="Display Field Source" enabled="false" />
 										<Button tooltip="Display Field Target for selected Field"  type="Transparent" press="getTargetPressed" id="btn-show-target" text="Display Field Target" enabled="false" />
 										<Button tooltip="Expand selected object"  type="Transparent" press="getExpandPressed" id="btn-expand-object" text="Expand Object" enabled="false" />
 										<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source-add" text="Display Field Source + all related objects" enabled="false" />
 										<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getTargetPressed" id="btn-show-target-add" text="Display Field Target + all related objects" enabled="false" />
-										<ToolbarSpacer/>
 									</OverflowToolbar>
+								</infoToolbar>								
+								<content>
+									<!--OverflowToolbar id="toolbar-buttons">
+										<Button icon="sap-icon://hint" type="Transparent" press="handlePopoverPress" />
+
+										<ToolbarSpacer/>
+									</OverflowToolbar-->
 									<TabContainer id="tabs" itemSelect="tabChanged">
 										<items>
 											<TabContainerItem name="{i18n>fields}">
