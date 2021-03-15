@@ -9,6 +9,8 @@ sap.ui.define([], function () {
 						return "CDS View Extensions";	
 				case "YABL":
 						return "SQL Views";	
+				case "DDLS":
+						return "CDS Views";						
                 // case "DDLX":
                 //     return "sap-icon://address-book";
                 // case "COMPOSITE":
