@@ -104,6 +104,11 @@
 										<Title text="{ObjectName}"/>
 										<Title text="- {Description}"/>
 										<ToolbarSpacer />
+										<Button  icon="sap-icon://home" tooltip="Set as Main Node" enabled="true">									
+										</Button>
+										<Button  icon="sap-icon://tree" tooltip="Show in Freestyle Mode" enabled="true">									
+										</Button>										
+										
 										<!--Button press="whereUsedPressed" id="btn-show-where-used" text="{i18n>showWhereUsed}" enabled="false" /-->
 										<Button press="viewInBrowserPressed" icon="sap-icon://detail-view" tooltip="{i18n>showSourceCode}" enabled="{=${ActionLink/Display}.length !== 0}">
 											<customData>

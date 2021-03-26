@@ -189,6 +189,12 @@ sap.ui.define([
       oGraph.getNodes().forEach(function(node){
         node.setSelected(false);
       })
+
+      var oToolbar = oGraph.getToolbar();
+      if (oToolbar.getContent()[8] && oGraph.getNodes().length)  {
+        oToolbar.getContent()[8].firePress();
+      }
+      
     },
 
     fnErrorHandler: function(oError) {
