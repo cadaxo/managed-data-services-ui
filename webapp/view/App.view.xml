@@ -121,6 +121,7 @@
 								</headerToolbar>
 								<infoToolbar>
 									<OverflowToolbar id="toolbar" active="false" design="Info" height="2rem" press="onToolbarPress"  ariaLabelledBy="myText">
+										
 										<Text id="myText" text="Mode: Show CDS View Sources"/>
 										<ToolbarSpacer/>
 																				<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source" text="Display Field Source" enabled="false" />
@@ -140,6 +141,17 @@
 										<items>
 											<TabContainerItem name="{i18n>fields}">
 												<content>
+													<Toolbar>
+														<ToolbarSpacer />
+														<SearchField
+															id="tree-fields-search-field"
+															search=".onSearch"
+															width="auto">
+															<customData>
+																<core:CustomData key="searchFor" value="tree-fields"/>
+															</customData>
+														</SearchField>
+													</Toolbar>
 													<FlexBox id="fields-header">
 														<items>
 															<Text id="fields-header-column1" width="170px" text="{i18n>column}">
@@ -164,9 +176,20 @@
 															</Text>
 														</items>
 													</FlexBox>
-													<Tree itemPress="fieldPressed" id="tree-fields" items="{nodeDetail>/fields}"
+													<Tree itemPress="fieldPressed" id="tree-fields" items="{
+														      path: 'nodeDetail>/fields',
+													          parameters: {
+            													operationMode: 'Client',
+            													useServersideApplicationFilters: false,
+																searchFor: 'tree-fields'
+          													  },
+																events: {
+																	change: '.onTreeChange'
+																}																
+															}"
 													mode="SingleSelectMaster"
-													>
+													>	
+														<items>
 														<CustomTreeItem type="Active">
 															<customData>
 																<core:CustomData key="fieldName" value="{nodeDetail>text}"/>
@@ -206,6 +229,7 @@
 																</items>
 															</FlexBox>
 														</CustomTreeItem>
+														</items>
 													</Tree>
 												</content>
 											</TabContainerItem>
@@ -214,6 +238,19 @@
 													<Table id="headerAnnotations"
 														inset="false"
 														items="{nodeDetail>/headerAnnotations}">
+														<headerToolbar>
+															<Toolbar>
+																<ToolbarSpacer />
+																<SearchField
+																	id="headerAnnotations-search-field"
+																	search=".onSearch"
+																	width="auto">
+																	<customData>
+																		<core:CustomData key="searchFor" value="headerAnnotations"/>
+																	</customData>
+																</SearchField>
+															</Toolbar>
+														</headerToolbar>
 														<columns>
 															<Column width="70%">
 																<Text text="{i18n>name}" />
@@ -243,6 +280,19 @@
 																	path: 'Position'
 																}
 															}">
+															<headerToolbar>
+																<Toolbar>
+																	<ToolbarSpacer />
+																	<SearchField
+																		id="parameters-search-field"
+																		search=".onSearch"
+																		width="auto">
+																		<customData>
+																			<core:CustomData key="searchFor" value="parameters"/>
+																		</customData>
+																	</SearchField>
+																</Toolbar>
+															</headerToolbar>															
 															<columns>
 																<Column width="60%">
 																	<Text text="{i18n>parameter}" />
@@ -276,6 +326,19 @@
 										}"
 										mode="SingleSelectMaster"
 										selectionChange="rootDetailFieldPressed">
+										<headerToolbar>
+											<Toolbar>
+												<ToolbarSpacer />
+												<SearchField
+													id="root-detail-search-field"
+													search=".onSearch"
+													width="auto">
+													<customData>
+														<core:CustomData key="searchFor" value="root-detail"/>
+													</customData>
+												</SearchField>
+											</Toolbar>
+										</headerToolbar>										
 										<columns>
 											<Column width="40%">
 												<Text text="{i18n>name}" />

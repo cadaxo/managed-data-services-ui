@@ -2,6 +2,7 @@ sap.ui.define([
   "com/cadaxo/cmds/controller/BaseController",
   "sap/ui/model/json/JSONModel",
   "sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator", 
   "sap/m/Text",
   "sap/m/Button",
   "sap/m/MessageBox",
@@ -12,7 +13,7 @@ sap.ui.define([
   "sap/ui/layout/VerticalLayout",
   "sap/m/MessageToast",
   "com/cadaxo/cmds/model/formatter"
-], function(Controller, JSONModel, Filter, Text, Button, MessageBox, Item, 
+], function(Controller, JSONModel, Filter, FilterOperator, Text, Button, MessageBox, Item, 
   Dialog, DialogType, HorizontalLayout, VerticalLayout, MessageToast, formatter) {
   "use strict";
   
@@ -1483,7 +1484,43 @@ sap.ui.define([
 		oController.getView().byId("btn-expand-object").setEnabled(true);
     oController.getView().byId("btn-show-source-add").setEnabled(false);
     oController.getView().byId("btn-show-target-add").setEnabled(false);
-  }
+  },
+
+  onSearch: function(oEvent) {
+    if (oEvent.getParameters().refreshButtonPressed) {
+      this.onRefresh();
+    } else {
+      var aTableSearchState = [];
+      var sQuery = oEvent.getParameter("query");
+      var sSearchFor = oEvent.getSource().getCustomData()[0].getValue("searchFor");
+      if (sQuery && sQuery.length > 0) {
+        aTableSearchState = [
+          new Filter({
+            filters: [
+              new Filter("text", FilterOperator.Contains, sQuery),
+              new Filter("dataelement", FilterOperator.Contains, sQuery),
+              new Filter("description", FilterOperator.Contains, sQuery),
+              new Filter("value", FilterOperator.Contains, sQuery),
+              new Filter("Description", FilterOperator.Contains, sQuery),
+              new Filter("ObjectName", FilterOperator.Contains, sQuery)
+            ],
+            and: false
+          })
+        ];
+      }
+      this._applySearch(aTableSearchState, sSearchFor);
+    }
+  },
+  _applySearch: function(aTableSearchState, sId) {
+    var oTable = this.byId(sId);
+    oTable.getBinding("items").filter(aTableSearchState);
+  },
+  onTreeChange: function(event) {
+    if (event.getParameter("reason") == "filter") {
+      const query = this.byId("tree-fields-search-field").getValue();
+      this.byId(event.getSource().mParameters.searchFor).expandToLevel(query ? 1 : 0);
+    }
+  }  
 
   });
 });
