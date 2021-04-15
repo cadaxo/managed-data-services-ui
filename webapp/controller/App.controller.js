@@ -842,6 +842,7 @@ sap.ui.define([
                       "description": field.Description,
                       "isField": true,
                       "isKey": field.IsKey,
+                      "isIntType": field.IsInttype,
                       "annotations": aAnnotations,
                       "isWhereUsed": bWhereUsed
                     })
@@ -918,6 +919,7 @@ sap.ui.define([
                       "description": oFieldValues.Description,
                       "isField": true,
                       "isKey": oFieldValues.IsKey,
+                      "isIntType": oFieldValues.IsInttype,
                       "alias": oFieldValues.FieldAlias,
                       "annotations": aAnnotations,
                       "isWhereUsed": bWhereUsed
