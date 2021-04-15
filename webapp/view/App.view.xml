@@ -204,7 +204,7 @@
 																	<core:Icon class="cadaxoCustomIcon" src="sap-icon://key" size="1rem" visible="{= ${nodeDetail>isKey} === true }" 
 																	tooltip="{i18n>primaryKey}" />
 																	<core:Icon class="cadaxoCustomIcon" src="sap-icon://rhombus-milestone" size="1rem" visible="{= ${nodeDetail>isIntType} === true }" 
-																	tooltip="{i18n>primaryKey}" />
+																	tooltip="{i18n>internalType}" />
 																	<Text width="150px" text="{parts: [
 																		'nodeDetail>text', 'nodeDetail>isWhereUsed'
 																		], formatter:'externFormatter.setHighlighted'}">
