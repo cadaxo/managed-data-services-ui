@@ -104,7 +104,7 @@
 										<Title text="{ObjectName}"/>
 										<Title text="- {Description}"/>
 										<ToolbarSpacer />
-										<Button  icon="sap-icon://home" tooltip="Set as Main Node" enabled="true">									
+										<Button  icon="sap-icon://home" tooltip="Set as Main Node" enabled="true" press="setMainNodePress">									
 										</Button>
 										<Button  icon="sap-icon://tree" tooltip="Show in Freestyle Mode" enabled="true">									
 										</Button>										
