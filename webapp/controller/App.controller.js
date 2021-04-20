@@ -196,8 +196,8 @@ sap.ui.define([
       })
 
       var oToolbar = oGraph.getToolbar();
-      if (oToolbar.getContent()[8] && oGraph.getNodes().length)  {
-        oToolbar.getContent()[8].firePress();
+      if (oToolbar.getContent()[9] && oGraph.getNodes().length)  {
+        oToolbar.getContent()[9].firePress();
       }
       
     },
@@ -636,6 +636,13 @@ sap.ui.define([
           //press: 
         }), 0);
 
+        oToolbar.insertContent(new Button("edit-main-node",{
+          icon: "sap-icon://edit",
+          visible: true,
+          type: "Transparent",
+          press: oController.onEditMainNode
+        }), 1);        
+
 
         // oToolbar.insertContent(new Button("btn-filter-bar-reset",{
         //   type: "Transparent",
@@ -649,7 +656,7 @@ sap.ui.define([
 
         //Set Placeholder for Search Input Field
         //oToolbar.getContent()[3].setPlaceholder(oController.getResourceBundle().getText("placeholderSearchInGraph"));
-        oToolbar.getContent()[2].setVisible(false);
+        oToolbar.getContent()[3].setVisible(false);
 
         // oToolbar.insertContent(new Button("btn-new-main-node",{
         //   type: "Transparent",
@@ -673,7 +680,7 @@ sap.ui.define([
           icon: "sap-icon://reset",
           visible: true,
           press: oController.onResetFilterPressed
-        }), 3);
+        }), 4);
 
 
         oToolbar.insertContent(new Button("btn-show-help",{
@@ -681,7 +688,7 @@ sap.ui.define([
           tooltip: oController.getResourceBundle().getText("tooltipShowVersionInfo"),
           icon: "sap-icon://sys-help",
           press: oController.onShowHelpPressed
-        }), 11);
+        }), 12);
     },
 
     fixNodeState: function(oNode) {
@@ -1565,6 +1572,67 @@ sap.ui.define([
 
     var oLayout = new sap.suite.ui.commons.networkgraph.layout.ForceDirectedLayout({});
     oController._graph.setLayoutAlgorithm(oLayout);
+  },
+
+  onEditMainNode: function(oEvent) {
+    if (!this.oConfirmDialog) {
+      this.oConfirmDialog = new Dialog({
+        type: DialogType.Message,
+        title: "Set Main Node",
+        content: [
+          new HorizontalLayout({
+            content: [
+              new VerticalLayout({
+                content: [
+                  new sap.m.Input({
+                    id: 'editMainNode-input',
+                    placeholder: 'Main Node Name',
+                    width: '100%'
+                  }),
+                  new sap.m.RadioButton({
+                    id: 'editMainNode-cds-radio',
+                    groupName: "type",
+                    text: 'CDS View',
+                    selected: true
+                  }),
+                  new sap.m.RadioButton({
+                    id: 'editMainNode-db-radio',
+                    groupName: "type",
+                    text: 'DB Table'
+                  }),
+                ]
+              })
+            ]
+          })
+        ],
+        
+        beginButton: new Button({
+          text: "Save",
+          press: function () {
+            var sMainNode = sap.ui.getCore().getElementById("editMainNode-input").getValue();
+            
+            
+            var sType = 'DDLS';
+            if (sap.ui.getCore().getElementById("editMainNode-db-radio").getSelected())
+            {
+              sType = "TABL";
+            }
+            
+            window.location.href = "/index.html?cadaxoMainNode="+sMainNode+"%7C"+sType;
+
+            this.oConfirmDialog.close();
+          }.bind(this)
+        }),
+        endButton: new Button({
+          text: "Cancel",
+          press: function () {
+            this.oConfirmDialog.close();
+          }.bind(this)
+        })
+      });
+    }
+
+    this.oConfirmDialog.open();
   }
 
   });
