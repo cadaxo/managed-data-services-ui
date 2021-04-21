@@ -1618,7 +1618,11 @@ sap.ui.define([
               sType = "TABL";
             }
             
-            window.location.href = "/index.html?cadaxoMainNode="+sMainNode+"%7C"+sType;
+            var sUrl = new URL(window.location.href);
+            var param = sUrl.searchParams;
+            param.set('cadaxoMainNode', sMainNode+"|"+sType);
+            sUrl.search = param.toString();
+            window.location.href = sUrl.toString();
 
             this.oConfirmDialog.close();
           }.bind(this)
