@@ -59,26 +59,30 @@
 										<g:customData>
 											<core:CustomData key="isRoot" value="{graphModel>isRoot}"/>
 										</g:customData>
-										<!--g:actionButtons>
+										<g:actionButtons>
 											<g:ActionButton
 													icon="sap-icon://navigation-left-arrow"
 													title="{i18n>showParentNodes}"
 													position="Left"
-													press="leftExpandPressed"/>
+													press="leftExpandPressed"
+													enabled="false"/>
 											<g:ActionButton
 													icon="sap-icon://navigation-right-arrow"
 													title="{i18n>showChildNodes}"
-													press="rightExpandPressed"/>
+													press="rightExpandPressed"
+													enabled="false"/>
 											<g:ActionButton
 												icon="sap-icon://open-command-field"
 												title="Expand All"
-												press="rightMultiExpandPressed"/>	
+												press="rightMultiExpandPressed"
+												enabled="false"/>
 											<g:ActionButton
 													icon="sap-icon://close-command-field"
 													title="Expand All"
 													position="Left"
-													press="leftMultiExpandPressed"/>		
-										</g:actionButtons-->
+													press="leftMultiExpandPressed"
+													enabled="false"/>		
+										</g:actionButtons>
 									</g:Node>
 
 								</g:nodes>
@@ -106,7 +110,7 @@
 										<ToolbarSpacer />
 										<Button  icon="sap-icon://home" tooltip="Set as Main Node" enabled="true" press="setMainNodePress">									
 										</Button>
-										<Button  icon="sap-icon://tree" tooltip="Show in Freestyle Mode" enabled="true">									
+										<Button  icon="sap-icon://tree" tooltip="Show in Freestyle Mode" enabled="true" press="setFreestylePress">									
 										</Button>										
 										
 										<!--Button press="whereUsedPressed" id="btn-show-where-used" text="{i18n>showWhereUsed}" enabled="false" /-->

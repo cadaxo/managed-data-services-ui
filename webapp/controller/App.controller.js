@@ -44,6 +44,9 @@ sap.ui.define([
       var oGraphLayoutModel = new JSONModel({orientation: 'LeftRight', nodePlacement: 'LinearSegments', nodeSpacing: 55});
       this.getView().setModel(oGraphLayoutModel, "graphLayoutModel");
 
+      var oGraphModeModel = new JSONModel({freestyle: false});
+      this.getView().setModel(oGraphModeModel, "graphModeModel");
+
       this.getView().attachAfterRendering(function() {
 
         oController._attachAfterRendering();
@@ -152,6 +155,9 @@ sap.ui.define([
 
     graphReady: function() {
       var oGraph = oController._graph;
+
+      var bFreestyle = oController.getView().getModel("graphModeModel").getProperty('/freestyle');
+
       if (oGraph) {
         var oMainNode = oGraph.getNodes()[0];
         if (oMainNode) {
@@ -164,8 +170,12 @@ sap.ui.define([
 
           }
           oGraph.scrollToElement(oMainNode);
-          //oController.hideAllNodes();
-          //oController.fixNodeState(oMainNode);
+          if (bFreestyle) {
+            oController.hideAllNodes();
+            oController.fixNodeState(oMainNode);
+          }
+          
+          
         }
       }
       
@@ -195,9 +205,12 @@ sap.ui.define([
         node.setSelected(false);
       })
 
-      var oToolbar = oGraph.getToolbar();
-      if (oToolbar.getContent()[9] && oGraph.getNodes().length)  {
-        oToolbar.getContent()[9].firePress();
+      if (!bFreestyle) {
+
+        var oToolbar = oGraph.getToolbar();
+        if (oToolbar.getContent()[9] && oGraph.getNodes().length)  {
+          oToolbar.getContent()[9].firePress();
+        }
       }
       
     },
@@ -640,7 +653,8 @@ sap.ui.define([
           icon: "sap-icon://edit",
           visible: true,
           type: "Transparent",
-          press: oController.onEditMainNode
+          press: oController.onEditMainNode,
+          tooltip: "Set Main Node Manually"
         }), 1);        
 
 
@@ -692,56 +706,68 @@ sap.ui.define([
     },
 
     fixNodeState: function(oNode) {
-      if (oNode.isHidden()) {
-        return;
-      }
-      var bHasHiddenSiblings = false;
-      var oButton = oNode.getActionButtons()[0];
-      if (oNode.getParentNodes().length === 0) {
-        oButton.setEnabled(false);
-      } else {
-        if (oController.hasHiddenParent(oNode)) {
-          bHasHiddenSiblings = true;
-          oButton.setIcon(LEFT_ARROW);
-          oButton.setTitle(oController.getResourceBundle().getText("expand"));
-        } else {
-          oButton.setIcon(RIGHT_ARROW);
-          oButton.setTitle(oController.getResourceBundle().getText("collapse"));
+      var bFreestyle = oController.getView().getModel("graphModeModel").getProperty('/freestyle');
 
-          var bColapsable = oNode.getParentNodes().some(function(n) {
-            return n._fixed == null;
-          });
-
-          if (!bColapsable) {
-            oButton.setEnabled(false);
-           // oNode.removeActionButton(0);
-          }
-
+      if (bFreestyle) {
+        if (oNode.isHidden()) {
+          return;
         }
-      }
-      oButton = oNode.getActionButtons()[1];
-      if (oNode.getChildNodes().length === 0) {
-        oButton.setEnabled(false);
-      } else {
-        if (oController.hasHiddenChild(oNode)) {
-          bHasHiddenSiblings = true;
-          oButton.setIcon(RIGHT_ARROW);
-          oButton.setTitle(oController.getResourceBundle().getText("expand"));
+        var bHasHiddenSiblings = false;
+        var oButton = oNode.getActionButtons()[0];
+        if (oNode.getParentNodes().length === 0) {
+          oButton.setEnabled(false);
         } else {
-          oButton.setIcon(LEFT_ARROW);
-          oButton.setTitle(oController.getResourceBundle().getText("collapse"));
-
-          var bColapsable = oNode.getChildNodes().some(function(n) {
-            return n._fixed == null;
-          });
-          if (!bColapsable) {
-            oButton.setEnabled(false);
-           // oNode.removeActionButton(1);
+          if (oController.hasHiddenParent(oNode)) {
+            bHasHiddenSiblings = true;
+            oButton.setIcon(LEFT_ARROW);
+            oButton.setTitle(oController.getResourceBundle().getText("expand"));
+          } else {
+            oButton.setIcon(RIGHT_ARROW);
+            oButton.setTitle(oController.getResourceBundle().getText("collapse"));
+  
+            var bColapsable = oNode.getParentNodes().some(function(n) {
+              return n._fixed == null;
+            });
+  
+            if (!bColapsable) {
+              oButton.setEnabled(false);
+             // oNode.removeActionButton(0);
+            }
+  
           }
-
         }
+        oButton = oNode.getActionButtons()[1];
+        if (oNode.getChildNodes().length === 0) {
+          oButton.setEnabled(false);
+        } else {
+          if (oController.hasHiddenChild(oNode)) {
+            bHasHiddenSiblings = true;
+            oButton.setIcon(RIGHT_ARROW);
+            oButton.setTitle(oController.getResourceBundle().getText("expand"));
+          } else {
+            oButton.setIcon(LEFT_ARROW);
+            oButton.setTitle(oController.getResourceBundle().getText("collapse"));
+  
+            var bColapsable = oNode.getChildNodes().some(function(n) {
+              return n._fixed == null;
+            });
+            if (!bColapsable) {
+              oButton.setEnabled(false);
+             // oNode.removeActionButton(1);
+            }
+  
+          }
+        }
+        oNode.setStatusIcon(bHasHiddenSiblings ? STATUS_ICON : undefined);
+      } else {
+        oNode.getActionButtons()[0].setEnabled(false);
+        oNode.getActionButtons()[1].setEnabled(false);
+        oNode.getActionButtons()[2].setEnabled(false);
+        oNode.getActionButtons()[3].setEnabled(false);
       }
-      oNode.setStatusIcon(bHasHiddenSiblings ? STATUS_ICON : undefined);
+
+
+      
     },
 
     fixAllNodesState: function() {
@@ -751,7 +777,10 @@ sap.ui.define([
     },
   
     openSidebar: function(oNode) {
-      //oController.fixNodeState(oNode);
+
+      oController.fixNodeState(oNode);
+      
+
 
       var oPanel = oController.getView().byId("sideBar-panel");
       oPanel.setVisible(true);
@@ -978,6 +1007,7 @@ sap.ui.define([
 
       oController.getView().byId("btn-show-source-add").setEnabled(false);
       oController.getView().byId("btn-show-target-add").setEnabled(false);
+
     },
       
     onResetFilterPressed: function(oEvent) {
@@ -1073,6 +1103,7 @@ sap.ui.define([
       
       oController.getView().byId("myText").setText("Mode: Display Field Source");
 
+      oController.getView().getModel("graphModeModel").setProperty('/freestyle', false);
 
     },
 
@@ -1143,7 +1174,7 @@ sap.ui.define([
       
       oController.getView().byId("myText").setText("Mode: Display Field Target");
 
-
+      oController.getView().getModel("graphModeModel").setProperty('/freestyle', false);
 
       
     },
@@ -1219,6 +1250,7 @@ sap.ui.define([
 
     oController._attachAfterRendering();
 
+    oController.getView().getModel("graphModeModel").setProperty('/freestyle', false);
                                          
     },
 
@@ -1572,6 +1604,8 @@ sap.ui.define([
 
     var oLayout = new sap.suite.ui.commons.networkgraph.layout.ForceDirectedLayout({});
     oController._graph.setLayoutAlgorithm(oLayout);
+
+    oController.getView().getModel("graphModeModel").setProperty('/freestyle', false);
   },
 
   onEditMainNode: function(oEvent) {
@@ -1639,6 +1673,54 @@ sap.ui.define([
     }
 
     this.oConfirmDialog.open();
+  },
+
+  setFreestylePress: function(oEvent) {
+    var oSideBarNode = oController.getModel().getProperty(oController.getView().byId("sideBar-panel").getBindingContext().getPath());
+    var sMainNode = oSideBarNode.ObjectName+'|'+oSideBarNode.ObjectType;
+
+    oController.getView().getModel("graphModeModel").setProperty('/freestyle', true);
+
+
+    const fnSuccessGraphData = function(oData, oResponse) {
+              
+      const fnSuccessLinksData = function(aNodes, oResponse) {
+
+          var links = oResponse.results
+
+           const oJson = new JSONModel({new: 'test'});
+           oJson.setSizeLimit(Number.MAX_SAFE_INTEGER);
+           oJson.setData({
+               nodes: aNodes,
+               links: links
+           });
+           this.setModel(oJson,'graphModel');
+
+           var oLayeredLayout = new sap.suite.ui.commons.networkgraph.layout.LayeredLayout({});
+           oController._graph.setLayoutAlgorithm(oLayeredLayout);
+
+           oController.getView().getModel("whereUsedFilterModel").setProperty("/enabled", false);
+           $(".cadaxoHighlightedTreeLine").each(function(){
+             $(this).removeClass('cadaxoHighlightedTreeLine');
+           })
+
+           oController.getView().byId("myText").setText("Mode: Freestyle");
+      }
+
+
+      this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
+          success: fnSuccessLinksData.bind(this, oData.results),
+          error: oController.fnErrorHandler.bind(this)
+      })
+    }
+
+    this.getModel().read("/Datasources", {
+        urlParameters: {"search" : sMainNode},
+        success: fnSuccessGraphData.bind(this),
+        error: oController.fnErrorHandler.bind(this)
+    });
+  
+
   }
 
   });
