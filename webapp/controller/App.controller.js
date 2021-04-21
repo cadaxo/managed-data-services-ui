@@ -1611,20 +1611,22 @@ sap.ui.define([
           press: function () {
             var sMainNode = sap.ui.getCore().getElementById("editMainNode-input").getValue();
             
-            
-            var sType = 'DDLS';
-            if (sap.ui.getCore().getElementById("editMainNode-db-radio").getSelected())
-            {
-              sType = "TABL";
-            }
-            
-            var sUrl = new URL(window.location.href);
-            var param = sUrl.searchParams;
-            param.set('cadaxoMainNode', sMainNode+"|"+sType);
-            sUrl.search = param.toString();
-            window.location.href = sUrl.toString();
+            if (sMainNode.length > 0) {
 
-            this.oConfirmDialog.close();
+              var sType = 'DDLS';
+              if (sap.ui.getCore().getElementById("editMainNode-db-radio").getSelected())
+              {
+                sType = "TABL";
+              }
+              
+              var sUrl = new URL(window.location.href);
+              var param = sUrl.searchParams;
+              param.set('cadaxoMainNode', sMainNode+"|"+sType);
+              sUrl.search = param.toString();
+              window.location.href = sUrl.toString();
+
+              this.oConfirmDialog.close();
+            }
           }.bind(this)
         }),
         endButton: new Button({
