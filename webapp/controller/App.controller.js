@@ -173,6 +173,7 @@ sap.ui.define([
           if (bFreestyle) {
             oController.hideAllNodes();
             oController.fixNodeState(oMainNode);
+            oGraph.setCurrentZoomLevel(1);
           }
           
           
@@ -470,6 +471,7 @@ sap.ui.define([
 
       var oNode = oEvent.getSource().getParent();
       var bExpand = oController.hasHiddenParent(oNode);
+      var sKey = oNode.getKey();
 
       if (bExpand) {
         oNode.getParentNodes().forEach(function (oChild) {
@@ -483,10 +485,6 @@ sap.ui.define([
                 oChild.setHidden(!bExpand);
               }
             }
-  
-            // if (oController._multicombobox.getSelectedKeys().indexOf(oChild.getStatus()) > -1) {
-            //   oChild.setHidden(!bExpand);
-            // }
           } 
   
           
@@ -498,36 +496,39 @@ sap.ui.define([
 
         var aNodes = [];
 
-        function getSubNodes(oNode) {
+        function getSubNodes(oNode, sKey) {
           oNode.getChildNodes().forEach(function (node) {
-            if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false)) {
+            if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false) && sKey !== node.getKey()) {
   
               aNodes.push(node);
-              getSubNodes(node);
+              getSubNodes(node, sKey);
             } else {
               return;
             }
           })
           oNode.getParentNodes().forEach(function (node) {
-            if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false)) {
+            if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false)  && sKey !== node.getKey()) {
               aNodes.push(node);
-              getSubNodes(node);
+              getSubNodes(node, sKey);
             } else {
               return;
             }
           })        
         }
-  
+
         oNode.getParentNodes().forEach(function (node) {
   
           if (node._fixed == null) {
             aNodes.push(node);
-            getSubNodes(node);
+            getSubNodes(node, sKey);
           }
   
         })
+
+
   
         aNodes.forEach(function (node) {
+
           node.setHidden(true);
         })
 
@@ -555,6 +556,7 @@ sap.ui.define([
     
       var oNode = oEvent.getSource().getParent();
       var bExpand = oController.hasHiddenChild(oNode);
+      var sKey = oNode.getKey();
 
       if (bExpand) {
       oNode.getChildNodes().forEach(function (oChild) {
@@ -581,9 +583,9 @@ sap.ui.define([
     } else {
       var aNodes = [];
 
-      function getSubNodes(oNode) {
+      function getSubNodes(oNode, sKey) {
         oNode.getChildNodes().forEach(function (node) {
-          if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false)) {
+          if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false) && sKey !== node.getKey()) {
 
             aNodes.push(node);
             getSubNodes(node);
@@ -592,7 +594,7 @@ sap.ui.define([
           }
         })
         oNode.getParentNodes().forEach(function (node) {
-          if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false)) {
+          if (node._fixed == null && (aNodes.some(function(n) {return n.getKey() == node.getKey()}) == false) && sKey !== node.getKey()) {
             aNodes.push(node);
             getSubNodes(node);
           } else {
@@ -601,14 +603,17 @@ sap.ui.define([
         })        
       }
 
+
+
       oNode.getChildNodes().forEach(function (node) {
 
         if (node._fixed == null) {
           aNodes.push(node);
-          getSubNodes(node);
+          getSubNodes(node, sKey);
         }
 
       })
+
 
       aNodes.forEach(function (node) {
         node.setHidden(true);
@@ -709,6 +714,14 @@ sap.ui.define([
       var bFreestyle = oController.getView().getModel("graphModeModel").getProperty('/freestyle');
 
       if (bFreestyle) {
+        oNode.getActionButtons()[0].setEnabled(true);
+        oNode.getActionButtons()[1].setEnabled(true);
+        if (oController._mainNode === oNode.getTitle()) {
+          oNode.getActionButtons()[2].setEnabled(true);
+          oNode.getActionButtons()[3].setEnabled(true);
+        }
+
+
         if (oNode.isHidden()) {
           return;
         }
@@ -1043,7 +1056,7 @@ sap.ui.define([
 
       var oAction = new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: "GetFieldSource"})
 
-      if (oEvent.getSource().getId().indexOf('btn-show-source-add') > 0 ) {
+      if (oEvent.getSource().getId().indexOf('btn-show-source-add') > 0 || oEvent.getSource().getId().indexOf('menu-show-source-add') > 0) {
         var oAction = new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: "GetFieldSourceAll"})
 
       }
@@ -1115,8 +1128,8 @@ sap.ui.define([
       var sMainNode = oController._cadaxoMainNode;
 
       var oAction = new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: "GetFieldTarget"})
-
-      if (oEvent.getSource().getId().indexOf('btn-show-target-add') > 0 ) {
+      
+      if (oEvent.getSource().getId().indexOf('btn-show-target-add') > 0 || oEvent.getSource().getId().indexOf('menu-show-target-add') > 0) {
         var oAction = new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: "GetFieldTargetAll"})
 
       }
@@ -1677,7 +1690,17 @@ sap.ui.define([
 
   setFreestylePress: function(oEvent) {
     var oSideBarNode = oController.getModel().getProperty(oController.getView().byId("sideBar-panel").getBindingContext().getPath());
-    var sMainNode = oSideBarNode.ObjectName+'|'+oSideBarNode.ObjectType;
+    //var sMainNode = oSideBarNode.ObjectName+'|'+oSideBarNode.ObjectType;
+
+    oController._cadaxoMainNode = oSideBarNode.ObjectName+'|'+oSideBarNode.ObjectType;
+    oController._mainNode = oSideBarNode.ObjectName;
+    oController._graph.getToolbar().getContent()[0].setText('Main Node: ' + oController._mainNode)
+    
+    oController.getView().getModel("whereUsedFilterModel").setProperty("/enabled", false);
+    $(".cadaxoHighlightedTreeLine").each(function(){
+      $(this).removeClass('cadaxoHighlightedTreeLine');
+    })
+
 
     oController.getView().getModel("graphModeModel").setProperty('/freestyle', true);
 
@@ -1715,12 +1738,20 @@ sap.ui.define([
     }
 
     this.getModel().read("/Datasources", {
-        urlParameters: {"search" : sMainNode},
+        urlParameters: {"search" : oController._cadaxoMainNode},
         success: fnSuccessGraphData.bind(this),
         error: oController.fnErrorHandler.bind(this)
     });
   
 
+  },
+
+  rootDetailBeforeContextMenu: function(oEvent) {
+    oEvent.getParameter("listItem").setSelected(true);
+  },
+
+  treeBeforeContextMenu: function(oEvent) {
+    oEvent.getParameter("listItem").setSelected(true);
   }
 
   });

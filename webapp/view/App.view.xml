@@ -133,7 +133,7 @@
 										
 										<Text id="myText" text="Mode: Show CDS View Sources"/>
 										<ToolbarSpacer/>
-																				<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source" text="Display Field Source" enabled="false" />
+										<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source" text="Display Field Source" enabled="false" />
 										<Button tooltip="Display Field Target for selected Field"  type="Transparent" press="getTargetPressed" id="btn-show-target" text="Display Field Target" enabled="false" />
 										<Button tooltip="Set as Main Node"  type="Transparent" press="getExpandPressed" id="btn-expand-object" text="Set as Main Node" enabled="false" />
 										<Button tooltip="Display Field Source for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source-add" text="Display Field Source + all related objects" enabled="false" />
@@ -197,7 +197,16 @@
 																}																
 															}"
 													mode="SingleSelectMaster"
+													beforeOpenContextMenu="treeBeforeContextMenu"
 													>	
+														<contextMenu>
+															<Menu>
+																<MenuItem text="Display Field Source" press="getFieldSourcePressed"/>
+																<MenuItem text="Display Field Target" press="getTargetPressed"/>
+																<MenuItem text="Display Field Source + all related objects" press="getFieldSourcePressed" id="menu-show-source-add"/>
+																<MenuItem text="Display Field Target + all related objects" press="getTargetPressed" id="menu-show-target-add"/>
+															</Menu>
+														</contextMenu>
 														<items>
 														<CustomTreeItem type="Active">
 															<customData>
@@ -336,7 +345,13 @@
 											path: 'rootDetail>/fields'
 										}"
 										mode="SingleSelectMaster"
-										selectionChange="rootDetailFieldPressed">
+										selectionChange="rootDetailFieldPressed"
+										beforeOpenContextMenu="rootDetailBeforeContextMenu">
+										<contextMenu>
+												<Menu>
+													<MenuItem text="Set as Main Node" press="getExpandPressed"/>
+												</Menu>
+										</contextMenu>
 										<headerToolbar>
 											<Toolbar>
 												<ToolbarSpacer />
