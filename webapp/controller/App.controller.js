@@ -1114,7 +1114,7 @@ sap.ui.define([
       oController.getView().getModel("whereUsedFilterModel").setProperty("/enabled", true);
       oController.getView().getModel("whereUsedFilterModel").setProperty("/field", sSearchField);
       
-      oController.getView().byId("myText").setText("Mode: Display Field Source");
+      oController.getView().byId("myText").setText("Mode: Navigate To DB");
 
       oController.getView().getModel("graphModeModel").setProperty('/freestyle', false);
 
@@ -1185,7 +1185,7 @@ sap.ui.define([
       oController.getView().getModel("whereUsedFilterModel").setProperty("/enabled", true);
       oController.getView().getModel("whereUsedFilterModel").setProperty("/field", sSearchField);
       
-      oController.getView().byId("myText").setText("Mode: Display Field Target");
+      oController.getView().byId("myText").setText("Mode: Navigate To UI");
 
       oController.getView().getModel("graphModeModel").setProperty('/freestyle', false);
 
