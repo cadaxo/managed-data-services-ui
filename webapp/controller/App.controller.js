@@ -91,7 +91,7 @@ sap.ui.define([
     },
 
     _attachAfterRendering: function() {
-      debugger;
+ 
       const fnSuccessGraphData = function(oData, oResponse) {
               
         const fnSuccessLinksData = function(aNodes, oResponse) {
@@ -170,6 +170,7 @@ sap.ui.define([
 
           }
           oGraph.scrollToElement(oMainNode);
+          oMainNode.setStatus("MAINNODE");
           if (bFreestyle) {
             oController.hideAllNodes();
             oController.fixNodeState(oMainNode);

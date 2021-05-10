@@ -44,14 +44,14 @@ builder:
         path: dist
         pattern: "**/*.*"
       connection:
-        server: http://18.212.223.190:8000
+        server: http://cc0.cadaxo.com:8000
       authentication:
-        user: developer
-        password: ABAPAse1
+        user: cadaxo
+        password: Cadaxo02
       ui5:
         language: EN
-        package: ZCDX_MDS_UI
-        bspContainer: Z_MDS_UI
+        package: /CADAXO/MDS_UI
+        bspContainer: /CADAXO/MDS_UI
         bspContainerText: Cadaxo Managed Data Services UI
-        transportNo: NPLK900080
+        transportNo: CC0K900165
         calculateApplicationIndex: false
