@@ -24,9 +24,10 @@
 								noDataText="{i18n>noData}"
 								width="auto"
 								orientation="{graphLayoutModel>/orientation}"
-								statuses="{graphModel>/statuses}">
+								statuses="{graphModel>/statuses}"
+								afterLayouting ="afterLayouting">
 								<g:layoutAlgorithm>
-									<!--layout:LayeredLayout nodePlacement="{graphLayoutModel>/nodePlacement}" nodeSpacing="{graphLayoutModel>/nodeSpacing}" /-->
+									<!--layout:LayeredLayout nodePlacement="{graphLayoutModel>/nodePlacement}" nodeSpacing="{graphLayoutModel>/nodeSpacing}" -->
 									<layout:ForceDirectedLayout
 										optimalDistanceConstant="0.26"
 										>
@@ -73,12 +74,12 @@
 													enabled="false"/>
 											<g:ActionButton
 												icon="sap-icon://open-command-field"
-												title="Expand All"
+												title="{i18n>expandAll}"
 												press="rightMultiExpandPressed"
 												enabled="false"/>
 											<g:ActionButton
 													icon="sap-icon://close-command-field"
-													title="Expand All"
+													title="i18n>expandAll"
 													position="Left"
 													press="leftMultiExpandPressed"
 													enabled="false"/>		
@@ -108,9 +109,9 @@
 										<Title text="{ObjectName}"/>
 										<Title text="- {Description}"/>
 										<ToolbarSpacer />
-										<Button  icon="sap-icon://home" tooltip="Set as Main Node" enabled="true" press="setMainNodePress">									
+										<Button  icon="sap-icon://home" tooltip="{i18n>setAsMainNode}" enabled="true" press="setMainNodePress">									
 										</Button>
-										<Button  icon="sap-icon://tree" tooltip="Show in Freestyle Mode" enabled="true" press="setFreestylePress">									
+										<Button  icon="sap-icon://tree" tooltip="{i18n>showFreestyle}" enabled="true" press="setFreestylePress">									
 										</Button>										
 										
 										<!--Button press="whereUsedPressed" id="btn-show-where-used" text="{i18n>showWhereUsed}" enabled="false" /-->
@@ -130,22 +131,11 @@
 								</headerToolbar>
 								<infoToolbar>
 									<OverflowToolbar id="toolbar" active="false" design="Info" height="2rem" press="onToolbarPress"  ariaLabelledBy="myText">
-										
-										<Text id="myText" text="Mode: Show CDS View Sources"/>
+										<Text id="myText" text="{i18n>modeShowCDSSources}"/>
 										<ToolbarSpacer/>
-										<!--Button tooltip="Navigate To DB for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source" text="Navigate To DB" enabled="false" />
-										<Button tooltip="Navigate To UI for selected Field"  type="Transparent" press="getTargetPressed" id="btn-show-target" text="Navigate To UI" enabled="false" />
-										<Button tooltip="Navigate To Object"  type="Transparent" press="getExpandPressed" id="btn-expand-object" text="Navigate To Object" enabled="false" />
-										<Button tooltip="Navigate To DB for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source-add" text="Navigate To DB + all related objects" enabled="false" />
-										<Button tooltip="Navigate To UI for selected Field"  type="Transparent" press="getTargetPressed" id="btn-show-target-add" text="Navigate To UI + all related objects" enabled="false" /-->
 									</OverflowToolbar>
 								</infoToolbar>								
 								<content>
-									<!--OverflowToolbar id="toolbar-buttons">
-										<Button icon="sap-icon://hint" type="Transparent" press="handlePopoverPress" />
-
-										<ToolbarSpacer/>
-									</OverflowToolbar-->
 									<TabContainer id="tabs" itemSelect="tabChanged">
 										<items>
 											<TabContainerItem name="{i18n>fields}">
@@ -163,11 +153,10 @@
 													</Toolbar>
 													<OverflowToolbar>
 														<!--ToolbarSpacer /-->
-														<Button tooltip="Navigate To DB for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source" text="Navigate To DB" enabled="false" />
-														<Button tooltip="Navigate To UI for selected Field"  type="Transparent" press="getTargetPressed" id="btn-show-target" text="Navigate To UI" enabled="false" />
-														<Button tooltip="Navigate To Object"  type="Transparent" press="getExpandPressed" id="btn-expand-object2" text="Navigate To Object" enabled="false" visible="false"/>
-														<Button tooltip="Navigate To DB for selected Field"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source-add" text="Navigate To DB + all objects" enabled="false" />
-														<Button tooltip="Navigate To UI for selected Field"  type="Transparent" press="getTargetPressed" id="btn-show-target-add" text="Navigate To UI + all objects" enabled="false" />
+														<Button tooltip="{i18n>navToDbForSelected}"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source" text="{i18n>navToDb}" enabled="false" />
+														<Button tooltip="{i18n>navToUIForSelected}"  type="Transparent" press="getTargetPressed" id="btn-show-target" text="{i18n>navToUI}" enabled="false" />
+														<Button tooltip="{i18n>navToDbForSelected}"  type="Transparent" press="getFieldSourcePressed" id="btn-show-source-add" text="{i18n>navToDbAllObj}" enabled="false" />
+														<Button tooltip="{i18n>navToUIForSelected}"  type="Transparent" press="getTargetPressed" id="btn-show-target-add" text="{i18n>navToUIAllObj}" enabled="false" />
 													</OverflowToolbar>
 													<FlexBox id="fields-header">
 														<items>
@@ -209,10 +198,10 @@
 													>	
 														<contextMenu>
 															<Menu>
-																<MenuItem text="Navigate To DB" press="getFieldSourcePressed"/>
-																<MenuItem text="Navigate To UI" press="getTargetPressed"/>
-																<MenuItem text="Navigate To DB + all objects" press="getFieldSourcePressed" id="menu-show-source-add"/>
-																<MenuItem text="Navigate To UI + all objects" press="getTargetPressed" id="menu-show-target-add"/>
+																<MenuItem text="{i18n>navToDb}" press="getFieldSourcePressed"/>
+																<MenuItem text="{i18n>navToUI}" press="getTargetPressed"/>
+																<MenuItem text="{i18n>navToDbAllObj}" press="getFieldSourcePressed" id="menu-show-source-add"/>
+																<MenuItem text="{i18n>navToUIAllObj}" press="getTargetPressed" id="menu-show-target-add"/>
 															</Menu>
 														</contextMenu>
 														<items>
@@ -357,12 +346,12 @@
 										beforeOpenContextMenu="rootDetailBeforeContextMenu">
 										<contextMenu>
 												<Menu>
-													<MenuItem text="Navigate To Object" press="getExpandPressed"/>
+													<MenuItem text="{i18n>navToObj}" press="getExpandPressed"/>
 												</Menu>
 										</contextMenu>
 										<infoToolbar>
 											<OverflowToolbar class="cadaxoCustomToolbar" height="2.75rem">
-												<Button tooltip="Navigate To Object"  type="Transparent" press="getExpandPressed" id="btn-expand-object" text="Navigate To Object" enabled="false" />
+												<Button tooltip="{i18n>navToObj}"  type="Transparent" press="getExpandPressed" id="btn-expand-object" text="{i18n>navToObj}" enabled="false" />
 											</OverflowToolbar>
 										</infoToolbar>
 										<headerToolbar>

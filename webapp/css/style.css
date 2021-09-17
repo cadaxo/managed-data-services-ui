@@ -33,3 +33,14 @@ html {
 .cadaxoCustomToolbar {
     background-color: #fff !important;
 }
+
+.cadaxoCustomToolbar .sapMBtnDisabled span {
+    color: #0854a0 !important;
+}
+.cadaxoCustomToolbar .sapMBtnHoverable.sapMFocusable span {
+    color: #0854a0 !important;
+}
+
+.cadaxoCustomToolbar button:hover bdi {
+    color: #0854a0 !important;
+}

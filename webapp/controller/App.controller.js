@@ -59,7 +59,9 @@ sap.ui.define([
       
       this._cadaxoMainNode = jQuery.sap.getUriParameters().get("cadaxoMainNode");
       if (this._cadaxoMainNode == null || this._cadaxoMainNode.length == 0) {
-        MessageBox.error("CDS View not selected. \n\n Select CDS View in Search App or add GET Parameter cadaxoMainNode into URL.");
+        //MessageBox.error("CDS View not selected. \n\n Select CDS View in Search App or add GET Parameter cadaxoMainNode into URL.");
+        //return;
+        this.onEditMainNode();
         return;
       }
 
@@ -130,7 +132,17 @@ sap.ui.define([
                  nodes: nodes,
                  links: links
              });
-           
+             
+             if (nodes.length == 1 && links.length == 0) {
+              var oLayeredLayout = new sap.suite.ui.commons.networkgraph.layout.LayeredLayout({});
+              oController._graph.setLayoutAlgorithm(oLayeredLayout);
+             } else {
+              var oLayout = new sap.suite.ui.commons.networkgraph.layout.ForceDirectedLayout({});
+              oController._graph.setLayoutAlgorithm(oLayout);
+             }
+
+
+
              this.setModel(oJson,'graphModel');
         }
 
@@ -643,11 +655,6 @@ sap.ui.define([
     setCustomToolbar: function(oGraph) {
         var oToolbar = oGraph.getToolbar();
 
-        // oToolbar.insertContent(new Text("text-filter-bar",{
-        //   text: oController.getResourceBundle().getText("labelFilterWhereUsed") + " - {whereUsedFilterModel>/field}",
-        //   visible: "{whereUsedFilterModel>/enabled}"
-        //   //press: 
-        // }), 0);
 
         oToolbar.insertContent(new Text("text-filter-bar",{
           text: 'Main Node: ' + oController._mainNode,
@@ -660,7 +667,7 @@ sap.ui.define([
           visible: true,
           type: "Transparent",
           press: oController.onEditMainNode,
-          tooltip: "Set Main Node Manually"
+          tooltip: oController.getResourceBundle().getText("setMainNode"),
         }), 1);        
 
 
@@ -696,7 +703,7 @@ sap.ui.define([
 
         oToolbar.insertContent(new Button("btn-filter-bar-reset",{
           type: "Transparent",
-          tooltip: "Reset graph",
+          tooltip: oController.getResourceBundle().getText("resetGraph"),
           icon: "sap-icon://reset",
           visible: true,
           press: oController.onResetFilterPressed
@@ -774,10 +781,13 @@ sap.ui.define([
         }
         oNode.setStatusIcon(bHasHiddenSiblings ? STATUS_ICON : undefined);
       } else {
-        oNode.getActionButtons()[0].setEnabled(false);
-        oNode.getActionButtons()[1].setEnabled(false);
-        oNode.getActionButtons()[2].setEnabled(false);
-        oNode.getActionButtons()[3].setEnabled(false);
+        if (typeof oNode["getActionButtons"] == "function") {
+          oNode.getActionButtons()[0].setEnabled(false);
+          oNode.getActionButtons()[1].setEnabled(false);
+          oNode.getActionButtons()[2].setEnabled(false);
+          oNode.getActionButtons()[3].setEnabled(false);
+        }
+
       }
 
 
@@ -1115,7 +1125,7 @@ sap.ui.define([
       oController.getView().getModel("whereUsedFilterModel").setProperty("/enabled", true);
       oController.getView().getModel("whereUsedFilterModel").setProperty("/field", sSearchField);
       
-      oController.getView().byId("myText").setText("Mode: Navigate To DB");
+      oController.getView().byId("myText").setText(oController.getResourceBundle().getText("modeNavigateToDb"));
 
       oController.getView().getModel("graphModeModel").setProperty('/freestyle', false);
 
@@ -1186,7 +1196,7 @@ sap.ui.define([
       oController.getView().getModel("whereUsedFilterModel").setProperty("/enabled", true);
       oController.getView().getModel("whereUsedFilterModel").setProperty("/field", sSearchField);
       
-      oController.getView().byId("myText").setText("Mode: Navigate To UI");
+      oController.getView().byId("myText").setText(oController.getResourceBundle().getText("modeNavigateToUI"));
 
       oController.getView().getModel("graphModeModel").setProperty('/freestyle', false);
 
@@ -1195,76 +1205,24 @@ sap.ui.define([
 
     getExpandPressed: function(oEvent) {
        var oTree = oController.getView().byId("root-detail");
-   //  var sSearchField = oTree.getSelectedItem().getCustomData()[0].getValue();
-    //var sSearchObject = oTree.getSelectedItem().getBindingContext().getProperty("ObjectName");
        var sSearchObject = oTree.getSelectedItem().getCells()[0].getText();
        var sSearchObjectType = oTree.getSelectedItem().getCells()[2].getText();
 
-    //   var sMainNode = oController._cadaxoMainNode;
+      oController._cadaxoMainNode = sSearchObject+'|'+sSearchObjectType;
+      oController._mainNode = sSearchObject;
+      oController._graph.getToolbar().getContent()[0].setText('Main Node: ' + oController._mainNode)
+      
+      oController.getView().getModel("whereUsedFilterModel").setProperty("/enabled", false);
+      $(".cadaxoHighlightedTreeLine").each(function(){
+        $(this).removeClass('cadaxoHighlightedTreeLine');
+      })
 
-    //   var aFilters = [//new Filter({path: "FieldSearch/SearchObjectName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchObject}),
-    //                   //new Filter({path: "FieldSearch/SearchFieldName", operator: sap.ui.model.FilterOperator.EQ, value1: sSearchField}),
-    //                   new Filter({path: "FieldSearch/ActionName", operator: sap.ui.model.FilterOperator.EQ, value1: 'ExpandObject'})];
-    //                   const fnSuccessGraphData = function(oData, oResponse) {
+      
+      oController.getView().byId("myText").setText(oController.getResourceBundle().getText("modeShowCDSSources"));
 
-    //                     const fnSuccessLinksData = function(aNodes, oResponse) {
-                
-    //                       var links = oResponse.results
-    //                       var alinks = [];
-    //                       var tmpNodes = [];
-                
-    //                       aNodes.forEach(function(node) {
-    //                         tmpNodes.push(node.DsId);
-    //                       });
-                          
-    //                       links.forEach(function(link) {
-    //                         if (tmpNodes.includes(link.ObjectId1) && tmpNodes.includes(link.ObjectId2)) {
-    //                           alinks.push(link);
-    //                         }
-    //                       });
-                
-                
-    //                       const oJson = new JSONModel({new: 'test'});
-    //                       oJson.setSizeLimit(Number.MAX_SAFE_INTEGER);
-    //                       oJson.setData({
-    //                           nodes: aNodes,
-    //                           links: alinks
-    //                       });
-    //                       this.setModel(oJson,'graphModel');
-    //                       oController.openSidebar(aNodes[0]);   
-    //                     }
-    //                     this.getModel().read("/Datasources('"+oData.results[0].DsId+"')/toAllLinks",{
-    //                         success: fnSuccessLinksData.bind(this, oData.results),
-    //                         error: oController.fnErrorHandler.bind(this)
-    //                     })
-                
-    //                     //var oLayeredLayout = new sap.suite.ui.commons.networkgraph.layout.LayeredLayout({});
-    //                     //oController._graph.setLayoutAlgorithm(oLayeredLayout);
-    //                   }
-                
-    //                   oController.getView().getModel().read("/Datasources", {
-    //                     filters: aFilters,
-    //                     //urlParameters: {"search": sMainNode},
-    //                     urlParameters: {"search": sSearchObject+'|'+sSearchObjectType},
-    //                     success: fnSuccessGraphData.bind(this),
-    //                     error: oController.fnErrorHandler.bind(this)
-    //                   });
-    //                   oController.getView().byId("myText").setText("Mode: Expand Object");
-    oController._cadaxoMainNode = sSearchObject+'|'+sSearchObjectType;
-    oController._mainNode = sSearchObject;
-    oController._graph.getToolbar().getContent()[0].setText('Main Node: ' + oController._mainNode)
-    
-    oController.getView().getModel("whereUsedFilterModel").setProperty("/enabled", false);
-    $(".cadaxoHighlightedTreeLine").each(function(){
-      $(this).removeClass('cadaxoHighlightedTreeLine');
-    })
+      oController._attachAfterRendering();
 
-    
-    oController.getView().byId("myText").setText("Mode: Show CDS View Sources");
-
-    oController._attachAfterRendering();
-
-    oController.getView().getModel("graphModeModel").setProperty('/freestyle', false);
+      oController.getView().getModel("graphModeModel").setProperty('/freestyle', false);
                                          
     },
 
@@ -1385,7 +1343,7 @@ sap.ui.define([
       oController.getView().getModel("versionModel").getProperty("/backend") + "\n" +
       "Frontend:" + oController.getView().getModel("versionModel").getProperty("/frontend")
     , {
-      actions: ["Download Manual (PDF)", MessageBox.Action.CLOSE],
+      actions: [oController.getResourceBundle().getText("downloadManual"), MessageBox.Action.CLOSE],
       onClose: function (sAction) {
         if (sAction !== MessageBox.Action.CLOSE) {
           window.open("http://cadaxo.com/mds/mdsonepage1_00.pdf");
@@ -1612,7 +1570,7 @@ sap.ui.define([
     })
 
     
-    oController.getView().byId("myText").setText("Mode: Show CDS View Sources");
+    oController.getView().byId("myText").setText(oController.getResourceBundle().getText("modeShowCDSSources"));
 
     oController._attachAfterRendering();
 
@@ -1728,7 +1686,7 @@ sap.ui.define([
              $(this).removeClass('cadaxoHighlightedTreeLine');
            })
 
-           oController.getView().byId("myText").setText("Mode: Freestyle");
+           oController.getView().byId("myText").setText(oController.getResourceBundle().getText("modeFreestyle"));
       }
 
 
